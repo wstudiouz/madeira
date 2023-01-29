@@ -16,6 +16,31 @@ const fillEffect = keyframes`
     fill: #fff;
   }
 `;
+const circleEffect = keyframes`
+0% {
+  width: 0px;
+  height: 0px;
+  border-radius:50%;
+  left:50%;
+  right:50%;
+  transform: translate(-50%, -50%),
+}
+80% {
+  width: 0px;
+  height: 0px;
+  border-radius:50%;
+  left:50%;
+  right:50%;
+  transform: translate(-50%, -50%),
+}
+100% {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  left:0;
+  right:0;
+}
+`;
 
 const IntroAnimation = (): ReactElement => {
   return (
@@ -24,6 +49,7 @@ const IntroAnimation = (): ReactElement => {
         height: "100vh",
         justifyContent: "center",
         alignItems: "center",
+        position: "relative",
         background: theme.palette.primary.main,
       }}
     >
@@ -42,6 +68,17 @@ const IntroAnimation = (): ReactElement => {
           },
         }}
         viewBox="0 0 941 831"
+      />
+      <Stack
+        sx={{
+          width: "100%",
+          height: "100%",
+          borderRadius: "0%",
+          backgroundColor: "white",
+          position: "absolute",
+
+          animation: `${circleEffect} 5s ease-in-out`,
+        }}
       />
     </Stack>
   );
