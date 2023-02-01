@@ -3,7 +3,8 @@ import React, {ReactElement} from "react";
 import {theme} from "../../theme";
 import BigText from "./BigText";
 import MiniTextCard from "./MiniTextCard";
-const Complex = (): ReactElement => {
+import {LeonHandleSvg} from "../../imports/index"
+const Complex = (): ReactElement => {  
   return (
     <Stack
       sx={{
@@ -19,8 +20,7 @@ const Complex = (): ReactElement => {
         textSx={{color: theme.palette.primary.contrastText}}
         sx={{width: {sm: "100%", md: "100%", lg: "60%", xl: "60%"}}}
       />
-      <Box
-        component="div"
+      <Stack
         sx={{
           width: {sm: "100%", md: "100%", lg: "60%", xl: "60%"},
           display: "flex",
@@ -50,7 +50,8 @@ const Complex = (): ReactElement => {
           textSx={{marginTop: "-20px"}}
           desc="of excellent reputation"
         />
-      </Box>
+       <Box sx={{position:"absolute", width:"180px", height:"210px", margin:"15rem 0 0 10rem"}} component="img"  src={LeonHandleSvg} />
+      </Stack>
     </Stack>
   );
 };

@@ -1,23 +1,24 @@
 import {Box, Stack, Typography} from "@mui/material";
 import React, {ReactElement} from "react";
+import {theme} from "../../theme";
 const Hero = (): ReactElement => {
   const styles = {
     heroText1: {
-      "color": "#CCA041",
+      "color": theme.palette.secondary.main,
       "margin": "15px 0",
       "&:before": {
         position: "absolute",
         content: '""',
         width: "15%",
         display: "block",
-        border: "1.5px solid #CCA041",
+        border: `1.5px solid ${theme.palette.secondary.main}`,
         marginTop: "-18px",
       },
       "&:after": {
         position: "absolute",
         content: '""',
         width: "15%",
-        border: "1.5px solid #CCA041",
+        border: `1.5px solid ${theme.palette.secondary.main}`,
         display: "block",
         marginTop: "18px",
       },
@@ -27,7 +28,7 @@ const Hero = (): ReactElement => {
   return (
     <Stack>
       <Typography variant="h3">ABOUT US</Typography>
-      <Box
+      <Stack
         sx={{
           display: "flex",
           justifyContent: "space-between",
@@ -35,18 +36,20 @@ const Hero = (): ReactElement => {
           marginTop: "30px",
           flexDirection: {xs: "column", sm: "column", md: "column", lg: "row"},
         }}
-        component="div"
       >
-        <Box
+        <Stack
           sx={{width: {sm: "100%", md: "100%", lg: "50%", xl: "50%"}}}
-          component="div"
         >
           <Typography sx={styles.heroText1} variant="h3">
             We do what we love for over 15 years, and we are pleased to present
             Viporte doors — doors as a piece of art!
           </Typography>
           <Typography
-            sx={{display: "block", marginTop: "50px", width: {sm: "100%", md: "100%", lg: "55%", xl: "60%"}}}
+            sx={{
+              display: "block",
+              marginTop: "50px",
+              width: {sm: "100%", md: "100%", lg: "55%", xl: "60%"},
+            }}
             variant="paragraph"
           >
             We combine best european technologies, the beauty of Caucasus
@@ -54,7 +57,7 @@ const Hero = (): ReactElement => {
             secular traditions of italian masters we produce a truly high
             quality doors!
           </Typography>
-        </Box>
+        </Stack>
         <Box
           src="https://picsum.photos/230/450"
           sx={{
@@ -72,17 +75,17 @@ const Hero = (): ReactElement => {
               xl: "350px",
             },
             height: {
-                xs: "270px",
-                sm: "360px",
-                md: "400px",
-                lg: "500px",
-                xl: "580px",
-            }
+              xs: "270px",
+              sm: "360px",
+              md: "400px",
+              lg: "500px",
+              xl: "580px",
+            },
           }}
           component="img"
           alt="Door img"
         />
-      </Box>
+      </Stack>
     </Stack>
   );
 };
