@@ -7,7 +7,7 @@ type ComponentProps = {
 }
 const BigText = ({text,textSx, sx}: ComponentProps): ReactElement => {
   return (
-    <Stack sx={sx}>
+    <Stack sx={{...sx, maxWidth:"98%"}}>
       <Typography sx={textSx} variant="heroText1">{text}</Typography>
     </Stack>
   );
