@@ -1,12 +1,12 @@
-import {Stack} from "@mui/material";
 import React, {ReactElement} from "react";
 import IntroAnimation from "../components/home/IntroAnimation";
+import MainContainer from "../components/MainContainer";
 
 const HomePage = (): ReactElement => {
   return (
-    <Stack>
+    <MainContainer>
       <IntroAnimation />
-    </Stack>
+    </MainContainer>
   );
 };
 export default HomePage;
