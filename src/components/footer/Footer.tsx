@@ -3,6 +3,7 @@ import {Box} from "@mui/system";
 import {theme} from "../../theme";
 import React, {ReactElement} from "react";
 import {FooterBg} from "../../imports";
+import { Link } from "react-router-dom";
 const Footer = (): ReactElement => {
   const styles = {
     href: {
@@ -16,7 +17,7 @@ const Footer = (): ReactElement => {
       height: {xs: "1.5px", sm: "1.5px", md: "1.5px", lg: "100%", xl: "100%"},
       overflow: "hidden",
       border: `1px solid ${theme.palette.secondary.main}`,
-      background:theme.palette.secondary.main
+      background: theme.palette.secondary.main,
     },
     bgImg: {
       height: 150,
@@ -73,7 +74,7 @@ const Footer = (): ReactElement => {
       }}
     >
       <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
-        <Box component="a" href="/contact" sx={styles.href}>
+        <Link  to="/contact" style={styles.href}>
           Contacts
           <Box
             component="hr"
@@ -87,11 +88,11 @@ const Footer = (): ReactElement => {
               },
             }}
           ></Box>
-        </Box>
+        </Link>
       </Typography>
       <Box sx={styles.line} component="hr"></Box>
       <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
-        <Box component="a" href="/about" sx={{...styles.href}}>
+        <Link  to="/about" style={styles.href}>
           About us
           <Box
             component="hr"
@@ -105,7 +106,7 @@ const Footer = (): ReactElement => {
               },
             }}
           ></Box>
-        </Box>
+        </Link>
       </Typography>
     </Stack>
   );
