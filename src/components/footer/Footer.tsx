@@ -12,9 +12,9 @@ const Footer = (): ReactElement => {
       fontFamily: "'Libre Caslon Text'",
     },
     line: {
-      width: {xs: "85%", sm: "85%", md: "85%", lg: "0", xl: "0"},
-      margin: "10px",
-      height: {xs: "1.5px", sm: "1.5px", md: "1.5px", lg: "100%", xl: "100%"},
+      width: {xs: "85%",lg: "0"},
+      margin: {xs:"7px", lg:"25px"},
+      height: {xs: "1.5px", lg: "100%"},
       overflow: "hidden",
       border: `1px solid ${theme.palette.secondary.main}`,
       background: theme.palette.secondary.main,
@@ -59,54 +59,52 @@ const Footer = (): ReactElement => {
           lg: "90px 60px 30px 60px",
           xl: "110px 70px 30px 70px",
         },
-        display: "flex",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: {
           xs: "column",
-          sm: "column",
-          md: "column",
           lg: "row",
-          xl: "row",
         },
         ...styles.bgImg,
         ...styles.bgLine,
       }}
     >
       <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
-        <Link  to="/contact" style={styles.href}>
-          Contacts
           <Box
             component="hr"
             sx={{
               display: {
                 xs: "none",
-                sm: "none",
-                md: "none",
-                lg: "block",
-                xl: "block",
+                lg: "inline",
               },
+              width:"7rem",
+              marginRight:"15px",
+              border: styles.line.border,
+              background: styles.line.background
             }}
           ></Box>
+        <Link  to="/contact" style={styles.href}>
+          Contacts
         </Link>
       </Typography>
       <Box sx={styles.line} component="hr"></Box>
       <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
         <Link  to="/about" style={styles.href}>
           About us
+        </Link>
           <Box
             component="hr"
             sx={{
               display: {
                 xs: "none",
-                sm: "none",
-                md: "none",
-                lg: "block",
-                xl: "block",
+                lg: "inline",
               },
+              width:"7rem",
+              marginLeft:"15px",
+              border: styles.line.border,
+              background: styles.line.background
             }}
           ></Box>
-        </Link>
       </Typography>
     </Stack>
   );
