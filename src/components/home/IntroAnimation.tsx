@@ -1,5 +1,5 @@
 import {keyframes, Stack, SvgIcon} from "@mui/material";
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import {LogoComponent} from "../../imports";
 import {theme} from "../../theme";
 
@@ -16,33 +16,14 @@ const fillEffect = keyframes`
     fill: #fff;
   }
 `;
-const circleEffect = keyframes`
-0% {
-  width: 0px;
-  height: 0px;
-  border-radius:50%;
-  left:50%;
-  right:50%;
-  transform: translate(-50%, -50%),
-}
-80% {
-  width: 0px;
-  height: 0px;
-  border-radius:50%;
-  left:50%;
-  right:50%;
-  transform: translate(-50%, -50%),
-}
-100% {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  left:0;
-  right:0;
-}
-`;
 
 const IntroAnimation = (): ReactElement => {
+  const [animation, setAnimation] = useState<boolean>(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimation(false);
+    }, 4000);
+  }, []);
   return (
     <Stack
       sx={{
@@ -51,6 +32,8 @@ const IntroAnimation = (): ReactElement => {
         alignItems: "center",
         position: "relative",
         background: theme.palette.primary.main,
+        transition: "all 0.5s linear",
+        opacity: animation ? 1 : 0,
       }}
     >
       <SvgIcon
@@ -69,7 +52,7 @@ const IntroAnimation = (): ReactElement => {
         }}
         viewBox="0 0 941 831"
       />
-      <Stack
+      {/* <Stack
         sx={{
           width: "100%",
           height: "100%",
@@ -79,7 +62,7 @@ const IntroAnimation = (): ReactElement => {
 
           animation: `${circleEffect} 5s ease-in-out`,
         }}
-      />
+      /> */}
     </Stack>
   );
 };
