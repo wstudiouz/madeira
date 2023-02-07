@@ -2,54 +2,47 @@ import {Stack, Typography} from "@mui/material";
 import {Box} from "@mui/system";
 import React, {ReactElement} from "react";
 import MiniTextCard from "./MiniTextCard";
+import {theme} from "../../theme";
 const Production = (): ReactElement => {
   return (
     <Stack
       sx={{
-        margin: {
-          xs: "2rem 0 0 0",
-          sm: "4rem 0 0 0",
-          md: "5rem 0 0 0",
-          lg: "15rem 0 0 0",
+        marginTop: {
+          xs: "2rem",
+          sm: "4rem",
+          md: "5rem",
+          lg: "15rem",
         },
       }}
     >
-      <Typography variant="h3">Own production</Typography>
+      <Typography variant="h3" color={theme.palette.primary.main}>
+        Own production
+      </Typography>
       <Stack
         sx={{
-          display: "flex",
           justifyContent: "space-between",
           alignItems: {
             xs: "center",
             sm: "flex-start",
-            md: "flex-start",
             lg: "center",
           },
           margin: "50px 0",
           flexDirection: {
             xs: "column-reverse",
             sm: "row",
-            md: "row",
-            lg: "row",
           },
         }}
       >
         <Stack
           sx={{
-            display: "flex",
             alignItems: {
               xs: "center",
               sm: "flex-start",
-              md: "flex-start",
-              lg: "flex-start",
             },
             flexDirection: {
-              xs: "column",
-              sm: "column",
-              md: "column",
               lg: "row",
             },
-            width: {xs: "100%", sm: "35%", md: "39%", lg: "56%", xl: "50"},
+            width: {xs: "100%", sm: "35%", md: "39%", lg: "56%", xl: "50%"},
           }}
         >
           <Box
@@ -61,7 +54,6 @@ const Production = (): ReactElement => {
               margin: {
                 xs: "60px auto 0 auto",
                 sm: "0 auto",
-                md: "0 auto",
                 lg: "0",
               },
             }}
