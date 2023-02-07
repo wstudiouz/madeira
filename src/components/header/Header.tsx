@@ -1,16 +1,16 @@
 import {
   AppBar,
-  Button,
   CssBaseline,
   Drawer,
   IconButton,
   List,
   Toolbar,
   Typography,
+  keyframes
 } from "@mui/material";
 import {Box} from "@mui/system";
 import React from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -18,12 +18,14 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import {theme} from "../../theme";
 import {MobileLogo} from "../../imports";
 import HeaderIcon from "./HeaderIcon";
+import CloseIcon from "@mui/icons-material/Close";
+import MiniHrComponent from "../MiniHrComponent";
 
 interface Props {
   window?: () => Window;
 }
 
-const drawerWidth = 450;
+const drawerWidth = {xs: "100%", md: "75%", lg: "50%"};
 const navItems = [
   {url: "about", text: "ABOUT US"},
   {url: "catalogue", text: "CATALOGUE"},
@@ -36,28 +38,55 @@ const navIcons = [
 ];
 
 export default function DrawerAppBar(props: Props) {
-  const styles = {
-    position: "absolute",
-    content: '""',
-    width: "20%",
-    overflowX: "hidden",
-    display: "block",
-    border: `1px solid ${theme.palette.secondary.main}`,
-  };
+  // manashu animatsiya chota ishlamayabdi negadur aboutda ishlovdi buni drawerida ishlamadi
+  const textAnimation = keyframes` 
+  from {
+    transform: translateX(-70px);
+  }
+  to {
+    transform: translate(0);
+  }
+`;
   const {window} = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{textAlign: "center"}}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        position: "relative",
+        height: "100vh",
+        minHeight: "650px",
+      }}
+    >
+      <IconButton
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          right: "15px",
+          top: "10px",
+        }}
+      >
+        <CloseIcon />
+      </IconButton>
       <Box
         component="img"
         src={MobileLogo}
-        sx={{width: "130px", height: "114px", margin: "50px auto 20px auto"}}
+        sx={{
+          width: "130px",
+          height: "114px",
+          margin: "70px auto 30px auto",
+          animation: `${textAnimation} 0.7s ease`,
+        }}
       />
       <List>
         {navItems.map((item, index) => (
@@ -69,6 +98,7 @@ export default function DrawerAppBar(props: Props) {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              animation: `${textAnimation} 0.7s ease`
             }}
           >
             <Link
@@ -91,24 +121,29 @@ export default function DrawerAppBar(props: Props) {
       </List>
       <List
         sx={{
-          "width": "100%",
-          "display": "flex",
-          "justifyContent": "center",
-          "alignItems": "center",
-          "padding": "0",
-          "&:before": {
-            ...styles,
-            marginLeft: "-60%",
-          },
-          "&:after": {
-            ...styles,
-            marginLeft: "60%",
-          },
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          padding: "0",
+          position: "absolute",
+          bottom: 30,
         }}
       >
-        {navIcons.map((item, index) => (
-          <HeaderIcon url={item.url} key={index} MyIcon={<item.icon />} />
-        ))}
+        <MiniHrComponent sx={{width: "20%", height: "2px"}} />
+        <List
+          sx={{
+            width: "auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {navIcons.map((item, index) => (
+            <HeaderIcon url={item.url} key={index} MyIcon={<item.icon />} />
+          ))}
+        </List>
+        <MiniHrComponent sx={{width: "20%", height: "2px"}} />
       </List>
     </Box>
   );
@@ -116,40 +151,25 @@ export default function DrawerAppBar(props: Props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
-  const GoToLink = (url: string) => navigate(url);
-
   return (
     <Box sx={{display: "flex"}}>
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar component="nav" sx={{background:"white",border:"none"}}>
+        <Toolbar >
+          <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+            <Link style={{textDecoration: "none", color: theme.palette.secondary.main}} to="/">
+              Medeira
+            </Link>
+          </Typography>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{mr: 2, display: {sm: "none"}}}
+            sx={{mr: 2, color: theme.palette.secondary.main}}
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{flexGrow: 1, display: {xs: "none", sm: "block"}}}
-          >
-            Madeira
-          </Typography>
-          <Box sx={{display: {xs: "none", sm: "block"}}}>
-            {navItems.map((item, index) => (
-              <Button
-                onClick={() => GoToLink(item.url)}
-                key={index}
-                sx={{color: "#fff"}}
-              >
-                {item.text}
-              </Button>
-            ))}
-          </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
@@ -162,7 +182,7 @@ export default function DrawerAppBar(props: Props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            "display": {xs: "block", sm: "none"},
+            "display": "block",
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
