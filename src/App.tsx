@@ -1,7 +1,8 @@
 import React from "react";
-import {Routes, Route, Outlet, BrowserRouter} from "react-router-dom";
+import {Routes, Route, BrowserRouter} from "react-router-dom";
 import MainContent from "./MainContent";
 import AboutUsPage from "./page/AboutUsPage";
+import CataloguePage from "./page/CataloguePage";
 import ContactPage from "./page/ContactPage";
 import ErrorPage from "./page/ErrorPage";
 import HomePage from "./page/HomePage";
@@ -15,10 +16,10 @@ function App(): JSX.Element {
           <Route path="" element={<HomePage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="about" element={<AboutUsPage />} />
-          <Route path="catalogue" element={<Outlet />}>
+          <Route path="catalogue" element={<CataloguePage />}>
             <Route path="" element={<ErrorPage />} />
-            <Route path=":id" element={<ProductDetailPage />} />
           </Route>
+            <Route path="/catalogue/:id" element={<ProductDetailPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
