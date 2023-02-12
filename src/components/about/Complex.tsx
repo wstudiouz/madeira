@@ -1,32 +1,37 @@
-import {Box, Stack} from "@mui/material";
+import {Box, Stack, Typography} from "@mui/material";
 import React, {ReactElement} from "react";
 import {theme} from "../../theme";
-import BigText from "./BigText";
 import MiniTextCard from "./MiniTextCard";
-import {LeonHandleSvg} from "../../imports/index"
-const Complex = (): ReactElement => {  
+import {LeonHandleSvg} from "../../imports/index";
+import {Parallax} from "react-scroll-parallax";
+const Complex = (): ReactElement => {
   return (
     <Stack
       sx={{
-        display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         margin: "50px 0",
-        flexDirection: {xs: "column", sm: "column", md: "column", lg: "row"},
+        flexDirection: {lg: "row"},
       }}
     >
-      <BigText
-        text="Complex solution of interior problems"
-        textSx={{color: theme.palette.primary.contrastText}}
-        sx={{width: {sm: "100%", md: "100%", lg: "60%", xl: "60%"}}}
-      />
+      <Parallax style={{width: "100%"}} speed={10}>
+        <Typography
+          variant="heroText1"
+          sx={{
+            width: {xs: "100%", lg: "60%"},
+            color: theme.palette.primary.contrastText,
+          }}
+        >
+          Complex solution of interior problems
+        </Typography>
+      </Parallax>
+
       <Stack
         sx={{
-          width: {sm: "100%", md: "100%", lg: "60%", xl: "60%"},
-          display: "flex",
+          width: {lg: "60%"},
           justifyContent: "left",
           alignItems: "center",
-          flexDirection: "column",
+          margin: {xs: "10rem", lg: "0"},
         }}
       >
         <MiniTextCard
@@ -40,17 +45,29 @@ const Complex = (): ReactElement => {
             width: "300px",
             padding: "7px 10px 50px 7px",
             border: `1px solid ${theme.palette.secondary.main}`,
-            display: "flex",
             alignItems: "flex-start",
             flexDirection: "column",
-            marginTop:"50px"
+            marginTop: "50px",
+            position: "relative",
           }}
           variantMy="heroText2"
           text="15 years"
           textSx={{marginTop: "-20px"}}
           desc="of excellent reputation"
         />
-       <Box sx={{position:"absolute", width:"180px", height:"210px", margin:"15rem 0 0 10rem"}} component="img"  src={LeonHandleSvg} />
+        <Parallax
+          style={{
+            position: "absolute",
+            margin: "16rem 0 0 10rem",
+          }}
+          speed={2}
+        >
+          <Box
+            sx={{width: "150px", height: "190px"}}
+            component="img"
+            src={LeonHandleSvg}
+          />
+        </Parallax>
       </Stack>
     </Stack>
   );
