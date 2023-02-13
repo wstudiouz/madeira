@@ -2,12 +2,13 @@ import React, {ReactElement} from "react";
 import ListItem from "@mui/material/ListItem";
 import {theme} from "../../theme";
 import {Link} from "react-router-dom";
+import { SxProps } from "@mui/system";
 type ComponentProps = {
   MyIcon: ReactElement;
   url: string;
 };
 const HeaderIcon = ({MyIcon, url}: ComponentProps): ReactElement => {
-  const styles = {
+  const myIconStyless :SxProps = {
     position: "absolute",
     content: '""',
     width: "100%",
@@ -28,11 +29,11 @@ const HeaderIcon = ({MyIcon, url}: ComponentProps): ReactElement => {
         "alignItems": "center",
         "margin": "0 3px",
         "&:before": {
-          ...styles,
+          ...myIconStyless,
           marginTop: "-33px",
         },
         "&:after": {
-          ...styles,
+          ...myIconStyless,
           marginTop: "33px",
         },
       }}
