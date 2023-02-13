@@ -1,6 +1,6 @@
 import {Stack} from "@mui/material";
 import {Box} from "@mui/system";
-import React, {ReactElement, useState} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import Door from "./Door";
 
 const Doors = (): ReactElement => {
@@ -12,7 +12,11 @@ const Doors = (): ReactElement => {
     "https://picsum.photos/350/505",
   ]);
   const [order, setOrder] = useState<number | undefined>(undefined);
-
+  const [trigger, setTrigger] = useState<boolean>(false);
+  useEffect(() => {
+    if (order !== undefined) setTrigger(false);
+    else setTrigger(true);
+  }, [order]);
   return (
     <Stack
       sx={{
@@ -39,15 +43,15 @@ const Doors = (): ReactElement => {
               component="i"
               sx={{
                 width: "100%",
-                height: typeof order !== undefined ? 0 : "2px",
+                height: trigger ? "2px" : "0px",
                 display: "block",
                 position: "absolute",
                 left: "0",
                 top: `${((index + 1) * 100) / images.length}%`,
                 zIndex: 10,
-                transition: "opacity 0.5s ease",
+                transition: "all 0.5s linear",
                 background: "#FFF",
-                opacity: typeof order !== undefined ? 0 : 1,
+                opacity: trigger ? 1 : 0,
               }}
             ></Box>
           ))}
