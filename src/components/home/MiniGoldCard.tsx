@@ -2,6 +2,7 @@ import React, {ReactElement} from "react";
 import {theme} from "../../theme";
 import {Link} from "react-router-dom";
 import {Stack, SxProps} from "@mui/system";
+import MiniHrComponent from "../MiniHrComponent";
 type ComponentProps = {
   content: ReactElement | string;
   url?: string;
@@ -16,8 +17,18 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
     display: "block",
     border: `1px solid ${theme.palette.secondary.main}`,
   };
+
   return (
-    <Stack sx={{position: "relative"}}>
+    <Stack
+      sx={{
+        position: "relative",
+        justifyContent:  "left",
+        alignItems: "center",
+        flexDirection: "row",
+        margin: url ? "0" :"0 auto",
+      }}
+    >
+      {!url ? <MiniHrComponent sx={{width: "90px", height: "2px"}} /> : <></>}
       <Stack
         sx={{
           "width": "40px",
@@ -28,7 +39,7 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
           "display": "flex",
           "justifyContent": "center",
           "alignItems": "center",
-          "margin": "0 3px",
+          "margin": `0 ${url ? "3px" : "25px"}`,
           "&:before": {
             ...styles,
             marginTop: "-33px",
@@ -36,6 +47,7 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
           "&:after": {
             ...styles,
             marginTop: "33px",
+            
           },
           ...sx,
         }}
@@ -48,7 +60,7 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
               justifyContent: "center",
               alignItems: "center",
               color: theme.palette.secondary.main,
-              textDecoration: "none",
+              textDecoration: "none"
             }}
           >
             {content}
@@ -66,6 +78,7 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
           </Stack>
         )}
       </Stack>
+      {!url ? <MiniHrComponent sx={{width: "90px", height: "2px"}} /> : <></>}
     </Stack>
   );
 };

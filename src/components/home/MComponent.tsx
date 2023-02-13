@@ -15,6 +15,7 @@ const MComponent = ({
    <Stack ref={SectionRef} sx={{
     justifyContent:"center",
     alignItems:"center",
+    marginBottom: {xs: "50px", md: "100px", lg: "150px"},
     ...sx
    }}>
     <Box component="img" src={DeskLogo} sx={{width:"280px", height:"auto", margin:"30px auto"}} />
