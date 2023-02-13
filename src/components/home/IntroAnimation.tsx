@@ -17,48 +17,46 @@ const fillEffect = keyframes`
   }
 `;
 
-type ComponentProps = {
-  animation: boolean
-};
-
-const IntroAnimation = ({animation}: ComponentProps): ReactElement => {
-
+const IntroAnimation = (): ReactElement => {
   return (
-    <Stack>
-      {
-        animation ? (
-          <Stack
+    <Stack
       sx={{
-        height: "100vh",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
-        background: theme.palette.primary.main,
-        transition: "all 0.5s linear",
-        opacity: animation ? 1 : 0,
+        position: "fixed",
+        top: "60px",
+        left: "0",
+        zIndex: "10",
+        width: "100%",
+        height: "92vh",
       }}
     >
-      <SvgIcon
-        component={LogoComponent}
+      <Stack
         sx={{
-          "width": "50%",
-          "height": "auto",
-          "& path": {
-            fill: theme.palette.primary.main,
-            stroke: "#fff",
-            strokeWidth: "3px",
-            strokeDasharray: "11957",
-            strokeDashoffset: "11957",
-            animation: `${logoEffect} 3s linear forwards, ${fillEffect} .4s 3.1s ease-out forwards`,
-          },
+          height: "100vh",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          background: theme.palette.primary.main,
+          transition: "all 0.5s linear",
+          opacity: 1,
         }}
-        viewBox="0 0 941 831"
-      />
-    </Stack>
-        ):(
-          <></>
-        )
-      }
+      >
+        <SvgIcon
+          component={LogoComponent}
+          sx={{
+            "width": "50%",
+            "height": "auto",
+            "& path": {
+              fill: theme.palette.primary.main,
+              stroke: "#fff",
+              strokeWidth: "3px",
+              strokeDasharray: "11957",
+              strokeDashoffset: "11957",
+              animation: `${logoEffect} 3s linear forwards, ${fillEffect} .4s 3.1s ease-out forwards`,
+            },
+          }}
+          viewBox="0 0 941 831"
+        />
+      </Stack>
     </Stack>
   );
 };

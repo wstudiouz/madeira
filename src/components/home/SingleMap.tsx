@@ -6,12 +6,14 @@ type ComponentProps = {
   isSeen: boolean;
   setOrder: Dispatch<SetStateAction<number | undefined>>;
   index: number;
+  myRef:React.RefObject<HTMLDivElement>;
 };
 const SingleMap = ({
   text,
   isSeen,
   setOrder,
   index,
+  myRef
 }: ComponentProps): ReactElement => {
   const textAnimation = keyframes`
   from {
@@ -23,18 +25,20 @@ const SingleMap = ({
     transform-origin: 0 50%;
   }
 `;
-
+console.log(myRef)
   return (
     <Stack
       onMouseEnter={() => setOrder(index)}
       onMouseLeave={() => setOrder(undefined)}
+      onClick={() => myRef?.current?.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}
       sx={{
-        width: "40px",
+        width: "100%",
         margin: "5px 0",
         height: "30px",
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
+        
       }}
     >
       <hr
