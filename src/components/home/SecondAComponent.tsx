@@ -75,7 +75,7 @@ const SeacondAComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
         stackSx={{
           width: {xs: "100%", sm: "400px", lg: "30%"},
           minWidth: "300px",
-          marginTop: "50px",
+          marginTop: "51px",
         }}
         text="Branded Furniture"
         textSx={{margin: "30px 0"}}
