@@ -1,11 +1,11 @@
 import {Stack} from "@mui/material";
 import React, {ReactElement} from "react";
-import IntroAnimation from "../components/home/IntroAnimation";
+import Home from "../components/home";
 
 const HomePage = (): ReactElement => {
   return (
     <Stack>
-      <IntroAnimation />
+     <Home />
     </Stack>
   );
 };

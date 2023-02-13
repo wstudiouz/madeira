@@ -1,5 +1,5 @@
 import {keyframes, Stack, SvgIcon} from "@mui/material";
-import React, {ReactElement, useEffect, useState} from "react";
+import React, {ReactElement} from "react";
 import {LogoComponent} from "../../imports";
 import {theme} from "../../theme";
 
@@ -17,15 +17,17 @@ const fillEffect = keyframes`
   }
 `;
 
-const IntroAnimation = (): ReactElement => {
-  const [animation, setAnimation] = useState<boolean>(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setAnimation(false);
-    }, 4000);
-  }, []);
+type ComponentProps = {
+  animation: boolean
+};
+
+const IntroAnimation = ({animation}: ComponentProps): ReactElement => {
+
   return (
-    <Stack
+    <Stack>
+      {
+        animation ? (
+          <Stack
       sx={{
         height: "100vh",
         justifyContent: "center",
@@ -52,17 +54,11 @@ const IntroAnimation = (): ReactElement => {
         }}
         viewBox="0 0 941 831"
       />
-      {/* <Stack
-        sx={{
-          width: "100%",
-          height: "100%",
-          borderRadius: "0%",
-          backgroundColor: "white",
-          position: "absolute",
-
-          animation: `${circleEffect} 5s ease-in-out`,
-        }}
-      /> */}
+    </Stack>
+        ):(
+          <></>
+        )
+      }
     </Stack>
   );
 };
