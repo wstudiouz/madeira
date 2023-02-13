@@ -1,7 +1,7 @@
 import React, {ReactElement, useEffect, useRef, useState} from "react";
 import IntroAnimation from "./IntroAnimation";
 import SingleMap from "./SingleMap";
-import { Stack,  Typography} from "@mui/material";
+import {Stack, Typography} from "@mui/material";
 import MComponent from "./MComponent";
 import AComponent from "./AComponent";
 import DComponent from "./DComponent";
@@ -106,9 +106,9 @@ const Home = (): ReactElement => {
               <SingleMap
                 key={index}
                 text={e.text}
-                isSeen={index === order || index === active}
-                index={index}
-                setOrder={setOrder}
+                active={index === order || index === active}
+                // index={index}
+                // setOrder={setOrder}
                 myRef={el5} // e.ref desam error beryabdi polniy childga berishga rosa urundim o'xshamadi bir ko'rsez bo'larkan
               />
             ))}
@@ -121,7 +121,7 @@ const Home = (): ReactElement => {
       <DComponent SectionRef={el3} />
       <EComponent SectionRef={el4} />
       <IComponent SectionRef={el5} />
-      <RComponent SectionRef={el6} /> 
+      <RComponent SectionRef={el6} />
       <SeacondAComponent SectionRef={el7} />
     </Stack>
   );
