@@ -26,7 +26,6 @@ const Production = (): ReactElement => {
             sm: "flex-start",
             lg: "center",
           },
-          margin: "50px 0",
           flexDirection: {
             xs: "column-reverse",
             sm: "row",

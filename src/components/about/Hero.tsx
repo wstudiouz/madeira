@@ -16,7 +16,7 @@ const Hero = (): ReactElement => {
     heroText1: {
       color: theme.palette.secondary.main,
       margin: "15px 0",
-      padding:"0",
+      padding: "0",
       animation: `${textAnimation} 0.7s ease`,
     },
     lines: {
@@ -30,7 +30,7 @@ const Hero = (): ReactElement => {
   };
 
   return (
-    <Stack>
+    <Stack height={"100%"}>
       <Typography variant="h3" color={theme.palette.primary.main}>
         ABOUT US
       </Typography>
@@ -39,24 +39,22 @@ const Hero = (): ReactElement => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          marginTop: "30px",
           flexDirection: {xs: "column", lg: "row"},
         }}
       >
         <Stack sx={{width: {xs: "100%", lg: "50%"}}}>
-          
           <Typography
             sx={{
               ...styles.heroText1,
               "&:after": {...styles.lines},
-                "&:before": {...styles.lines, marginTop: "-18px"},
+              "&:before": {...styles.lines, marginTop: "-18px"},
             }}
             variant="h3"
           >
             We do what we love for over 15 years, and we are pleased to present
             Viporte doors — doors as a piece of art!
           </Typography>
-          
+
           <Typography
             sx={{
               display: "block",
@@ -72,7 +70,6 @@ const Hero = (): ReactElement => {
             quality doors!
           </Typography>
         </Stack>
-
         <Doors />
       </Stack>
     </Stack>

@@ -8,14 +8,13 @@ const Warranty = (): ReactElement => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        margin: "50px 0",
         flexDirection: {lg: "row"},
       }}
     >
       <Stack
         sx={{
           width: "40%",
-          height:"auto",
+          height: "auto",
           display: {xs: "none", md: "block"},
         }}
       >
