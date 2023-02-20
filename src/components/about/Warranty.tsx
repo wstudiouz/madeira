@@ -9,6 +9,7 @@ const Warranty = (): ReactElement => {
         justifyContent: "space-between",
         alignItems: "center",
         flexDirection: {lg: "row"},
+        marginTop:"100px"
       }}
     >
       <Stack

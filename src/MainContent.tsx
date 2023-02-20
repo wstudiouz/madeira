@@ -11,7 +11,7 @@ function MainContent(): JSX.Element {
       <Stack sx={{marginTop: "80px"}}>
         <Outlet />
       </Stack>
-      <Footer />
+      {/* <Footer /> */}
     </Stack>
   );
 }

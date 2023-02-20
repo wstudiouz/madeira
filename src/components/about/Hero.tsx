@@ -30,7 +30,7 @@ const Hero = (): ReactElement => {
   };
 
   return (
-    <Stack height={"100%"}>
+    <Stack >
       <Typography variant="h3" color={theme.palette.primary.main}>
         ABOUT US
       </Typography>

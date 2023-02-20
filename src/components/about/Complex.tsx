@@ -9,11 +9,12 @@ const Complex = (): ReactElement => {
     <Stack
       sx={{
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "flex-start",
         flexDirection: {lg: "row"},
+        position:"relative"
       }}
     >
-      <Stack sx={{position: "relative", width: {xs: "100%", lg: "60%"}}}>
+      <Stack sx={{position: "relative",  width: {xs: "100%", lg: "60%"}, height:"40vh",minHeight:"300px"}}>
         <ParallaxLayer speed={0.1}>
           <Typography
             variant="heroText1"
@@ -31,7 +32,7 @@ const Complex = (): ReactElement => {
           width: {lg: "60%"},
           justifyContent: "left",
           alignItems: "center",
-          margin: {xs: "10rem", lg: "0"},
+          margin: {xs: "10rem auto", lg: "0 auto"},
         }}
       >
         <MiniTextCard

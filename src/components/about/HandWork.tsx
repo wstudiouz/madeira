@@ -10,17 +10,22 @@ const HandWork = (): ReactElement => {
         justifyContent: "space-between",
         alignItems: "center",
         flexDirection: "row",
+        position:"relative"
       }}
     >
       <Stack
         sx={{
           display: {xs: "none", lg: "flex"},
-          alignItems: "flex-end",
+          alignItems: "center",
+          justifyContent:"space-between",
           width: {lg: "60%", xl: "50%"},
+          height:"60vh",
+          position:"relative",
+          paddingTop:"200px"
         }}
       >
-        <Stack sx={{position: "relative", height: "100%"}}>
-          <ParallaxLayer speed={0.5}>
+        <Stack sx={{position: "absolute", width:"90%",left:"0"}}>
+          <ParallaxLayer speed={0.1}>
             <Typography
               variant="heroText1"
               sx={{
@@ -32,8 +37,8 @@ const HandWork = (): ReactElement => {
           </ParallaxLayer>
         </Stack>
 
-        <Stack sx={{position: "relative"}}>
-          <ParallaxLayer speed={0.5}>
+        <Stack sx={{position: "absolute",width:"50%",right:"0",float:"right",bottom:"0"}}>
+          <ParallaxLayer speed={0.1}>
             <Box
               component="img"
               alt="handworks"
