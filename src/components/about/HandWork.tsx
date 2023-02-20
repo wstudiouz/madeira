@@ -1,26 +1,37 @@
 import {Stack, Typography} from "@mui/material";
 import {Box} from "@mui/system";
 import React, {ReactElement} from "react";
-import {Parallax} from "react-scroll-parallax";
 import {theme} from "../../theme";
-const HandWork = (): ReactElement => {
+import {ScrollParallax} from "react-just-parallax";
+type ComponentProps = {
+  show: boolean;
+};
+const HandWork = ({show}: ComponentProps): ReactElement => {
+ 
   return (
     <Stack
       sx={{
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "flex-start",
         flexDirection: "row",
-        marginTop: "50px",
+        margin: {
+          xs: "20px 0",
+          sm: "30px 0",
+          md: "40px 0",
+          lg: "50px 0 10rem 0",
+        },
       }}
     >
       <Stack
         sx={{
           display: {xs: "none", lg: "flex"},
-          alignItems: "flex-end",
+          justifyContent: "right",
+          alignItems: "flex-start",
           width: {lg: "60%", xl: "50%"},
+          position: "relative",
         }}
       >
-        <Parallax speed={5}>
+        <ScrollParallax strength={0.02}>
           <Typography
             variant="heroText1"
             sx={{
@@ -29,24 +40,60 @@ const HandWork = (): ReactElement => {
           >
             With our own hands
           </Typography>
-        </Parallax>
+        </ScrollParallax>
 
-        <Parallax speed={-8}>
+        <ScrollParallax strength={0.1}>
           <Box
             component="img"
             alt="handworks"
             src="https://picsum.photos/300"
-            sx={{width: "300px", height: "300px"}}
+            sx={{
+              width: "300px",
+              height: "300px",
+              position: "absolute",
+              right: "0",
+              top: "-50px",
+            }}
           />
-        </Parallax>
+        </ScrollParallax>
       </Stack>
 
       <Box
-        component="img"
-        sx={{width: {xs: "100%", lg: "38%", xl: "48%"}}}
-        src="https://picsum.photos/500/300"
-        alt="our group"
-      />
+        component="span"
+        sx={{
+         width: {xs: "100%", lg: "58%", xl: "48%"},
+          "display": "block",
+          "position": "relative",
+          "overflow": "hidden",
+          "&:after": {
+            content: '""',
+            width: "30%",
+            height: "100%",
+            display: "block",
+            position: "absolute",
+            top: "0",
+            right: "0",
+            transformOrigin: "100% 50%",
+            transition: "all 1s ease",
+            background: "#FFF",
+            transform: show ?  "scale(0, 1)" : null,
+          },
+        }}
+      >
+        <Box
+          component="img"
+          sx={{
+            width: "100%",
+            height: "auto",
+            transition: "all 1s ease",
+            transform: show
+              ? "translate3d(-30px, 0, 0)"
+              : "translate3d(0, 0, 0)",
+          }}
+          src="https://picsum.photos/500/300"
+          alt="our group"
+        />
+      </Box>
     </Stack>
   );
 };

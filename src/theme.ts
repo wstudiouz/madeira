@@ -100,6 +100,18 @@ function getTheme(): Theme {
         fontWeight: "700",
         fontSize: "100px",
         lineHeight: "123px",
+        [theme.breakpoints.between("md", "lg")]: {
+          fontSize: "81px",
+          lineHeight: "95px",
+        },
+        [theme.breakpoints.between("sm", "md")]: {
+          fontSize: "66px",
+          lineHeight: "60px",
+        },
+        [theme.breakpoints.between("xs", "sm")]: {
+          fontSize: "46px",
+          lineHeight: "47px",
+        },
       },
       heroText2: {
         fontFamily: "Playfair Display",

@@ -11,7 +11,6 @@ const Production = (): ReactElement => {
           xs: "2rem",
           sm: "4rem",
           md: "5rem",
-          lg: "15rem",
         },
       }}
     >
@@ -49,7 +48,13 @@ const Production = (): ReactElement => {
             component="img"
             alt="own production"
             sx={{
-              width: {sm: "170px", md: "250px", lg: "270px", xs: "300px"},
+              width: {
+                xs: "220px",
+                sm: "190px",
+                md: "250px",
+                lg: "270px",
+                xl: "300px",
+              },
               height: "auto",
               margin: {
                 xs: "60px auto 0 auto",
@@ -63,7 +68,13 @@ const Production = (): ReactElement => {
             component="img"
             alt="own production"
             sx={{
-              width: {sm: "170px", md: "250px", lg: "270px", xs: "300px"},
+              width: {
+                xs: "220px",
+                sm: "190px",
+                md: "250px",
+                lg: "270px",
+                xl: "300px",
+              },
               height: "auto",
               margin: {
                 xs: "40px auto 0 auto",

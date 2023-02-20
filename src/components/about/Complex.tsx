@@ -3,7 +3,7 @@ import React, {ReactElement} from "react";
 import {theme} from "../../theme";
 import MiniTextCard from "./MiniTextCard";
 import {LeonHandleSvg} from "../../imports/index";
-import {Parallax} from "react-scroll-parallax";
+import {ScrollParallax} from "react-just-parallax";
 const Complex = (): ReactElement => {
   return (
     <Stack
@@ -14,7 +14,7 @@ const Complex = (): ReactElement => {
         flexDirection: {lg: "row"},
       }}
     >
-      <Parallax style={{width: "100%"}} speed={10}>
+      <ScrollParallax strength={0.08}>
         <Typography
           variant="heroText1"
           sx={{
@@ -24,14 +24,15 @@ const Complex = (): ReactElement => {
         >
           Complex solution of interior problems
         </Typography>
-      </Parallax>
+      </ScrollParallax>
 
       <Stack
         sx={{
           width: {lg: "60%"},
           justifyContent: "left",
           alignItems: "center",
-          margin: {xs: "10rem", lg: "0"},
+          margin: {xs: "6rem", lg: "0"},
+          position: "relative",
         }}
       >
         <MiniTextCard
@@ -55,19 +56,19 @@ const Complex = (): ReactElement => {
           textSx={{marginTop: "-20px"}}
           desc="of excellent reputation"
         />
-        <Parallax
-          style={{
-            position: "absolute",
-            margin: "16rem 0 0 10rem",
-          }}
-          speed={2}
-        >
+        <ScrollParallax isAbsolutelyPositioned strength={0.02}>
           <Box
-            sx={{width: "150px", height: "190px"}}
+            sx={{
+              width: "150px",
+              height: "190px",
+              position: "absolute",
+              right: {xs:"15px",lg:"80px"},
+              bottom: "-90px",
+            }}
             component="img"
             src={LeonHandleSvg}
           />
-        </Parallax>
+        </ScrollParallax>
       </Stack>
     </Stack>
   );

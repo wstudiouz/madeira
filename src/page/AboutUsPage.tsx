@@ -1,20 +1,29 @@
 import {Stack} from "@mui/material";
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import Complex from "../components/about/Complex";
 import HandWork from "../components/about/HandWork";
 import Hero from "../components/about/Hero";
 import Production from "../components/about/Production";
 import Warranty from "../components/about/Warranty";
-// import AboutHero from "../components/about/hero";
+import MainContainer from "../components/MainContainer";
 const AboutUsPage = (): ReactElement => {
+  const [show, setShow] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 1000);
+  }, []);
   return (
-    <Stack sx={{width:"100%", margin:"10px auto", padding:{xs:"0 10px",sm:"0 50px",md:"0 100px",lg:"0 150px"}}}>
-          <Hero />
-          <Complex />
-          <Warranty />
-          <Production />
-          <HandWork />
-    </Stack>
+    <MainContainer>
+      <Stack>
+        <Hero />
+        <Complex />
+        <Warranty show={show} />
+        <Production />
+        <HandWork show={show}/>
+      </Stack>
+    </MainContainer>
   );
 };
 export default AboutUsPage;
