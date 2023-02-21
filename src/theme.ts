@@ -55,10 +55,20 @@ function getTheme(): Theme {
         fontSize: "40px",
         fontWeight: "300",
         fontFamily: "ivyjournal",
-        [theme.breakpoints.between("xs", "md")]: {
-          fontSize: "30px",
-          lineHeight: "34px",
-          fontWeight: "300",
+        [theme.breakpoints.between("md", "lg")]: {
+          fontSize: "25px",
+          lineHeight: "35px",
+          fontWeight: "400",
+        },
+        [theme.breakpoints.between("sm", "md")]: {
+          fontSize: "16px",
+          lineHeight: "20px",
+          fontWeight: "400",
+        },
+        [theme.breakpoints.between("xs", "sm")]: {
+          fontSize: "12px",
+          lineHeight: "15px",
+          fontWeight: "400",
         },
       },
       h2: {
@@ -66,10 +76,10 @@ function getTheme(): Theme {
         fontSize: "30px",
         fontWeight: "700",
         fontFamily: "Playfair Display",
-        [theme.breakpoints.between("xs", "md")]: {
-          fontSize: "24px",
-          lineHeight: "30px",
-          fontWeight: "300",
+        [theme.breakpoints.between("xs", "sm")]: {
+          fontSize: "12px",
+          lineHeight: "15px",
+          fontWeight: "400",
         },
       },
       h3: {

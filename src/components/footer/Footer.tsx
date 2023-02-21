@@ -4,6 +4,7 @@ import {theme} from "../../theme";
 import React, {ReactElement} from "react";
 import {FooterBg} from "../../imports";
 import { Link } from "react-router-dom";
+import MiniHrComponent from "../MiniHrComponent";
 const Footer = (): ReactElement => {
   const styles = {
     href: {
@@ -12,38 +13,27 @@ const Footer = (): ReactElement => {
       fontFamily: "'Libre Caslon Text'",
     },
     line: {
-      width: {xs: "85%",lg: "0"},
-      margin: {xs:"7px", lg:"25px"},
-      height: {xs: "1.5px", lg: "100%"},
+      width: 0,
+      margin: "25px",
+      height: "100%",
       overflow: "hidden",
       border: `1px solid ${theme.palette.secondary.main}`,
       background: theme.palette.secondary.main,
     },
     bgImg: {
-      height: 150,
+      height: {xs:"50px",sm:"70px",md:"100px",lg:"130px",xl:"150px"},
       backgroundImage: `url(${FooterBg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
     },
     bgLine: {
-      "&:before": {
-        position: "absolute",
-        content: '""',
-        width: "100%",
-        overflowX: "hidden",
-        display: "block",
-        border: `1.5px solid ${theme.palette.secondary.main}`,
-        marginTop: "-120px",
-      },
-      "&:after": {
-        position: "absolute",
-        content: '""',
-        width: "100%",
-        overflowX: "hidden",
-        border: `1.5px solid ${theme.palette.secondary.main}`,
-        display: "block",
-        marginTop: "120px",
-      },
+      position: "absolute",
+      content: '""',
+      width: "100%",
+      overflowX: "hidden",
+      display: "block",
+      border: `1.5px solid ${theme.palette.secondary.main}`,
+      marginTop: {xs:"-40px",sm:"-55px",md:"-75px",lg:"-105px",xl:"-120px"},
     },
   };
   return (
@@ -61,28 +51,19 @@ const Footer = (): ReactElement => {
         },
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: {
-          xs: "column",
-          lg: "row",
-        },
+        flexDirection: "row",
         ...styles.bgImg,
-        ...styles.bgLine,
+        "&:after":{
+          ...styles.bgLine,
+          marginTop:{xs:"40px",sm:"55px",md:"75px",lg:"105px",xl:"120px"}
+        },
+        "&:before":{
+          ...styles.bgLine
+        }
       }}
     >
       <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
-          <Box
-            component="hr"
-            sx={{
-              display: {
-                xs: "none",
-                lg: "inline",
-              },
-              width:"7rem",
-              marginRight:"15px",
-              border: styles.line.border,
-              background: styles.line.background
-            }}
-          ></Box>
+          <MiniHrComponent sx={{width:{xs:"4rem", sm:"6rem", md:"7rem",lg:"8rem"},height:"1px",marginRight:"10px"}} />
         <Link  to="/contact" style={styles.href}>
           Contacts
         </Link>
@@ -92,19 +73,7 @@ const Footer = (): ReactElement => {
         <Link  to="/about" style={styles.href}>
           About us
         </Link>
-          <Box
-            component="hr"
-            sx={{
-              display: {
-                xs: "none",
-                lg: "inline",
-              },
-              width:"7rem",
-              marginLeft:"15px",
-              border: styles.line.border,
-              background: styles.line.background
-            }}
-          ></Box>
+        <MiniHrComponent sx={{width:{xs:"4rem", sm:"6rem", md:"7rem",lg:"8rem"},height:"1px",marginLeft:"10px"}} />
       </Typography>
     </Stack>
   );
