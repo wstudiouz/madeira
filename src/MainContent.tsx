@@ -2,13 +2,15 @@ import React from "react";
 import {Stack} from "@mui/material";
 import {Outlet} from "react-router-dom";
 import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
+// import Header from "./components/header/Header";
+import TestHeader from "./components/header/TestHeader";
 
 
 function MainContent(): JSX.Element {
   return (
     <Stack >
-      <Header />
+      {/* <Header /> */}
+      <TestHeader />
       <Stack sx={{marginTop:"80px"}} >
         <Outlet />
       </Stack>

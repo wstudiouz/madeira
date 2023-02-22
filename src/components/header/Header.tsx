@@ -6,7 +6,7 @@ import {
   List,
   Toolbar,
   Typography,
-  keyframes
+  Fade
 } from "@mui/material";
 import {Box} from "@mui/system";
 import React from "react";
@@ -21,10 +21,6 @@ import HeaderIcon from "./HeaderIcon";
 import CloseIcon from "@mui/icons-material/Close";
 import MiniHrComponent from "../MiniHrComponent";
 
-interface Props {
-  window?: () => Window;
-}
-
 const drawerWidth = {xs: "100%", md: "75%", lg: "50%"};
 const navItems = [
   {url: "about", text: "ABOUT US"},
@@ -37,17 +33,8 @@ const navIcons = [
   {icon: TwitterIcon, url: "#twitter=link"},
 ];
 
-export default function DrawerAppBar(props: Props) {
-  // manashu animatsiya chota ishlamayabdi negadur aboutda ishlovdi buni drawerida ishlamadi
-  const textAnimation = keyframes` 
-  from {
-    transform: translateX(-70px);
-  }
-  to {
-    transform: translate(0);
-  }
-`;
-  const {window} = props;
+export default function DrawerAppBar() {
+ 
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -85,12 +72,12 @@ export default function DrawerAppBar(props: Props) {
           width: "130px",
           height: "114px",
           margin: "70px auto 30px auto",
-          animation: `${textAnimation} 0.7s ease`,
         }}
       />
       <List>
         {navItems.map((item, index) => (
-          <Typography
+          <Fade key={index} in={true} timeout={1000}>
+            <Typography
             key={index}
             variant="h1"
             sx={{
@@ -98,7 +85,6 @@ export default function DrawerAppBar(props: Props) {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              animation: `${textAnimation} 0.7s ease`
             }}
           >
             <Link
@@ -117,6 +103,7 @@ export default function DrawerAppBar(props: Props) {
               =
             </Typography>
           </Typography>
+          </Fade>
         ))}
       </List>
       <List
@@ -148,9 +135,6 @@ export default function DrawerAppBar(props: Props) {
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{display: "flex"}}>
       <CssBaseline />
@@ -174,12 +158,11 @@ export default function DrawerAppBar(props: Props) {
       </AppBar>
       <Box component="nav">
         <Drawer
-          container={container}
-          variant="temporary"
+          anchor="left"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             "display": "block",
