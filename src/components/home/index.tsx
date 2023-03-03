@@ -1,10 +1,14 @@
 import React, {ReactElement, useEffect, useRef, useState} from "react";
 import IntroAnimation from "./IntroAnimation";
 import SingleMap from "./SingleMap";
-import {keyframes, Stack, SvgIcon, Typography} from "@mui/material";
+import {Stack, Typography} from "@mui/material";
 import MComponent from "./MComponent";
-import MiniGoldCard from "./MiniGoldCard";
 import AComponent from "./AComponent";
+import DComponent from "./DComponent";
+import EComponent from "./EComponent";
+import IComponent from "./IComponent";
+import RComponent from "./RComponent";
+import SeacondAComponent from "./SecondAComponent";
 
 type ObjectType = {
   text: string;
@@ -22,7 +26,7 @@ const Home = (): ReactElement => {
   const el7 = useRef<HTMLDivElement>(null);
   const [animation, setAnimation] = useState<boolean>(true);
   const [order, setOrder] = useState<number | undefined>(undefined);
-  const [active, setActive] = useState<number>(0); // qaysi sectiondaligi ya'ni M harfidami yoki A harfidami padesgi map arrayini indexiga qarab set qilinadi
+  const [active] = useState<number>(0); // qaysi sectiondaligi ya'ni M harfidami yoki A harfidami padesgi map arrayini indexiga qarab set qilinadi
   const [map] = useState<Array<ObjectType>>([
     {text: "M", over: "Madeira M harfiniki", ref: el1},
     {text: "A", over: "Madeira A harfiniki", ref: el2},
@@ -102,9 +106,9 @@ const Home = (): ReactElement => {
               <SingleMap
                 key={index}
                 text={e.text}
-                isSeen={index === order || index === active}
-                index={index}
-                setOrder={setOrder}
+                active={index === order || index === active}
+                // index={index}
+                // setOrder={setOrder}
                 myRef={el5} // e.ref desam error beryabdi polniy childga berishga rosa urundim o'xshamadi bir ko'rsez bo'larkan
               />
             ))}
@@ -114,6 +118,11 @@ const Home = (): ReactElement => {
 
       <MComponent SectionRef={el1} />
       <AComponent SectionRef={el2} />
+      <DComponent SectionRef={el3} />
+      <EComponent SectionRef={el4} />
+      <IComponent SectionRef={el5} />
+      <RComponent SectionRef={el6} />
+      <SeacondAComponent SectionRef={el7} />
     </Stack>
   );
 };

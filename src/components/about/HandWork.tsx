@@ -7,7 +7,6 @@ type ComponentProps = {
   show: boolean;
 };
 const HandWork = ({show}: ComponentProps): ReactElement => {
- 
   return (
     <Stack
       sx={{
@@ -61,7 +60,7 @@ const HandWork = ({show}: ComponentProps): ReactElement => {
       <Box
         component="span"
         sx={{
-         width: {xs: "100%", lg: "58%", xl: "48%"},
+          "width": {xs: "100%", lg: "58%", xl: "48%"},
           "display": "block",
           "position": "relative",
           "overflow": "hidden",
@@ -76,7 +75,7 @@ const HandWork = ({show}: ComponentProps): ReactElement => {
             transformOrigin: "100% 50%",
             transition: "all 1s ease",
             background: "#FFF",
-            transform: show ?  "scale(0, 1)" : null,
+            transform: show ? "scale(0, 1)" : null,
           },
         }}
       >

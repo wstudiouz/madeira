@@ -21,7 +21,7 @@ const AboutUsPage = (): ReactElement => {
         <Complex />
         <Warranty show={show} />
         <Production />
-        <HandWork show={show}/>
+        <HandWork show={show} />
       </Stack>
     </MainContainer>
   );

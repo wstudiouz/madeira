@@ -9,9 +9,9 @@ const Complex = (): ReactElement => {
     <Stack
       sx={{
         justifyContent: "space-between",
-        alignItems: "center",
-        margin: "50px 0",
+        alignItems: "flex-start",
         flexDirection: {lg: "row"},
+        position: "relative",
       }}
     >
       <ScrollParallax strength={0.08}>
@@ -62,7 +62,7 @@ const Complex = (): ReactElement => {
               width: "150px",
               height: "190px",
               position: "absolute",
-              right: {xs:"15px",lg:"80px"},
+              right: {xs: "15px", lg: "80px"},
               bottom: "-90px",
             }}
             component="img"

@@ -22,11 +22,11 @@ const IntroAnimation = (): ReactElement => {
     <Stack
       sx={{
         position: "fixed",
-        top: "60px",
+        top: "0",
         left: "0",
-        zIndex: "10",
+        zIndex: "1101",
         width: "100%",
-        height: "92vh",
+        height: "100vh",
       }}
     >
       <Stack

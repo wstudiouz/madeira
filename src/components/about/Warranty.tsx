@@ -6,7 +6,7 @@ import MiniTextCard from "./MiniTextCard";
 type ComponentProps = {
   show: boolean;
 };
-const Warranty = ({show} : ComponentProps): ReactElement => {
+const Warranty = ({show}: ComponentProps): ReactElement => {
   return (
     <Stack
       sx={{
@@ -15,6 +15,7 @@ const Warranty = ({show} : ComponentProps): ReactElement => {
         alignItems: "center",
         margin: {xs: "30px 0", lg: "50px 0"},
         flexDirection: {lg: "row"},
+        marginTop: "100px",
       }}
     >
       <Stack
