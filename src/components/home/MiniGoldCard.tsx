@@ -7,8 +7,9 @@ type ComponentProps = {
   content: ReactElement | string;
   url?: string;
   sx?: SxProps;
+  btn?: boolean;
 };
-const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
+const MiniGoldCard = ({content, url, sx, btn}: ComponentProps): ReactElement => {
   const styles = {
     position: "absolute",
     content: '""',
@@ -28,7 +29,7 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
         margin: url ? "0" : "0 auto",
       }}
     >
-      {!url ? <MiniHrComponent sx={{width: "90px", height: "2px"}} /> : <></>}
+      {!url && !btn ? <MiniHrComponent sx={{width: "90px", height: "2px"}} /> : <></>}
       <Stack
         sx={{
           "width": "40px",
@@ -80,7 +81,7 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
           </Stack>
         )}
       </Stack>
-      {!url ? <MiniHrComponent sx={{width: "90px", height: "2px"}} /> : <></>}
+      {!url && !btn ? <MiniHrComponent sx={{width: "90px", height: "2px"}} /> : <></>}
     </Stack>
   );
 };

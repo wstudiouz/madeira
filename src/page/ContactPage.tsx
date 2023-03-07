@@ -1,14 +1,17 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import React, { ReactElement } from "react";
+import Form from "../components/contact/Form";
+import Hero from "../components/contact/Hero";
+import Map from "../components/contact/Map";
+import MainContainer from "../components/MainContainer";
 
 const ContactPage = () : ReactElement =>{
     return <Stack>
-        <Typography variant="h2">H2</Typography>
-        <Typography variant="h3">H3</Typography>
-        <Typography variant="heroText1">HeroText1</Typography>
-        <Typography variant="heroText2">HeroText2</Typography>
-        <Typography variant="product">Product</Typography>
-        <Typography variant="buttonText">buttonText</Typography>
+        <MainContainer>
+            <Hero />
+            <Form />
+        </MainContainer>
+        <Map />
     </Stack>
 }
 export default ContactPage
