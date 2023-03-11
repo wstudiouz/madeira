@@ -109,8 +109,8 @@ function getTheme(): Theme {
           lineHeight: "60px",
         },
         [theme.breakpoints.between("xs", "sm")]: {
-          fontSize: "46px",
-          lineHeight: "47px",
+          fontSize: "40px",
+          lineHeight: "42px",
         },
       },
       heroText2: {

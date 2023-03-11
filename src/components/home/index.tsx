@@ -9,51 +9,35 @@ import EComponent from "./EComponent";
 import IComponent from "./IComponent";
 import RComponent from "./RComponent";
 import SeacondAComponent from "./SecondAComponent";
+import MainContainer from "../MainContainer";
+import LetterContainer from "./LetterContainer";
 
 type ObjectType = {
   text: string;
   over: string;
-  ref: React.Ref<HTMLElement>;
+  id: string;
 };
 
 const Home = (): ReactElement => {
-  const el1 = useRef<HTMLDivElement>(null);
-  const el2 = useRef<HTMLDivElement>(null);
-  const el3 = useRef<HTMLDivElement>(null);
-  const el4 = useRef<HTMLDivElement>(null);
-  const el5 = useRef<HTMLDivElement>(null);
-  const el6 = useRef<HTMLDivElement>(null);
-  const el7 = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [animation, setAnimation] = useState<boolean>(true);
-  const [order, setOrder] = useState<number | undefined>(undefined);
-  const [active] = useState<number>(0); // qaysi sectiondaligi ya'ni M harfidami yoki A harfidami padesgi map arrayini indexiga qarab set qilinadi
-  const [map] = useState<Array<ObjectType>>([
-    {text: "M", over: "Madeira M harfiniki", ref: el1},
-    {text: "A", over: "Madeira A harfiniki", ref: el2},
-    {text: "D", over: "Madeira D harfiniki", ref: el3},
-    {text: "E", over: "Madeira E harfiniki", ref: el4},
-    {text: "I", over: "Madeira I harfiniki", ref: el5},
-    {text: "R", over: "Madeira R harfiniki", ref: el6},
-    {text: "A", over: "Madeira A harfiniki", ref: el7},
-  ]);
+  const [order, setOrder] = useState<string | undefined>(undefined);
+  const letters: ObjectType[] = [
+    {text: "M", over: "Madeira M harfiniki", id: "M"},
+    {text: "A", over: "Madeira A harfiniki", id: "A"},
+    {text: "D", over: "Madeira D harfiniki", id: "D"},
+    {text: "E", over: "Madeira E harfiniki", id: "E"},
+    {text: "I", over: "Madeira I harfiniki", id: "I"},
+    {text: "R", over: "Madeira R harfiniki", id: "R"},
+    {text: "A", over: "Madeira A harfiniki", id: "A2"},
+  ];
   useEffect(() => {
     setTimeout(() => {
       setAnimation(false);
     }, 4000);
   }, []);
-
   return (
-    <Stack
-      sx={{
-        margin: {
-          xs: "30px 10px 30px 10px",
-          sm: "30px 30px 30px 30px",
-          md: "30px 50px 30px 50px",
-          lg: "30px 60px 30px 60px",
-          xl: "30px 70px 30px 70px",
-        },
-      }}
-    >
+    <Stack ref={containerRef} sx={{overflow: "hidden"}}>
       {animation ? (
         <IntroAnimation />
       ) : (
@@ -91,7 +75,7 @@ const Home = (): ReactElement => {
               transform: "translate3d(0, 0, 0) rotate(-90deg)",
             }}
           >
-            {map[active].over}
+            {letters.map((letter) => (letter.id === order ? letter.over : ""))}
           </Typography>
           <Stack
             sx={{
@@ -102,27 +86,49 @@ const Home = (): ReactElement => {
               marginTop: "-30px",
             }}
           >
-            {map.map((e, index) => (
+            {letters.map((letter, index) => (
               <SingleMap
                 key={index}
-                text={e.text}
-                active={index === order || index === active}
-                // index={index}
-                // setOrder={setOrder}
-                myRef={el5} // e.ref desam error beryabdi polniy childga berishga rosa urundim o'xshamadi bir ko'rsez bo'larkan
+                text={letter.text}
+                active={letter.id === order}
+                onClick={() =>
+                  document?.getElementById(letter.id)?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  })
+                }
               />
             ))}
           </Stack>
         </Stack>
       )}
-
-      <MComponent SectionRef={el1} />
-      <AComponent SectionRef={el2} />
-      <DComponent SectionRef={el3} />
-      <EComponent SectionRef={el4} />
-      <IComponent SectionRef={el5} />
-      <RComponent SectionRef={el6} />
-      <SeacondAComponent SectionRef={el7} />
+      <MainContainer>
+        <LetterContainer
+          sx={{marginTop: {xs: 0, md: 0, lg: 0}}}
+          setOrder={setOrder}
+          id={"M"}
+        >
+          <MComponent />
+        </LetterContainer>
+        <LetterContainer setOrder={setOrder} id={"A"}>
+          <AComponent />
+        </LetterContainer>
+        <LetterContainer setOrder={setOrder} id={"D"}>
+          <DComponent />
+        </LetterContainer>
+        <LetterContainer setOrder={setOrder} id={"E"}>
+          <EComponent />
+        </LetterContainer>
+        <LetterContainer setOrder={setOrder} id={"I"}>
+          <IComponent />
+        </LetterContainer>
+        <LetterContainer setOrder={setOrder} id={"R"}>
+          <RComponent />
+        </LetterContainer>
+        <LetterContainer setOrder={setOrder} id={"A2"}>
+          <SeacondAComponent />
+        </LetterContainer>
+      </MainContainer>
     </Stack>
   );
 };

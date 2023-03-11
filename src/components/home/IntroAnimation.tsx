@@ -43,7 +43,7 @@ const IntroAnimation = (): ReactElement => {
         <SvgIcon
           component={LogoComponent}
           sx={{
-            "width": "50%",
+            "width": "40%",
             "height": "auto",
             "& path": {
               fill: theme.palette.primary.main,

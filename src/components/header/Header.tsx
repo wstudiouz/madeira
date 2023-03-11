@@ -6,11 +6,10 @@ import {
   List,
   Toolbar,
   Typography,
-  keyframes
 } from "@mui/material";
-import {Box} from "@mui/system";
+import {Box, keyframes} from "@mui/system";
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -38,18 +37,23 @@ const navIcons = [
 ];
 
 export default function DrawerAppBar(props: Props) {
-  // manashu animatsiya chota ishlamayabdi negadur aboutda ishlovdi buni drawerida ishlamadi
+  const {window} = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const location = useLocation();
   const textAnimation = keyframes` 
-  from {
-    transform: translateX(-70px);
+  0% {
+    opacity:0;
+    transform: translateX(-120px);
   }
-  to {
+  50% {
+    opacity:0;
+    transform: translateX(-120px);
+  }
+  100% {
+    opacity:1;
     transform: translate(0);
   }
 `;
-  const {window} = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -85,7 +89,7 @@ export default function DrawerAppBar(props: Props) {
           width: "130px",
           height: "114px",
           margin: "70px auto 30px auto",
-          animation: `${textAnimation} 0.7s ease`,
+          animation: mobileOpen ? `${textAnimation} 0.6s ease` : undefined,
         }}
       />
       <List>
@@ -98,7 +102,9 @@ export default function DrawerAppBar(props: Props) {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              animation: `${textAnimation} 0.7s ease`
+              animation: mobileOpen
+                ? `${textAnimation} 0.${index + 7}s ease`
+                : undefined,
             }}
           >
             <Link
@@ -154,10 +160,22 @@ export default function DrawerAppBar(props: Props) {
   return (
     <Box sx={{display: "flex"}}>
       <CssBaseline />
-      <AppBar component="nav" sx={{background:"white",border:"none"}}>
-        <Toolbar >
-          <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-            <Link style={{textDecoration: "none", color: theme.palette.secondary.main}} to="/">
+      <AppBar
+        component="nav"
+        sx={{
+          background: location.pathname === "/" ? "transparent" : "white",
+          boxShadow: "none",
+        }}
+      >
+        <Toolbar>
+          <Typography variant="h6" sx={{flexGrow: 1}}>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: theme.palette.secondary.main,
+              }}
+              to="/"
+            >
               Medeira
             </Link>
           </Typography>
@@ -166,7 +184,7 @@ export default function DrawerAppBar(props: Props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{mr: 2, color: theme.palette.secondary.main}}
+            sx={{color: theme.palette.secondary.main, padding: "0"}}
           >
             <MenuIcon />
           </IconButton>
@@ -177,6 +195,7 @@ export default function DrawerAppBar(props: Props) {
           container={container}
           variant="temporary"
           open={mobileOpen}
+          transitionDuration={600}
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.

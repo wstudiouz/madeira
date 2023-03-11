@@ -22,10 +22,10 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
     <Stack
       sx={{
         position: "relative",
-        justifyContent:  "left",
+        justifyContent: "left",
         alignItems: "center",
         flexDirection: "row",
-        margin: url ? "0" :"0 auto",
+        margin: url ? "0" : "0 auto",
       }}
     >
       {!url ? <MiniHrComponent sx={{width: "90px", height: "2px"}} /> : <></>}
@@ -39,7 +39,10 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
           "display": "flex",
           "justifyContent": "center",
           "alignItems": "center",
-          "margin": `0 ${url ? "3px" : "25px"}`,
+          "margin": {
+            md: `0 ${url ? "3px" : "25px"}`,
+            xs: `0 ${url ? "3px" : "20px"}`,
+          },
           "&:before": {
             ...styles,
             marginTop: "-33px",
@@ -47,7 +50,6 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
           "&:after": {
             ...styles,
             marginTop: "33px",
-            
           },
           ...sx,
         }}
@@ -60,7 +62,7 @@ const MiniGoldCard = ({content, url, sx}: ComponentProps): ReactElement => {
               justifyContent: "center",
               alignItems: "center",
               color: theme.palette.secondary.main,
-              textDecoration: "none"
+              textDecoration: "none",
             }}
           >
             {content}

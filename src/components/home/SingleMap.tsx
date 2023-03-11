@@ -3,30 +3,13 @@ import {Stack, Typography, Box} from "@mui/material";
 import {theme} from "../../theme";
 type ComponentProps = {
   text: string;
-  // isSeen: boolean;
-  // setOrder: Dispatch<SetStateAction<number | undefined>>;
   active: boolean;
-  // index: number;
-  myRef: React.RefObject<HTMLDivElement>;
+  onClick: () => void;
 };
-const SingleMap = ({
-  text,
-  // isSeen,
-  // setOrder,
-  active,
-  // index,
-  myRef,
-}: ComponentProps): ReactElement => {
-  console.log(myRef);
+const SingleMap = ({text, active, onClick}: ComponentProps): ReactElement => {
   return (
     <Stack
-      onClick={() =>
-        myRef?.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-          inline: "nearest",
-        })
-      }
+      onClick={onClick}
       sx={{
         "width": "100%",
         "margin": "5px 0",

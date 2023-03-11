@@ -25,7 +25,7 @@ const MiniTextCard = ({
       <Typography
         sx={{
           ...textSx,
-          marginBottom: "20px",
+          marginBottom: "30px",
           color: theme.palette.primary.main,
         }}
         variant={variantMy || "h2"}
@@ -33,7 +33,7 @@ const MiniTextCard = ({
         {text}
         {textSup ? <Box component="sup">2</Box> : <></>}
       </Typography>
-      <Typography sx={descSx} variant="paragraph">
+      <Typography sx={descSx} variant="paragraph" color={"#000"}>
         {desc}
       </Typography>
     </Stack>
