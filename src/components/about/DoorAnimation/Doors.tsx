@@ -27,6 +27,7 @@ const Doors = (): ReactElement => {
           lg: "0 auto",
         },
         width: "350px",
+        maxWidth:"100%",
         height: `${images.length * 100}px`,
         position: "relative",
         zIndex: "2",

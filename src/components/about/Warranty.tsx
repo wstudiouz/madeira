@@ -1,30 +1,42 @@
-import {Stack} from "@mui/material";
+import {Stack, Grid} from "@mui/material";
 import {Box} from "@mui/system";
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect, useRef, useState} from "react";
 import {ScrollParallax} from "react-just-parallax";
 import MiniTextCard from "./MiniTextCard";
-type ComponentProps = {
-  show: boolean;
-};
-const Warranty = ({show}: ComponentProps): ReactElement => {
+import useIntersectionObserver from "../../utils/Hooks";
+
+const Warranty = (): ReactElement => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isVisible = useIntersectionObserver(ref, {});
+  const [active,setActive] = useState<boolean>(false)
+  
+  useEffect(() => {
+    if (isVisible?.isIntersecting) {
+      setActive(true)
+    }
+  }, [ isVisible?.isIntersecting]);
+
   return (
-    <Stack
+    <Grid
+      container
+      ref={ref}
       sx={{
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        margin: {xs: "30px 0", lg: "50px 0"},
         flexDirection: {lg: "row"},
         marginTop: "100px",
       }}
     >
-      <Stack
+      <Grid
+        item
+        md={4}
         sx={{
-          width: {sm: "47.5%", lg: "31,6%"},
+          width: "100%",
           height: "auto",
           display: {xs: "none", md: "block"},
-          margin: {lg: "0 12.76% 0 7.14%"},
           position: "relative",
+          border: "1px solid red",
         }}
       >
         <Box
@@ -40,7 +52,7 @@ const Warranty = ({show}: ComponentProps): ReactElement => {
         >
           <Box
             component="path"
-            sx={{fill: "#FFF", transformOrigin: "0px 0px"}}
+            sx={{fill: "#fff", transformOrigin: "0px 0px"}}
             d="M0,0v420h265V0H0z M213.8,377.8c-24.2,23.6-57.7,35.3-100.4,35.3c-35.3,0-62.6-7.8-82.1-23.4C11.7,374.2,2,352.6,2,325.2
               c0-16.3,4.4-29.4,13.2-39.4c8.8-10,20.7-15,35.6-15c13.9,0,25,4.5,33.3,13.5c8.3,9,12.5,20.4,12.5,34.3c0,14.6-4.7,26-14.2,34.3
               c-9.5,8.3-23.1,12.5-40.7,12.5c5.4,8.5,12.5,14.7,21.4,18.8c8.8,4.1,19.7,6.1,32.5,6.1c19.7,0,34.3-8.2,44-24.7
@@ -72,7 +84,7 @@ const Warranty = ({show}: ComponentProps): ReactElement => {
               left: "0",
               zIndex: 2,
               transition: "all 1s 0.5s ease",
-              transform: show ? "translate3d(-100%, 0, 0)" : null, // manashu boshida translate3d(-100%, 0, 0) bo'lsa animatsiyasiyam o'xshar ekan
+              transform: active ? "translate3d(-100%, 0, 0)" : null, // manashu boshida translate3d(-100%, 0, 0) bo'lsa animatsiyasiyam o'xshar ekan
               background: "#ebe8e4",
             },
           }}
@@ -93,20 +105,32 @@ const Warranty = ({show}: ComponentProps): ReactElement => {
             />
           </ScrollParallax>
         </Box>
-      </Stack>
+      </Grid>
 
-      <Stack
+      <Grid
+        item
+        md={7.5}
         sx={{
-          width: {lg: "60%"},
-          justifyContent: "left",
+          width: "100%",
+          justifyContent: {xs: "center", md: "left"},
           alignItems: "flex-start",
         }}
       >
-        <MiniTextCard
-          stackSx={{width: "300px"}}
-          text="WARRANTY"
-          desc="Time-proven technology, hardwood materials and high quality paint coatings guarantee you a long-term operation of our products, which is confirmed by a 5-year warranty!"
-        />
+        <Grid
+          item
+          xs={10}
+          sm={8}
+          md={9}
+          lg={7}
+          xl={6}
+          sx={{margin: {xs: "0 auto", md: "0"}}}
+        >
+          <MiniTextCard
+            stackSx={{width: "100%"}}
+            text="WARRANTY"
+            desc="Time-proven technology, hardwood materials and high quality paint coatings guarantee you a long-term operation of our products, which is confirmed by a 5-year warranty!"
+          />
+        </Grid>
 
         <Stack
           sx={{
@@ -127,8 +151,8 @@ const Warranty = ({show}: ComponentProps): ReactElement => {
             desc="logistics center"
           />
         </Stack>
-      </Stack>
-    </Stack>
+      </Grid>
+    </Grid>
   );
 };
 export default Warranty;
