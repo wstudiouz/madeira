@@ -1,4 +1,4 @@
-import {Typography} from "@mui/material";
+import {Typography, Grid} from "@mui/material";
 import {Stack} from "@mui/system";
 import React, {Dispatch, ReactElement, SetStateAction, useState} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -77,81 +77,86 @@ const Hero = ({setState}: ComponentProps): ReactElement => {
         СATALOGUE
       </Typography>
       <hr />
-      <Stack sx={{flexDirection: {xs: "column", sm: "row"}}}>
-        <Stack
-          sx={{
-            width: {
-              xs: "100%",
-              sm: "50%",
-              md: "40%",
-              lg: "30%",
-              position: "relative",
-            },
-          }}
-        >
-          <Stack sx={style.title} onClick={() => setCollection(!collection)}>
-            <Typography
-              variant="h3"
-              sx={{fontSize: "16px", lineHeight: "20px"}}
+      <Grid container>
+        <Grid item xs={12} sm={10} sx={{display:"flex", flexDirection: {xs: "column", sm: "row"}}}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Stack
+              sx={{
+                width: "100%",
+                position: "relative",
+              }}
             >
-              Select Collection
-            </Typography>
-            <ExpandMoreIcon />
-          </Stack>
-          <List sx={style.content}>
-            {collections.map((e, index) => (
-              <ListItem
-                key={index}
-                sx={{borderBottom: `1px solid ${theme.palette.secondary.main}`}}
-                onClick={() => handleChange(index, 1)}
+              <Stack
+                sx={style.title}
+                onClick={() => setCollection(!collection)}
               >
-                {e}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
-        <hr style={{marginTop: "1px"}} />
-        <Stack
-          sx={{
-            width: {
-              xs: "100%",
-              sm: "50%",
-              md: "40%",
-              lg: "30%",
-              position: "relative",
-            },
-          }}
-        >
-          <Stack
-            sx={{
-              ...style.title,
-              border: `1px solid ${
-                material ? theme.palette.secondary.main : "white"
-              }`,
-            }}
-            onClick={() => setMaterial(!material)}
-          >
-            <Typography
-              variant="h3"
-              sx={{fontSize: "16px", lineHeight: "20px"}}
+                <Typography
+                  variant="h3"
+                  sx={{fontSize: "16px", lineHeight: "20px"}}
+                >
+                  Select Collection
+                </Typography>
+                <ExpandMoreIcon />
+              </Stack>
+              <List sx={style.content}>
+                {collections.map((e, index) => (
+                  <ListItem
+                    key={index}
+                    sx={{
+                      borderBottom: `1px solid ${theme.palette.secondary.main}`,
+                    }}
+                    onClick={() => handleChange(index, 1)}
+                  >
+                    {e}
+                  </ListItem>
+                ))}
+              </List>
+            </Stack>
+          </Grid>
+          <hr style={{marginTop: "1px"}} />
+          <Grid item xs={12} sm={6} md={4}>
+            <Stack
+              sx={{
+                width: "100%",
+                position: "relative",
+              }}
             >
-              Select material
-            </Typography>
-            <ExpandMoreIcon />
-          </Stack>
-          <List sx={{...style.content, display: material ? "block" : "none"}}>
-            {materials.map((e, index) => (
-              <ListItem
-                key={index}
-                sx={{borderBottom: `1px solid ${theme.palette.secondary.main}`}}
-                onClick={() => handleChange(index, 2)}
+              <Stack
+                sx={{
+                  ...style.title,
+                  border: `1px solid ${
+                    material ? theme.palette.secondary.main : "white"
+                  }`,
+                }}
+                onClick={() => setMaterial(!material)}
               >
-                {e}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
-      </Stack>
+                <Typography
+                  variant="h3"
+                  sx={{fontSize: "16px", lineHeight: "20px"}}
+                >
+                  Select material
+                </Typography>
+                <ExpandMoreIcon />
+              </Stack>
+              <List
+                sx={{...style.content, display: material ? "block" : "none"}}
+              >
+                {materials.map((e, index) => (
+                  <ListItem
+                    key={index}
+                    sx={{
+                      borderBottom: `1px solid ${theme.palette.secondary.main}`,
+                    }}
+                    onClick={() => handleChange(index, 2)}
+                  >
+                    {e}
+                  </ListItem>
+                ))}
+              </List>
+            </Stack>
+          </Grid>
+        </Grid>
+      </Grid>
       <hr style={{marginTop: "1px"}} />
       <Stack></Stack>
     </Stack>

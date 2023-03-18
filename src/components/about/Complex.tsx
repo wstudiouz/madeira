@@ -12,6 +12,7 @@ const Complex = (): ReactElement => {
         alignItems: "flex-start",
         flexDirection: {lg: "row"},
         position: "relative",
+        marginTop:"100px"
       }}
     >
       <ScrollParallax strength={0.08}>
