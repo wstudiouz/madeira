@@ -3,18 +3,18 @@ import {Box} from "@mui/system";
 import React, {ReactElement, useEffect, useRef, useState} from "react";
 import {ScrollParallax} from "react-just-parallax";
 import MiniTextCard from "./MiniTextCard";
-import useIntersectionObserver from "../../utils/Hooks";
+import useIntersectionObserver from "../../ts/utils/Hooks";
 
 const Warranty = (): ReactElement => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, {});
-  const [active,setActive] = useState<boolean>(false)
-  
+  const [active, setActive] = useState<boolean>(false);
+
   useEffect(() => {
     if (isVisible?.isIntersecting) {
-      setActive(true)
+      setActive(true);
     }
-  }, [ isVisible?.isIntersecting]);
+  }, [isVisible?.isIntersecting]);
 
   return (
     <Grid
