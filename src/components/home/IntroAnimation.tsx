@@ -1,5 +1,5 @@
-import {keyframes, Stack, SvgIcon} from "@mui/material";
-import React, {ReactElement} from "react";
+import {keyframes, Stack, SvgIcon, Typography} from "@mui/material";
+import React, {ReactElement, useEffect, useState} from "react";
 import {LogoComponent} from "../../imports";
 import {theme} from "../../theme";
 
@@ -16,8 +16,18 @@ const fillEffect = keyframes`
     fill: #fff;
   }
 `;
-
+const logoTextEffect = keyframes`
+  100% {
+    color: "#fff";
+  }
+`;
 const IntroAnimation = (): ReactElement => {
+  const [animation, setAnimation] = useState<boolean>(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimation(false);
+    }, 2600);
+  }, []);
   return (
     <Stack
       sx={{
@@ -27,6 +37,8 @@ const IntroAnimation = (): ReactElement => {
         zIndex: "1101",
         width: "100%",
         height: "100vh",
+        opacity: animation ? 1 : 0,
+        transition: "opacity 0.5s linear",
       }}
     >
       <Stack
@@ -43,7 +55,7 @@ const IntroAnimation = (): ReactElement => {
         <SvgIcon
           component={LogoComponent}
           sx={{
-            "width": "40%",
+            "width": "35%",
             "height": "auto",
             "& path": {
               fill: theme.palette.primary.main,
@@ -51,11 +63,19 @@ const IntroAnimation = (): ReactElement => {
               strokeWidth: "3px",
               strokeDasharray: "11957",
               strokeDashoffset: "11957",
-              animation: `${logoEffect} 3s linear forwards, ${fillEffect} .4s 3.1s ease-out forwards`,
+              animation: `${logoEffect} 2s linear forwards, ${fillEffect} 2.5s linear forwards`,
             },
           }}
           viewBox="0 0 941 831"
         />
+        <Stack
+          sx={{
+            animation: `${logoTextEffect} .2s linear 2.4s`,
+          }}
+        >
+          <Typography variant="heroText1">M A D E I R A</Typography>
+          <Typography variant="h2">Уникальность во всем!</Typography>
+        </Stack>
       </Stack>
     </Stack>
   );

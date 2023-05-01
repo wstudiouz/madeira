@@ -17,7 +17,7 @@ const MComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
         ...sx,
       }}
     >
-      <MouseParallax strength={0.05}>
+      <MouseParallax strength={0.01}>
         <Stack sx={{alignItems: "center"}}>
           <Box
             component="img"
