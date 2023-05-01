@@ -1,5 +1,3 @@
-import {AboutPageListResponseDataItemAttributesIntroImage} from "../api/generated/api";
-
 export enum ProjectDetailComponents {
   headSection = "cases.head-section",
   image = "others.image",
@@ -15,7 +13,6 @@ export type DynamicZoneComponent = {
   id: number;
   __component: ProjectDetailComponents;
   subtitle?: string;
-  image?: AboutPageListResponseDataItemAttributesIntroImage;
   firstColumnText?: string;
   secondColumnText?: string;
   thirdColumnText?: string;

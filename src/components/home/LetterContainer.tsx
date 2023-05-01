@@ -1,6 +1,6 @@
 import React, {ReactElement, useEffect, useRef} from "react";
 import {Stack, SxProps} from "@mui/system";
-import useIntersectionObserver from "../../utils/Hooks";
+import useIntersectionObserver from "../../ts/utils/Hooks";
 
 type Props = {
   children: React.ReactNode;
