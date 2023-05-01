@@ -30,7 +30,7 @@ const Hero = (): ReactElement => {
   };
 
   return (
-    <Stack >
+    <Stack sx={{marginTop:"100px"}}>
       <Typography variant="h3" color={theme.palette.primary.main}>
         ABOUT US
       </Typography>

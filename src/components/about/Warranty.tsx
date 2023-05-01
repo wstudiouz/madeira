@@ -15,7 +15,7 @@ const Warranty = ({show}: ComponentProps): ReactElement => {
         alignItems: "center",
         margin: {xs: "30px 0", lg: "50px 0"},
         flexDirection: {lg: "row"},
-        marginTop: "100px",
+        marginTop: "120px",
       }}
     >
       <Stack

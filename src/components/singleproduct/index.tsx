@@ -1,7 +1,7 @@
 import React, {ReactElement, useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Box, Stack} from "@mui/system";
-import {Typography} from "@mui/material";
+import {Typography, Grid} from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -10,6 +10,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import {theme} from "../../theme";
+import MainContainer from "../MainContainer";
 
 function createData(
   name: string,
@@ -53,17 +54,7 @@ const SingleProduct = (): ReactElement => {
       .catch(() => setData({error: true, data: {}}));
   }, [id]);
   return (
-    <Stack
-      sx={{
-        margin: {
-          xs: "30px 10px 30px 10px",
-          sm: "30px 30px 30px 30px",
-          md: "30px 50px 30px 50px",
-          lg: "30px 60px 30px 60px",
-          xl: "30px 70px 30px 70px",
-        },
-      }}
-    >
+    <MainContainer>
       <Stack sx={{marginBottom: {xs: "30px", lg: "-50px"}}}>
         <Typography variant="h3">Madeira</Typography>
         <Typography variant="paragraph">solid ash</Typography>
@@ -76,27 +67,29 @@ const SingleProduct = (): ReactElement => {
       >
         <Stack sx={{width: {xs: "100%", lg: "65%"}}}>
           <Typography variant="product">{data.data.id} $</Typography>
-          <Stack
-            sx={{flexDirection: "row", flexWrap: "wrap", margin: "30px 0"}}
-          >
+          <Grid container sx={{margin: "30px 0"}} spacing={{xs:2,lg:1}}>
             {"1"
               .repeat(3)
               .split("")
               .map((_, index) => (
-                <Box
-                  key={index}
-                  component="img"
-                  src={`https://picsum.photos/20${index}`}
-                  sx={{
-                    width: "200px",
-                    height: "auto",
-                    margin: "5px 15px",
-                  }}
-                />
+                <Grid key={index} item xs={4} lg={2} >
+                  <Box
+                    component="img"
+                    src={`https://picsum.photos/20${index}`}
+                    sx={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                  />
+                </Grid>
               ))}
-          </Stack>
-          <Typography variant="h4">{data.data.title}</Typography>
-          <Typography variant="paragraph">{data.data.overview}</Typography>
+          </Grid>
+          <Grid container>
+            <Grid item xs={12} sm={10} md={7} lg={4}>
+              <Typography variant="h4">{data.data.title}</Typography>
+              <Typography variant="paragraph">{data.data.overview}</Typography>
+            </Grid>
+          </Grid>
         </Stack>
         <Stack sx={{width: {xs: "100%", lg: "30%"}}}>
           <Box
@@ -106,15 +99,17 @@ const SingleProduct = (): ReactElement => {
           />
         </Stack>
       </Stack>
-      <TableContainer
+     <Grid container>
+        <Grid item md={8} lg={7} sx={{display:{xs:"none",md:"block"}}}>
+        <TableContainer
         component={Paper}
         sx={{
           background: "none",
           margin: "30px 0",
-          width: {xs: "100%", lg: "70%", xl: "60%"},
+          width: "100%",
         }}
       >
-        <Table sx={{minWidth: 650}} aria-label="simple table">
+        <Table sx={{minWidth: 300}} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>type</TableCell>
@@ -140,13 +135,15 @@ const SingleProduct = (): ReactElement => {
           </TableBody>
         </Table>
       </TableContainer>
+        </Grid>
+     </Grid>
       <Typography
         variant="paragraph"
-        sx={{color: theme.palette.secondary.main}}
+        sx={{display:{xs:"none",md:"block",color: theme.palette.secondary.main}}}
       >
         Non standard sizes are 2100, 2200, 2300 mm.
       </Typography>
-    </Stack>
+    </MainContainer>
   );
 };
 
