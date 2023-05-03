@@ -2,6 +2,7 @@ import {keyframes, Stack, SvgIcon, Typography} from "@mui/material";
 import React, {ReactElement, useEffect, useState} from "react";
 import {LogoComponent} from "../../imports";
 import {theme} from "../../theme";
+import {zIndex} from "../../ts/utils/ZIndexs";
 
 const logoEffect = keyframes`
   100% {
@@ -26,7 +27,7 @@ const IntroAnimation = (): ReactElement => {
   useEffect(() => {
     setTimeout(() => {
       setAnimation(false);
-    }, 2600);
+    }, 2800);
   }, []);
   return (
     <Stack
@@ -34,7 +35,7 @@ const IntroAnimation = (): ReactElement => {
         position: "fixed",
         top: "0",
         left: "0",
-        zIndex: "1101",
+        zIndex: animation ? zIndex.introAnimation : 0,
         width: "100%",
         height: "100vh",
         opacity: animation ? 1 : 0,
