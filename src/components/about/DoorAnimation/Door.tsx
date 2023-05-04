@@ -56,6 +56,7 @@ const ChildComponent = ({
     backgroundRepeat: "no-repeat",
     backgroundImage: `url(${image})`,
     transitionDelay: "0.2s",
+    margin: "0 auto",
     ...sx,
   };
   return (
@@ -89,10 +90,10 @@ const Door = ({
       sx={{
         ...sx,
         position: "relative",
-
-        width: "100%",
-        height: "100px",
+        width: {xs: "300px", sm: "350px"},
+        height: {xs: "86px", sm: "100px"},
         display: "block",
+        margin: "0 auto",
       }}
     >
       {"1"

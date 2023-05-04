@@ -26,9 +26,9 @@ const Doors = (): ReactElement => {
           md: "80px auto 0 auto",
           lg: "0 auto",
         },
-        width: "350px",
-        maxWidth:"100%",
-        height: `${images.length * 100}px`,
+        width: {xs: "280x", sm: "350px"},
+        maxWidth: "100%",
+        height: {xs: `${images.length * 86}px`, sm: `${images.length * 100}px`},
         position: "relative",
         zIndex: "2",
         display: "block",
@@ -43,7 +43,7 @@ const Doors = (): ReactElement => {
               key={index}
               component="i"
               sx={{
-                width: "100%",
+                width: {xs: "280x", sm: "350px"},
                 height: trigger ? "2px" : "0px",
                 display: "block",
                 position: "absolute",
