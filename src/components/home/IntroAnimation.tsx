@@ -4,8 +4,11 @@ import {LogoComponent} from "../../imports";
 import {theme} from "../../theme";
 
 const logoEffect = keyframes`
-  100% {
+  95% {
     stroke-dashoffset: 0;
+  }
+  100%{
+    display:none
   }
 `;
 const fillEffect = keyframes`
@@ -16,9 +19,15 @@ const fillEffect = keyframes`
     fill: #fff;
   }
 `;
-const logoTextEffect = keyframes`
+
+const textEffect = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
   100% {
-    color: "#fff";
+    opacity: 1;
+    transform: translateY(0);
   }
 `;
 const IntroAnimation = (): ReactElement => {
@@ -26,7 +35,7 @@ const IntroAnimation = (): ReactElement => {
   useEffect(() => {
     setTimeout(() => {
       setAnimation(false);
-    }, 2600);
+    }, 3600);
   }, []);
   return (
     <Stack
@@ -70,11 +79,17 @@ const IntroAnimation = (): ReactElement => {
         />
         <Stack
           sx={{
-            animation: `${logoTextEffect} .2s linear 2.4s`,
+            opacity: 0,
+            animation: `${textEffect} .2s linear 2.4s forwards`,
+            animationDelay: "2.4s",
+            transition: "opacity 0.5s linear",
+            color: "white",
           }}
         >
           <Typography variant="heroText1">M A D E I R A</Typography>
-          <Typography variant="h2">Уникальность во всем!</Typography>
+          <Typography variant="h2" sx={{textAlign: "center"}}>
+            Уникальность во всем!
+          </Typography>
         </Stack>
       </Stack>
     </Stack>
