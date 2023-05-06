@@ -3,7 +3,7 @@ import {Box} from "@mui/system";
 import {theme} from "../../theme";
 import React, {ReactElement} from "react";
 import {FooterBg} from "../../imports";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 const Footer = (): ReactElement => {
   const styles = {
     href: {
@@ -12,8 +12,8 @@ const Footer = (): ReactElement => {
       fontFamily: "'Libre Caslon Text'",
     },
     line: {
-      width: {xs: "85%",lg: "0"},
-      margin: {xs:"7px", lg:"25px"},
+      width: {xs: "85%", lg: "0"},
+      margin: {xs: "7px", lg: "25px"},
       height: {xs: "1.5px", lg: "100%"},
       overflow: "hidden",
       border: `1px solid ${theme.palette.secondary.main}`,
@@ -52,13 +52,6 @@ const Footer = (): ReactElement => {
         width: "auto",
         overflow: "hidden",
         position: "relative",
-        margin: {
-          xs: "30px 10px 30px 10px",
-          sm: "50px 30px 30px 30px",
-          md: "70px 50px 30px 50px",
-          lg: "90px 60px 30px 60px",
-          xl: "110px 70px 30px 70px",
-        },
         justifyContent: "center",
         alignItems: "center",
         flexDirection: {
@@ -70,41 +63,41 @@ const Footer = (): ReactElement => {
       }}
     >
       <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
-          <Box
-            component="hr"
-            sx={{
-              display: {
-                xs: "none",
-                lg: "inline",
-              },
-              width:"7rem",
-              marginRight:"15px",
-              border: styles.line.border,
-              background: styles.line.background
-            }}
-          ></Box>
-        <Link  to="/contact" style={styles.href}>
+        <Box
+          component="hr"
+          sx={{
+            display: {
+              xs: "none",
+              lg: "inline",
+            },
+            width: "7rem",
+            marginRight: "15px",
+            border: styles.line.border,
+            background: styles.line.background,
+          }}
+        ></Box>
+        <Link to="/contact" style={styles.href}>
           Contacts
         </Link>
       </Typography>
       <Box sx={styles.line} component="hr"></Box>
       <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
-        <Link  to="/about" style={styles.href}>
+        <Link to="/about" style={styles.href}>
           About us
         </Link>
-          <Box
-            component="hr"
-            sx={{
-              display: {
-                xs: "none",
-                lg: "inline",
-              },
-              width:"7rem",
-              marginLeft:"15px",
-              border: styles.line.border,
-              background: styles.line.background
-            }}
-          ></Box>
+        <Box
+          component="hr"
+          sx={{
+            display: {
+              xs: "none",
+              lg: "inline",
+            },
+            width: "7rem",
+            marginLeft: "15px",
+            border: styles.line.border,
+            background: styles.line.background,
+          }}
+        ></Box>
       </Typography>
     </Stack>
   );

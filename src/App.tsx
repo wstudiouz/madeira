@@ -7,6 +7,8 @@ import ContactPage from "./page/ContactPage";
 import ErrorPage from "./page/ErrorPage";
 import HomePage from "./page/HomePage";
 import ProductDetailPage from "./page/ProductDetailPage";
+import Footer from "./components/footer/Footer";
+import MainContainer from "./components/MainContainer";
 
 function App(): JSX.Element {
   return (
@@ -19,10 +21,13 @@ function App(): JSX.Element {
           <Route path="catalogue" element={<CataloguePage />}>
             <Route path="" element={<ErrorPage />} />
           </Route>
-            <Route path="/catalogue/:id" element={<ProductDetailPage />} />
+          <Route path="/catalogue/:id" element={<ProductDetailPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
+      <MainContainer>
+        <Footer />
+      </MainContainer>
     </BrowserRouter>
   );
 }

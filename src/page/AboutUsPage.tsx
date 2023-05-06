@@ -7,7 +7,6 @@ import Production from "../components/about/Production";
 import Warranty from "../components/about/Warranty";
 import MainContainer from "../components/MainContainer";
 const AboutUsPage = (): ReactElement => {
-  
   return (
     <MainContainer>
       <Grid container sx={{alignItems: "center", justifyContent: "center"}}>
