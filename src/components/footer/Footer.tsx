@@ -12,15 +12,15 @@ const Footer = (): ReactElement => {
       fontFamily: "'Libre Caslon Text'",
     },
     line: {
-      width: {xs: "85%", lg: "0"},
-      margin: {xs: "7px", lg: "25px"},
-      height: {xs: "1.5px", lg: "100%"},
+      width: "0",
+      margin: {xs: "0 15px", lg: "0 29px"},
+      height: "100%",
       overflow: "hidden",
       border: `1px solid ${theme.palette.secondary.main}`,
       background: theme.palette.secondary.main,
     },
     bgImg: {
-      height: 150,
+      height: {xs: "50px", sm: "75px", md: "100px", lg: "125px", xl: "150px"},
       backgroundImage: `url(${FooterBg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -33,7 +33,13 @@ const Footer = (): ReactElement => {
         overflowX: "hidden",
         display: "block",
         border: `1.5px solid ${theme.palette.secondary.main}`,
-        marginTop: "-120px",
+        marginTop: {
+          xs: "-40px",
+          sm: "-60px",
+          md: "-80px",
+          lg: "-100px",
+          xl: "-120px",
+        },
       },
       "&:after": {
         position: "absolute",
@@ -42,7 +48,13 @@ const Footer = (): ReactElement => {
         overflowX: "hidden",
         border: `1.5px solid ${theme.palette.secondary.main}`,
         display: "block",
-        marginTop: "120px",
+        marginTop: {
+          xs: "40px",
+          sm: "60px",
+          md: "80px",
+          lg: "100px",
+          xl: "120px",
+        },
       },
     },
   };
@@ -54,24 +66,26 @@ const Footer = (): ReactElement => {
         position: "relative",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: {
-          xs: "column",
-          lg: "row",
-        },
+        flexDirection: "row",
         ...styles.bgImg,
         ...styles.bgLine,
       }}
     >
-      <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
+      <Typography
+        variant="h1"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          fontSize: {xs: "12px", sm: "20px", md: "25px", lg: "30px"},
+          fontWeight: 400,
+        }}
+      >
         <Box
           component="hr"
           sx={{
-            display: {
-              xs: "none",
-              lg: "inline",
-            },
-            width: "7rem",
-            marginRight: "15px",
+            display: "inline",
+            width: {xs: "3rem", sm: "6rem", md: "8rem", lg: "10rem"},
+            marginRight: {xs: "9px", lg: "15px"},
             border: styles.line.border,
             background: styles.line.background,
           }}
@@ -81,19 +95,24 @@ const Footer = (): ReactElement => {
         </Link>
       </Typography>
       <Box sx={styles.line} component="hr"></Box>
-      <Typography variant="h1" sx={{display: "flex", alignItems: "center"}}>
+      <Typography
+        variant="h1"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          fontSize: {xs: "12px", sm: "20px", md: "25px", lg: "30px"},
+          fontWeight: 400,
+        }}
+      >
         <Link to="/about" style={styles.href}>
           About us
         </Link>
         <Box
           component="hr"
           sx={{
-            display: {
-              xs: "none",
-              lg: "inline",
-            },
-            width: "7rem",
-            marginLeft: "15px",
+            display: "inline",
+            width: {xs: "3rem", sm: "6rem", md: "8rem", lg: "10rem"},
+            marginLeft: {xs: "9px", lg: "15px"},
             border: styles.line.border,
             background: styles.line.background,
           }}
