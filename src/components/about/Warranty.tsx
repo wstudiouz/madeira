@@ -4,6 +4,7 @@ import React, {ReactElement, useEffect, useRef, useState} from "react";
 import {ScrollParallax} from "react-just-parallax";
 import MiniTextCard from "./MiniTextCard";
 import useIntersectionObserver from "../../ts/utils/Hooks";
+import {zIndex} from "../../ts/utils/ZIndexs";
 
 const Warranty = (): ReactElement => {
   const ref = useRef<HTMLDivElement>(null);
@@ -46,7 +47,7 @@ const Warranty = (): ReactElement => {
             width: "100%",
             display: "block",
             position: "relative",
-            zIndex: 3,
+            zIndex: zIndex.warrantyFiveLogo,
             transform: "scale(1.007)",
           }}
         >
@@ -72,7 +73,7 @@ const Warranty = (): ReactElement => {
             "position": "absolute",
             "top": "0",
             "left": "0",
-            "zIndex": 1,
+            "zIndex": zIndex.warrantyFiveBg,
             "overflow": "hidden",
             "&:before": {
               content: '""',
@@ -82,7 +83,7 @@ const Warranty = (): ReactElement => {
               position: "absolute",
               top: "0",
               left: "0",
-              zIndex: 2,
+              zIndex: zIndex.warrantyFiveBgBefore,
               transition: "all 1s 0.5s ease",
               transform: active ? "translate3d(-100%, 0, 0)" : null, // manashu boshida translate3d(-100%, 0, 0) bo'lsa animatsiyasiyam o'xshar ekan
               background: "#ebe8e4",
