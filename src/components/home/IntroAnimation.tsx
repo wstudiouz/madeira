@@ -34,7 +34,7 @@ const IntroAnimation = (): ReactElement => {
         position: "fixed",
         top: "0",
         left: "0",
-        zIndex: "1101",
+        zIndex: animation ? "1101" : 0,
         width: "100%",
         height: "100vh",
         opacity: animation ? 1 : 0,
