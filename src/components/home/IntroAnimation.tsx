@@ -5,8 +5,11 @@ import {theme} from "../../theme";
 import {zIndex} from "../../ts/utils/ZIndexs";
 
 const logoEffect = keyframes`
-  100% {
+  95% {
     stroke-dashoffset: 0;
+  }
+  100%{
+    display:none
   }
 `;
 const fillEffect = keyframes`
@@ -17,9 +20,13 @@ const fillEffect = keyframes`
     fill: #fff;
   }
 `;
-const logoTextEffect = keyframes`
+
+const textEffect = keyframes`
+  0% {
+    opacity: 0;
+  }
   100% {
-    color: "#fff";
+    opacity: 1;
   }
 `;
 const IntroAnimation = (): ReactElement => {
@@ -56,7 +63,7 @@ const IntroAnimation = (): ReactElement => {
         <SvgIcon
           component={LogoComponent}
           sx={{
-            "width": "35%",
+            "width": "33%",
             "height": "auto",
             "& path": {
               fill: theme.palette.primary.main,
@@ -71,11 +78,15 @@ const IntroAnimation = (): ReactElement => {
         />
         <Stack
           sx={{
-            animation: `${logoTextEffect} .2s linear 2.4s`,
+            opacity: 0,
+            animation: `${textEffect} .2s linear 2.4s forwards`,
+            color: "white",
           }}
         >
           <Typography variant="heroText1">M A D E I R A</Typography>
-          <Typography variant="h2">Уникальность во всем!</Typography>
+          <Typography variant="h2" sx={{textAlign: "center"}}>
+            Уникальность во всем!
+          </Typography>
         </Stack>
       </Stack>
     </Stack>
