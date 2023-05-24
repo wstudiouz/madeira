@@ -3,21 +3,21 @@ import {Box} from "@mui/system";
 import React, {ReactElement, useEffect, useRef, useState} from "react";
 import {theme} from "../../theme";
 import {ScrollParallax} from "react-just-parallax";
-import useIntersectionObserver from "../../utils/Hooks";
+import useIntersectionObserver from "../../ts/utils/Hooks";
 
 const HandWork = (): ReactElement => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, {});
-  const [active,setActive] = useState<boolean>(false)
-  
+  const [active, setActive] = useState<boolean>(false);
+
   useEffect(() => {
     if (isVisible?.isIntersecting) {
-      setActive(true)
+      setActive(true);
     }
-  }, [ isVisible?.isIntersecting]);
+  }, [isVisible?.isIntersecting]);
   return (
     <Stack
-    ref={ref}
+      ref={ref}
       sx={{
         justifyContent: "space-between",
         alignItems: "flex-start",
@@ -36,7 +36,7 @@ const HandWork = (): ReactElement => {
           display: "flex",
           flexDirection: {xs: "column", lg: "row"},
           alignItems: {lg: "center"},
-          justifyContent:{lg:"space-between"},
+          justifyContent: {lg: "space-between"},
           width: "100%",
         }}
       >
@@ -65,8 +65,13 @@ const HandWork = (): ReactElement => {
           </ScrollParallax>
         </Grid>
 
-        <Grid item xs={12} lg={5} sx={{width: "100%",display:"flex", justifyContent:"right"}}>
-          <Grid item xs={7} lg={12} >
+        <Grid
+          item
+          xs={12}
+          lg={5}
+          sx={{width: "100%", display: "flex", justifyContent: "right"}}
+        >
+          <Grid item xs={7} lg={12}>
             <Box
               component="span"
               sx={{
@@ -106,7 +111,7 @@ const HandWork = (): ReactElement => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container sx={{width: "100%",marginTop:{xs:"50px",lg:"0"}}}>
+      <Grid container sx={{width: "100%", marginTop: {xs: "50px", lg: "0"}}}>
         <Grid
           item
           xs={6}

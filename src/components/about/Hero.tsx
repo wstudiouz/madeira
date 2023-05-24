@@ -61,27 +61,27 @@ const Hero = (): ReactElement => {
             />
           </Grid>
 
-         <Grid item xs={12} sm={6}  lg={8} xl={7}>
-         <Typography
-            sx={{
-              display: "block",
-              marginTop: "50px",
-              width: "100%",
-              animation: `${textAnimation} 0.7s ease`,
-            }}
-            variant="paragraph"
-          >
-            We combine best european technologies, the beauty of Caucasus
-            finewood, the art of carving and guaranteed quality. Having studied
-            secular traditions of italian masters we produce a truly high
-            quality doors!
-          </Typography>
-         </Grid>
+          <Grid item xs={12} sm={6} lg={8} xl={7}>
+            <Typography
+              sx={{
+                display: "block",
+                marginTop: "50px",
+                width: "100%",
+                animation: `${textAnimation} 0.7s ease`,
+              }}
+              variant="paragraph"
+            >
+              We combine best european technologies, the beauty of Caucasus
+              finewood, the art of carving and guaranteed quality. Having
+              studied secular traditions of italian masters we produce a truly
+              high quality doors!
+            </Typography>
+          </Grid>
         </Grid>
-        <Grid item md={3}>
+        <Grid item>
           <Doors />
         </Grid>
-        <Grid item md={1}></Grid>
+        {/* <Grid item md={1}></Grid> */}
       </Grid>
     </Stack>
   );
