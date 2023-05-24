@@ -78,10 +78,10 @@ const Hero = (): ReactElement => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md={3}>
+        <Grid item>
           <Doors />
         </Grid>
-        <Grid item md={1}></Grid>
+        {/* <Grid item md={1}></Grid> */}
       </Grid>
     </Stack>
   );
