@@ -23,11 +23,9 @@ const fillEffect = keyframes`
 const textEffect = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
 `;
 const IntroAnimation = (): ReactElement => {
@@ -43,7 +41,7 @@ const IntroAnimation = (): ReactElement => {
         position: "fixed",
         top: "0",
         left: "0",
-        zIndex: "1101",
+        zIndex: animation ? "1101" : 0,
         width: "100%",
         height: "100vh",
         opacity: animation ? 1 : 0,
@@ -64,7 +62,7 @@ const IntroAnimation = (): ReactElement => {
         <SvgIcon
           component={LogoComponent}
           sx={{
-            "width": "35%",
+            "width": "33%",
             "height": "auto",
             "& path": {
               fill: theme.palette.primary.main,
@@ -81,8 +79,6 @@ const IntroAnimation = (): ReactElement => {
           sx={{
             opacity: 0,
             animation: `${textEffect} .2s linear 2.4s forwards`,
-            animationDelay: "2.4s",
-            transition: "opacity 0.5s linear",
             color: "white",
           }}
         >
