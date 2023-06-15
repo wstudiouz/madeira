@@ -57,6 +57,15 @@ export type SecondACompData = {
     cardText: ComplexCard;
   };
 };
+type ObjectType = {
+  text: string;
+  over: string;
+  id: number;
+  shortKey: string;
+};
+export type LettersData = {
+  Letters: ObjectType[];
+};
 
 interface ComplexCard {
   id: number;

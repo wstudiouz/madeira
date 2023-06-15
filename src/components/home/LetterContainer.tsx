@@ -4,23 +4,28 @@ import useIntersectionObserver from "../../ts/utils/Hooks";
 
 type Props = {
   children: React.ReactNode;
-  id: string;
+  shortKey: string;
   sx?: SxProps;
   setOrder: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
-const LetterContainer = ({children, id, setOrder, sx}: Props): ReactElement => {
+const LetterContainer = ({
+  children,
+  shortKey,
+  setOrder,
+  sx,
+}: Props): ReactElement => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, {});
 
   useEffect(() => {
     if (isVisible?.isIntersecting) {
-      setOrder(id);
+      setOrder(shortKey);
     }
-  }, [id, isVisible?.isIntersecting, setOrder]);
+  }, [shortKey, isVisible?.isIntersecting, setOrder]);
 
   return (
     <Stack
-      id={id}
+      id={shortKey}
       ref={ref}
       sx={{
         minHeight: "100vh",

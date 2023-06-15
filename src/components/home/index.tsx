@@ -1,4 +1,4 @@
-import React, {ReactElement, useRef, useState} from "react";
+import React, {ReactElement, useEffect, useRef, useState} from "react";
 import IntroAnimation from "./IntroAnimation";
 import SingleMap from "./SingleMap";
 import {Stack, Typography} from "@mui/material";
@@ -11,25 +11,24 @@ import RComponent from "./RComponent";
 import SeacondAComponent from "./SecondAComponent";
 import MainContainer from "../MainContainer";
 import LetterContainer from "./LetterContainer";
-
-type ObjectType = {
-  text: string;
-  over: string;
-  id: string;
-};
+import {getter} from "../../ts/utils/Fetcher";
+import {LettersData} from "../../ts/REST/types/HomePageTypes";
 
 const Home = (): ReactElement => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [order, setOrder] = useState<string | undefined>(undefined);
-  const letters: ObjectType[] = [
-    {text: "M", over: "Madeira M harfiniki", id: "M"},
-    {text: "A", over: "Madeira A harfiniki", id: "A"},
-    {text: "D", over: "Madeira D harfiniki", id: "D"},
-    {text: "E", over: "Madeira E harfiniki", id: "E"},
-    {text: "I", over: "Madeira I harfiniki", id: "I"},
-    {text: "R", over: "Madeira R harfiniki", id: "R"},
-    {text: "A", over: "Madeira A harfiniki", id: "A2"},
-  ];
+
+  const [data, setData] = useState<LettersData>();
+  useEffect(() => {
+    const getData = async () => {
+      const result = await getter("home-page?populate=Letters");
+      if (result.ok && result.data) {
+        setData(result.data);
+      }
+    };
+
+    getData();
+  }, []);
   return (
     <Stack ref={containerRef} sx={{overflow: "hidden"}}>
       <IntroAnimation />
@@ -67,7 +66,10 @@ const Home = (): ReactElement => {
             transform: "translate3d(0, 0, 0) rotate(-90deg)",
           }}
         >
-          {letters.map((letter) => (letter.id === order ? letter.over : ""))}
+          {data &&
+            data.Letters.map((letter) =>
+              letter.shortKey === order ? letter.over : ""
+            )}
         </Typography>
         <Stack
           sx={{
@@ -78,45 +80,46 @@ const Home = (): ReactElement => {
             marginTop: "-30px",
           }}
         >
-          {letters.map((letter, index) => (
-            <SingleMap
-              key={index}
-              text={letter.text}
-              active={letter.id === order}
-              onClick={() =>
-                document?.getElementById(letter.id)?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
-              }
-            />
-          ))}
+          {data &&
+            data.Letters.map((letter, index) => (
+              <SingleMap
+                key={index}
+                text={letter.text}
+                active={letter.shortKey == order}
+                onClick={() =>
+                  document?.getElementById(letter.shortKey)?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  })
+                }
+              />
+            ))}
         </Stack>
       </Stack>
       <MainContainer>
         <LetterContainer
           sx={{marginTop: {xs: 0, md: 0, lg: 0}}}
           setOrder={setOrder}
-          id={"M"}
+          shortKey={"M"}
         >
           <MComponent />
         </LetterContainer>
-        <LetterContainer setOrder={setOrder} id={"A"}>
+        <LetterContainer setOrder={setOrder} shortKey={"A"}>
           <AComponent />
         </LetterContainer>
-        <LetterContainer setOrder={setOrder} id={"D"}>
+        <LetterContainer setOrder={setOrder} shortKey={"D"}>
           <DComponent />
         </LetterContainer>
-        <LetterContainer setOrder={setOrder} id={"E"}>
+        <LetterContainer setOrder={setOrder} shortKey={"E"}>
           <EComponent />
         </LetterContainer>
-        <LetterContainer setOrder={setOrder} id={"I"}>
+        <LetterContainer setOrder={setOrder} shortKey={"I"}>
           <IComponent />
         </LetterContainer>
-        <LetterContainer setOrder={setOrder} id={"R"}>
+        <LetterContainer setOrder={setOrder} shortKey={"R"}>
           <RComponent />
         </LetterContainer>
-        <LetterContainer setOrder={setOrder} id={"A2"}>
+        <LetterContainer setOrder={setOrder} shortKey={"A2"}>
           <SeacondAComponent />
         </LetterContainer>
       </MainContainer>
