@@ -2,15 +2,10 @@ import {Stack} from "@mui/material";
 import {Box} from "@mui/system";
 import React, {ReactElement, useEffect, useState} from "react";
 import Door from "./Door";
-
-const Doors = (): ReactElement => {
-  const [images] = useState<string[]>([
-    "https://picsum.photos/350/501",
-    "https://picsum.photos/350/502",
-    "https://picsum.photos/350/503",
-    "https://picsum.photos/350/504",
-    "https://picsum.photos/350/505",
-  ]);
+type Props = {
+  images: string[];
+};
+const Doors = ({images}: Props): ReactElement => {
   const [order, setOrder] = useState<number | undefined>(undefined);
   const [trigger, setTrigger] = useState<boolean>(false);
   useEffect(() => {
@@ -27,7 +22,7 @@ const Doors = (): ReactElement => {
           lg: "0 auto",
         },
         width: "350px",
-        maxWidth:"100%",
+        maxWidth: "100%",
         height: `${images.length * 100}px`,
         position: "relative",
         zIndex: "2",

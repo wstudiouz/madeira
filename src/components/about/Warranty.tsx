@@ -5,12 +5,26 @@ import {ScrollParallax} from "react-just-parallax";
 import MiniTextCard from "./MiniTextCard";
 import useIntersectionObserver from "../../ts/utils/Hooks";
 import {zIndex} from "../../ts/utils/ZIndexs";
+import {getter} from "../../ts/utils/Fetcher";
+import {WarrantyData} from "../../ts/REST/types/AboutPageTypes";
 
 const Warranty = (): ReactElement => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, {});
   const [active, setActive] = useState<boolean>(false);
+  const [data, setData] = useState<WarrantyData>();
+  useEffect(() => {
+    const getData = async () => {
+      const result = await getter(
+        "about-page?populate=Warranty.warranty,Warranty.supCard,Warranty.supCard2,Warranty.warrantyYearBg"
+      );
+      if (result.ok && result.data) {
+        setData(result.data);
+      }
+    };
 
+    getData();
+  }, []);
   useEffect(() => {
     if (isVisible?.isIntersecting) {
       setActive(true);
@@ -91,19 +105,21 @@ const Warranty = (): ReactElement => {
           }}
         >
           <ScrollParallax>
-            <Box
-              component="img"
-              src="https://viporte.com/templates/vp/resources/images/five.jpg"
-              sx={{
-                height: "calc(100% + 100px)",
-                marginTop: "-50px",
-                minWidth: "100%",
-                minHeight: "100%",
-                display: "block",
-                overflowClipMargin: "content-box",
-                overflow: "clip",
-              }}
-            />
+            {data && (
+              <Box
+                component="img"
+                src={`${process.env.REACT_APP_BACKEND_URL}${data.Warranty.warrantyYearBg.data.attributes.url}`}
+                sx={{
+                  height: "calc(100% + 100px)",
+                  marginTop: "-50px",
+                  minWidth: "100%",
+                  minHeight: "100%",
+                  display: "block",
+                  overflowClipMargin: "content-box",
+                  overflow: "clip",
+                }}
+              />
+            )}
           </ScrollParallax>
         </Box>
       </Grid>
@@ -126,11 +142,13 @@ const Warranty = (): ReactElement => {
           xl={6}
           sx={{margin: {xs: "0 auto", md: "0"}}}
         >
-          <MiniTextCard
-            stackSx={{width: "100%"}}
-            text="WARRANTY"
-            desc="Time-proven technology, hardwood materials and high quality paint coatings guarantee you a long-term operation of our products, which is confirmed by a 5-year warranty!"
-          />
+          {data && (
+            <MiniTextCard
+              stackSx={{width: "100%"}}
+              text={data.Warranty.warranty.title}
+              desc={data.Warranty.warranty.description}
+            />
+          )}
         </Grid>
 
         <Stack
@@ -138,19 +156,23 @@ const Warranty = (): ReactElement => {
             flexDirection: {xs: "column", lg: "row"},
           }}
         >
-          <MiniTextCard
-            variantMy="heroText2"
-            text="200 m"
-            textSup={true}
-            desc="Russia's largest branded showroom"
-          />
-          <MiniTextCard
-            stackSx={{marginLeft: {sm: "0", lg: "30px", xl: "40px"}}}
-            variantMy="heroText2"
-            text="2000 m"
-            textSup={true}
-            desc="logistics center"
-          />
+          {data && (
+            <MiniTextCard
+              variantMy="heroText2"
+              text={data.Warranty.supCard.text}
+              textSup={data.Warranty.supCard.sup}
+              desc={data.Warranty.supCard.desc}
+            />
+          )}
+          {data && (
+            <MiniTextCard
+              stackSx={{marginLeft: {sm: "0", lg: "30px", xl: "40px"}}}
+              variantMy="heroText2"
+              text={data.Warranty.supCard2.text}
+              textSup={data.Warranty.supCard2.sup}
+              desc={data.Warranty.supCard2.desc}
+            />
+          )}
         </Stack>
       </Grid>
     </Grid>

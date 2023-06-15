@@ -9,7 +9,7 @@ type ComponentProps = {
   descSx?: SxProps;
   stackSx?: SxProps;
   variantMy?: TypographyTypeMap["props"]["variant"];
-  textSup?: boolean;
+  textSup?: number;
 };
 const MiniTextCard = ({
   text,
@@ -31,7 +31,7 @@ const MiniTextCard = ({
         variant={variantMy || "h2"}
       >
         {text}
-        {textSup ? <Box component="sup">2</Box> : <></>}
+        {textSup && <Box component="sup">{textSup}</Box>}
       </Typography>
       <Typography sx={descSx} variant="paragraph" color={"#000"}>
         {desc}

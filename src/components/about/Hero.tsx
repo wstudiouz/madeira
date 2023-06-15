@@ -1,9 +1,11 @@
 import {Stack, Typography, SxProps, Grid} from "@mui/material";
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import {theme} from "../../theme";
 import Doors from "./DoorAnimation/Doors";
 import {keyframes} from "@mui/material";
 import MiniHrComponent from "../MiniHrComponent";
+import {getter} from "../../ts/utils/Fetcher";
+import {HeroData, ImageData} from "../../ts/REST/types/AboutPageTypes";
 const Hero = (): ReactElement => {
   const textAnimation = keyframes`
   from {
@@ -21,10 +23,43 @@ const Hero = (): ReactElement => {
     animation: `${textAnimation} 0.7s ease`,
   };
 
+  const [data, setData] = useState<HeroData>();
+  const [images, setImages] = useState<string[]>([]);
+  useEffect(() => {
+    const getData = async () => {
+      const result = await getter(
+        "about-page?populate=Hero.img1,Hero.img2,Hero.img3,Hero.img4,Hero.img5"
+      );
+      if (result.ok && result.data) {
+        setData(result.data);
+      }
+    };
+
+    getData();
+  }, []);
+
+  const setImagesFunction = (arr: HeroData) => {
+    const array: string[] = [];
+    for (let i = 1; i <= 5; i++) {
+      const imgKey = `img${i}` as keyof HeroData["Hero"];
+      const img = arr.Hero[imgKey] as ImageData;
+      const imgUrl = img.data.attributes.formats?.large?.url;
+      const fullUrl = `${process.env.REACT_APP_BACKEND_URL}${imgUrl}`;
+      array.push(fullUrl);
+    }
+    setImages(array);
+  };
+
+  useEffect(() => {
+    if (data?.Hero) {
+      setImagesFunction(data);
+    }
+  }, [data]);
+
   return (
     <Stack sx={{marginTop: "100px"}}>
       <Typography variant="h3" color={theme.palette.primary.main}>
-        ABOUT US
+        {data && data.Hero.title}
       </Typography>
       <Grid
         container
@@ -48,8 +83,7 @@ const Hero = (): ReactElement => {
             />
           </Grid>
           <Typography sx={styles} variant="h3">
-            We do what we love for over 15 years, and we are pleased to present
-            Viporte doors — doors as a piece of art!
+            {data && data.Hero.text}
           </Typography>
           <Grid item xs={4} sm={3}>
             <MiniHrComponent
@@ -71,16 +105,11 @@ const Hero = (): ReactElement => {
               }}
               variant="paragraph"
             >
-              We combine best european technologies, the beauty of Caucasus
-              finewood, the art of carving and guaranteed quality. Having
-              studied secular traditions of italian masters we produce a truly
-              high quality doors!
+              {data && data.Hero.desc}
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Doors />
-        </Grid>
+        <Grid item>{images && images.length && <Doors images={images} />}</Grid>
         {/* <Grid item md={1}></Grid> */}
       </Grid>
     </Stack>

@@ -1,10 +1,25 @@
 import {Box, Stack, Typography, Grid} from "@mui/material";
-import React, {ReactElement} from "react";
+import React, {ReactElement, useState, useEffect} from "react";
 import {theme} from "../../theme";
 import MiniTextCard from "./MiniTextCard";
 import {LeonHandleSvg} from "../../imports/index";
 import {ScrollParallax} from "react-just-parallax";
+import {getter} from "../../ts/utils/Fetcher";
+import {ComplexData} from "../../ts/REST/types/AboutPageTypes";
 const Complex = (): ReactElement => {
+  const [data, setData] = useState<ComplexData>();
+  useEffect(() => {
+    const getData = async () => {
+      const result = await getter(
+        "about-page?populate=Complex.rightTopCard,Complex.rightBottomCard"
+      );
+      if (result.ok && result.data) {
+        setData(result.data);
+      }
+    };
+
+    getData();
+  }, []);
   return (
     <Grid
       container
@@ -25,7 +40,7 @@ const Complex = (): ReactElement => {
               color: theme.palette.primary.contrastText,
             }}
           >
-            Complex solution of interior problems
+            {data && data.Complex.title}
           </Typography>
         </ScrollParallax>
       </Grid>
@@ -40,28 +55,32 @@ const Complex = (): ReactElement => {
             position: "relative",
           }}
         >
-          <MiniTextCard
-            stackSx={{width: "300px", maxWidth: "100%"}}
-            text="WIDE RANGE"
-            desc="We produce a wide range of products, including interior doors, sliding partitions, decor mouldings for metal exterior doors, floors, base moldings and boiserie wainscotings."
-          />
+          {data && (
+            <MiniTextCard
+              stackSx={{width: "300px", maxWidth: "100%"}}
+              text={data.Complex.rightTopCard.title}
+              desc={data.Complex.rightTopCard.description}
+            />
+          )}
 
-          <MiniTextCard
-            stackSx={{
-              width: "300px",
-              maxWidth: "100%",
-              padding: "7px 10px 50px 7px",
-              border: `1px solid ${theme.palette.secondary.main}`,
-              alignItems: "flex-start",
-              flexDirection: "column",
-              marginTop: "50px",
-              position: "relative",
-            }}
-            variantMy="heroText2"
-            text="15 years"
-            textSx={{marginTop: "-20px"}}
-            desc="of excellent reputation"
-          />
+          {data && (
+            <MiniTextCard
+              stackSx={{
+                width: "300px",
+                maxWidth: "100%",
+                padding: "7px 10px 50px 7px",
+                border: `1px solid ${theme.palette.secondary.main}`,
+                alignItems: "flex-start",
+                flexDirection: "column",
+                marginTop: "50px",
+                position: "relative",
+              }}
+              variantMy="heroText2"
+              text={data.Complex.rightBottomCard.title}
+              textSx={{marginTop: "-20px"}}
+              desc={data.Complex.rightBottomCard.description}
+            />
+          )}
           <ScrollParallax strength={0.02}>
             <Box
               sx={{
