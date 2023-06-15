@@ -1,13 +1,28 @@
-import React, {ReactElement} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import {Stack, SxProps, Box, SvgIcon, Grid} from "@mui/material";
 import MiniCardTextAndBtn from "./MiniCardTextAndBtn";
 import {ESvg} from "../../imports";
 import {ScrollParallax} from "react-just-parallax";
+import {getter} from "../../ts/utils/Fetcher";
+import {ECompData} from "../../ts/REST/types/HomePageTypes";
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
   sx?: SxProps;
 };
 const EComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
+  const [data, setData] = useState<ECompData>();
+  useEffect(() => {
+    const getData = async () => {
+      const result = await getter(
+        "home-page?populate=EComp.cardText,EComp.letterImg,EComp.button,EComp.leftImg"
+      );
+      if (result.ok && result.data) {
+        setData(result.data);
+      }
+    };
+
+    getData();
+  }, []);
   return (
     <Grid
       container
@@ -22,18 +37,20 @@ const EComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
     >
       <Grid item md={3}>
         <ScrollParallax strength={0.08}>
-          <Box
-            component="img"
-            src="https://picsum.photos/330/370"
-            sx={{
-              width: {
-                xs: "100%",
-              },
-              height: {
-                xs: "auto",
-              },
-            }}
-          />
+          {data && (
+            <Box
+              component="img"
+              src={`${process.env.REACT_APP_BACKEND_URL}${data.EComp.leftImg.data.attributes.url}`}
+              sx={{
+                width: {
+                  xs: "100%",
+                },
+                height: {
+                  xs: "auto",
+                },
+              }}
+            />
+          )}
         </ScrollParallax>
       </Grid>
       <Grid
@@ -83,35 +100,39 @@ const EComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
             }}
           >
             <ScrollParallax>
-              <Box
-                component="img"
-                src="https://viporte.com/templates/vp/resources/images/block_7_img.jpg"
-                sx={{
-                  height: "calc(100% + 100px)",
-                  minWidth: "100%",
-                  minHeight: "100%",
-                  display: "block",
-                  overflowClipMargin: "content-box",
-                  overflow: "clip",
-                }}
-              />
+              {data && (
+                <Box
+                  component="img"
+                  src={`${process.env.REACT_APP_BACKEND_URL}${data.EComp.letterImg.data.attributes.url}`}
+                  sx={{
+                    height: "calc(100% + 100px)",
+                    minWidth: "100%",
+                    minHeight: "100%",
+                    display: "block",
+                    overflowClipMargin: "content-box",
+                    overflow: "clip",
+                  }}
+                />
+              )}
             </ScrollParallax>
           </Box>
         </Stack>
       </Grid>
       <Grid item md={3}>
-        <MiniCardTextAndBtn
-          stackSx={{
-            width: {xs: "100%", md: "100%"},
-          }}
-          fisrtBtnText="III"
-          text="Kitchen Furniture"
-          textSx={{margin: "30px auto"}}
-          desc="We produce solid and engineered oak and ash planks. In the manufacture and floor finishing we aim to create unified interior compositions with natural materials. Viporte doors, floor coverings, wainscoting and base moldings perfectly fit each other, forming a luxurious interior design."
-          secondBtntext="Catalogue"
-          secondBtnUrl="/catalogue"
-          secondBtnSx={{width: "130px", marginTop: {md: "80px", xs: "30px"}}}
-        />
+        {data && (
+          <MiniCardTextAndBtn
+            stackSx={{
+              width: {xs: "100%", md: "100%"},
+            }}
+            fisrtBtnText="III"
+            text={data.EComp.cardText.title}
+            textSx={{margin: "30px auto"}}
+            desc={data.EComp.cardText.description}
+            secondBtntext={data.EComp.button.btnName}
+            secondBtnUrl={data.EComp.button.btnLink}
+            secondBtnSx={{width: "130px", marginTop: {md: "80px", xs: "30px"}}}
+          />
+        )}
       </Grid>
       <Grid item md={1} />
     </Grid>

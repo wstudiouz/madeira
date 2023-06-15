@@ -1,13 +1,28 @@
-import React, {ReactElement} from "react";
+import React, {ReactElement, useState, useEffect} from "react";
 import {Stack, SxProps, Box, SvgIcon, Grid} from "@mui/material";
 import MiniCardTextAndBtn from "./MiniCardTextAndBtn";
 import {DSvg} from "../../imports";
 import {ScrollParallax} from "react-just-parallax";
+import {getter} from "../../ts/utils/Fetcher";
+import {DCompData} from "../../ts/REST/types/HomePageTypes";
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
   sx?: SxProps;
 };
 const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
+  const [data, setData] = useState<DCompData>();
+  useEffect(() => {
+    const getData = async () => {
+      const result = await getter(
+        "home-page?populate=DComp.cardText,DComp.letterImg,DComp.button,DComp.firstImg,DComp.secondImg"
+      );
+      if (result.ok && result.data) {
+        setData(result.data);
+      }
+    };
+
+    getData();
+  }, []);
   return (
     <Grid
       container
@@ -20,15 +35,17 @@ const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
       }}
     >
       <Grid item md={3}>
-        <MiniCardTextAndBtn
-          fisrtBtnText="II"
-          text="Kitchen Furniture"
-          textSx={{margin: "30px auto"}}
-          desc="We produce solid and engineered oak and ash planks. In the manufacture and floor finishing we aim to create unified interior compositions with natural materials. Viporte doors, floor coverings, wainscoting and base moldings perfectly fit each other, forming a luxurious interior design."
-          secondBtntext="Catalogue"
-          secondBtnUrl="/catalogue"
-          secondBtnSx={{width: "130px", marginTop: {md: "80px", xs: "30px"}}}
-        />
+        {data && (
+          <MiniCardTextAndBtn
+            fisrtBtnText="II"
+            text={data.DComp.cardText.title}
+            textSx={{margin: "30px auto"}}
+            desc={data.DComp.cardText.description}
+            secondBtntext={data.DComp.button.btnName}
+            secondBtnUrl={data.DComp.button.btnLink}
+            secondBtnSx={{width: "130px", marginTop: {md: "80px", xs: "30px"}}}
+          />
+        )}
       </Grid>
 
       <Grid
@@ -78,19 +95,21 @@ const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
             }}
           >
             <ScrollParallax>
-              <Box
-                component="img"
-                src="https://viporte.com/templates/vp/resources/images/five.jpg"
-                sx={{
-                  height: "calc(100% + 100px)",
-                  marginTop: "-50px",
-                  minWidth: "100%",
-                  minHeight: "100%",
-                  display: "block",
-                  overflowClipMargin: "content-box",
-                  overflow: "clip",
-                }}
-              />
+              {data && (
+                <Box
+                  component="img"
+                  src={`${process.env.REACT_APP_BACKEND_URL}${data.DComp.letterImg.data.attributes.url}`}
+                  sx={{
+                    height: "calc(100% + 100px)",
+                    marginTop: "-50px",
+                    minWidth: "100%",
+                    minHeight: "100%",
+                    display: "block",
+                    overflowClipMargin: "content-box",
+                    overflow: "clip",
+                  }}
+                />
+              )}
             </ScrollParallax>
           </Box>
         </Stack>
@@ -105,49 +124,53 @@ const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
           }}
         >
           <ScrollParallax strength={0.01}>
-            <Box
-              component="img"
-              src="https://picsum.photos/300/300"
-              sx={{
-                width: {
-                  md: "210px",
-                  lg: "270px",
-                  xl: "350px",
-                },
-                height: {
-                  md: "210px",
-                  lg: "270px",
-                  xl: "350px",
-                },
-                marginLeft: {xs: "-120px"},
-              }}
-            />
+            {data && (
+              <Box
+                component="img"
+                src={`${process.env.REACT_APP_BACKEND_URL}${data.DComp.firstImg.data.attributes.url}`}
+                sx={{
+                  width: {
+                    md: "210px",
+                    lg: "270px",
+                    xl: "350px",
+                  },
+                  height: {
+                    md: "210px",
+                    lg: "270px",
+                    xl: "350px",
+                  },
+                  marginLeft: {xs: "-120px"},
+                }}
+              />
+            )}
           </ScrollParallax>
           <ScrollParallax strength={0.03}>
-            <Box
-              component="img"
-              src="https://picsum.photos/230/230"
-              sx={{
-                zIndex: 4,
-                position: "absolute",
-                width: {
-                  md: "180px",
-                  lg: "210px",
-                  xl: "250px",
-                },
-                height: {
-                  md: "180px",
-                  lg: "210px",
-                  xl: "250px",
-                },
-                marginLeft: {
-                  md: "-30px",
-                  lg: "0",
-                  xl: "40px",
-                },
-                marginTop: {xs: "-100px", lg: "-130px"},
-              }}
-            />
+            {data && (
+              <Box
+                component="img"
+                src={`${process.env.REACT_APP_BACKEND_URL}${data.DComp.secondImg.data.attributes.url}`}
+                sx={{
+                  zIndex: 4,
+                  position: "absolute",
+                  width: {
+                    md: "180px",
+                    lg: "210px",
+                    xl: "250px",
+                  },
+                  height: {
+                    md: "180px",
+                    lg: "210px",
+                    xl: "250px",
+                  },
+                  marginLeft: {
+                    md: "-30px",
+                    lg: "0",
+                    xl: "40px",
+                  },
+                  marginTop: {xs: "-100px", lg: "-130px"},
+                }}
+              />
+            )}
           </ScrollParallax>
         </Stack>
       </Grid>

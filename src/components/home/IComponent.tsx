@@ -18,6 +18,8 @@ import {theme} from "../../theme";
 import MiniTextCard from "../about/MiniTextCard";
 import {ISvg} from "../../imports";
 import {ScrollParallax} from "react-just-parallax";
+import {getter} from "../../ts/utils/Fetcher";
+import {ICompData} from "../../ts/REST/types/HomePageTypes";
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
   sx?: SxProps;
@@ -28,6 +30,20 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const resizeCalback = useCallback(() => {
     if (svgRef.current) setSvgHeight(svgRef.current.clientHeight + 100);
+  }, []);
+
+  const [data, setData] = useState<ICompData>();
+  useEffect(() => {
+    const getData = async () => {
+      const result = await getter(
+        "home-page?populate=IComp.cardTextFirst,IComp.cardTextSecond,IComp.letterImgLeft,IComp.letterImgRight,IComp.bottomImg1,IComp.bottomImg2,IComp.bottomImg3"
+      );
+      if (result.ok && result.data) {
+        setData(result.data);
+      }
+    };
+
+    getData();
   }, []);
 
   useEffect(() => {
@@ -48,16 +64,18 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
       }}
     >
       <Stack sx={{alignItems: "center", width: "30%"}}>
-        <MiniCardTextAndBtn
-          stackSx={{
-            width: {xs: "100%"},
-            minWidth: "300px",
-          }}
-          fisrtBtnText="IV"
-          text="Designers projects"
-          textSx={{marginY: "30px"}}
-          desc="We’re thankful to interior designers who use Viporte doors in their projects. We’re proud to present you our works!"
-        />
+        {data && (
+          <MiniCardTextAndBtn
+            stackSx={{
+              width: {xs: "100%"},
+              minWidth: "300px",
+            }}
+            fisrtBtnText="IV"
+            text={data.IComp.cardTextFirst.title}
+            textSx={{marginY: "30px"}}
+            desc={data.IComp.cardTextFirst.description}
+          />
+        )}
       </Stack>
       <Stack
         sx={{
@@ -78,28 +96,32 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
         >
           <Stack sx={{width: "50vw"}}>
             <ScrollParallax strength={isMobile ? 0.01 : 0.04}>
-              <Box
-                component="img"
-                src="https://picsum.photos/796/700"
-                sx={{
-                  width: "100%",
-                  height: svgHeight,
-                  objectFit: "cover",
-                }}
-              />
+              {data && (
+                <Box
+                  component="img"
+                  src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.letterImgLeft.data.attributes.url}`}
+                  sx={{
+                    width: "100%",
+                    height: svgHeight,
+                    objectFit: "cover",
+                  }}
+                />
+              )}
             </ScrollParallax>
           </Stack>
           <Stack sx={{width: "50vw"}}>
             <ScrollParallax strength={isMobile ? 0.02 : 0.08}>
-              <Box
-                component="img"
-                src="https://picsum.photos/795/700"
-                sx={{
-                  width: "100%",
-                  height: svgHeight,
-                  objectFit: "cover",
-                }}
-              />
+              {data && (
+                <Box
+                  component="img"
+                  src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.letterImgRight.data.attributes.url}`}
+                  sx={{
+                    width: "100%",
+                    height: svgHeight,
+                    objectFit: "cover",
+                  }}
+                />
+              )}
             </ScrollParallax>
           </Stack>
         </Stack>
@@ -125,16 +147,18 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
         >
           Quality
         </Typography>
-        <MiniTextCard
-          stackSx={{
-            width: {xs: "100%"},
-            textAlign: "center",
-            marginTop: "-40px",
-          }}
-          text="Warranty"
-          descSx={{textAlign: "justify"}}
-          desc="The company’s service department does mechanical works and warranty handling of Viporte products. Experts long-term experience and only professional equipment guarantees perfect quality and work exactitude."
-        />
+        {data && (
+          <MiniTextCard
+            stackSx={{
+              width: {xs: "100%"},
+              textAlign: "center",
+              marginTop: "-40px",
+            }}
+            text={data.IComp.cardTextSecond.title}
+            descSx={{textAlign: "justify"}}
+            desc={data.IComp.cardTextSecond.description}
+          />
+        )}
       </Stack>
       <Stack
         sx={{
@@ -144,25 +168,29 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
           margin: {xs: "30px 0", sm: "40px 0", lg: "80px 0"},
         }}
       >
-        <Box
-          component="img"
-          src="https://picsum.photos/280/350"
-          sx={{width: {md: "33%", xs: "48%"}, height: "auto"}}
-        />
-        <Box
-          component="img"
-          src="https://picsum.photos/281/350"
-          sx={{width: {md: "33%", xs: "48%"}, height: "auto"}}
-        />
-        <Box
-          component="img"
-          src="https://picsum.photos/282/350"
-          sx={{
-            width: "33%",
-            height: "auto",
-            display: {xs: "none", md: "block"},
-          }}
-        />
+        {data && (
+          <>
+            <Box
+              component="img"
+              src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.bottomImg1.data.attributes.url}`}
+              sx={{width: {md: "33%", xs: "48%"}, height: "auto"}}
+            />
+            <Box
+              component="img"
+              src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.bottomImg2.data.attributes.url}`}
+              sx={{width: {md: "33%", xs: "48%"}, height: "auto"}}
+            />
+            <Box
+              component="img"
+              src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.bottomImg3.data.attributes.url}`}
+              sx={{
+                width: "33%",
+                height: "auto",
+                display: {xs: "none", md: "block"},
+              }}
+            />
+          </>
+        )}
       </Stack>
     </Stack>
   );
