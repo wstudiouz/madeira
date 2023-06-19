@@ -36,6 +36,1317 @@ import {BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError} from "./base";
 /**
  *
  * @export
+ * @interface AboutComplexComponent
+ */
+export interface AboutComplexComponent {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutComplexComponent
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutComplexComponent
+   */
+  title?: string;
+  /**
+   *
+   * @type {AboutComplexComponentRightTopCard}
+   * @memberof AboutComplexComponent
+   */
+  rightTopCard?: AboutComplexComponentRightTopCard;
+  /**
+   *
+   * @type {AboutComplexComponentRightTopCard}
+   * @memberof AboutComplexComponent
+   */
+  rightBottomCard?: AboutComplexComponentRightTopCard;
+}
+/**
+ *
+ * @export
+ * @interface AboutComplexComponentRightTopCard
+ */
+export interface AboutComplexComponentRightTopCard {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutComplexComponentRightTopCard
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutComplexComponentRightTopCard
+   */
+  title?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutComplexComponentRightTopCard
+   */
+  description?: string;
+}
+/**
+ *
+ * @export
+ * @interface AboutHandWorkComponent
+ */
+export interface AboutHandWorkComponent {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHandWorkComponent
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHandWorkComponent
+   */
+  title?: string;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutHandWorkComponent
+   */
+  topImg?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutHandWorkComponent
+   */
+  bottomImg?: AboutHeroComponentImg1;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponent
+ */
+export interface AboutHeroComponent {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponent
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponent
+   */
+  title?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponent
+   */
+  text?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponent
+   */
+  desc?: string;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutHeroComponent
+   */
+  img1?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutHeroComponent
+   */
+  img2?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutHeroComponent
+   */
+  img3?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutHeroComponent
+   */
+  img4?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutHeroComponent
+   */
+  img5?: AboutHeroComponentImg1;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1
+ */
+export interface AboutHeroComponentImg1 {
+  /**
+   *
+   * @type {AboutHeroComponentImg1Data}
+   * @memberof AboutHeroComponentImg1
+   */
+  data?: AboutHeroComponentImg1Data;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1Data
+ */
+export interface AboutHeroComponentImg1Data {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1Data
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutHeroComponentImg1DataAttributes}
+   * @memberof AboutHeroComponentImg1Data
+   */
+  attributes?: AboutHeroComponentImg1DataAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1DataAttributes
+ */
+export interface AboutHeroComponentImg1DataAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  alternativeText?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  caption?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  width?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  height?: number;
+  /**
+   *
+   * @type {any}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  formats?: any;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  hash?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  ext?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  mime?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  size?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  url?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  previewUrl?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  provider?: string;
+  /**
+   *
+   * @type {any}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  provider_metadata?: any;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  related?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  /**
+   *
+   * @type {AboutHeroComponentImg1DataAttributesFolder}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  folder?: AboutHeroComponentImg1DataAttributesFolder;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  folderPath?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutHeroComponentImg1DataAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1DataAttributesFolder
+ */
+export interface AboutHeroComponentImg1DataAttributesFolder {
+  /**
+   *
+   * @type {AboutHeroComponentImg1DataAttributesFolderData}
+   * @memberof AboutHeroComponentImg1DataAttributesFolder
+   */
+  data?: AboutHeroComponentImg1DataAttributesFolderData;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1DataAttributesFolderData
+ */
+export interface AboutHeroComponentImg1DataAttributesFolderData {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderData
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutHeroComponentImg1DataAttributesFolderDataAttributes}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderData
+   */
+  attributes?: AboutHeroComponentImg1DataAttributesFolderDataAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1DataAttributesFolderDataAttributes
+ */
+export interface AboutHeroComponentImg1DataAttributesFolderDataAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  name?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  pathId?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  parent?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  children?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  /**
+   *
+   * @type {AboutHeroComponentImg1DataAttributesFolderDataAttributesFiles}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  files?: AboutHeroComponentImg1DataAttributesFolderDataAttributesFiles;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  path?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1DataAttributesFolderDataAttributesFiles
+ */
+export interface AboutHeroComponentImg1DataAttributesFolderDataAttributesFiles {
+  /**
+   *
+   * @type {Array<AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInner>}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFiles
+   */
+  data?: Array<AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInner>;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInner
+ */
+export interface AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInner {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInner
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInner
+   */
+  attributes?: AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+ */
+export interface AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  alternativeText?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  caption?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  width?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  height?: number;
+  /**
+   *
+   * @type {any}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  formats?: any;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  hash?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  ext?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  mime?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  size?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  url?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  previewUrl?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  provider?: string;
+  /**
+   *
+   * @type {any}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  provider_metadata?: any;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  related?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  folder?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  folderPath?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutHeroComponentImg1DataAttributesFolderDataAttributesFilesDataInnerAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponse
+ */
+export interface AboutPageListResponse {
+  /**
+   *
+   * @type {Array<AboutPageListResponseDataItem>}
+   * @memberof AboutPageListResponse
+   */
+  data?: Array<AboutPageListResponseDataItem>;
+  /**
+   *
+   * @type {AboutPageListResponseMeta}
+   * @memberof AboutPageListResponse
+   */
+  meta?: AboutPageListResponseMeta;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItem
+ */
+export interface AboutPageListResponseDataItem {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseDataItem
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributes}
+   * @memberof AboutPageListResponseDataItem
+   */
+  attributes?: AboutPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributes
+ */
+export interface AboutPageListResponseDataItemAttributes {
+  /**
+   *
+   * @type {AboutHeroComponent}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  Hero?: AboutHeroComponent;
+  /**
+   *
+   * @type {AboutComplexComponent}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  Complex?: AboutComplexComponent;
+  /**
+   *
+   * @type {AboutWarrantyComponent}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  Warranty?: AboutWarrantyComponent;
+  /**
+   *
+   * @type {AboutProductionComponent}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  Production?: AboutProductionComponent;
+  /**
+   *
+   * @type {AboutHandWorkComponent}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  HandWork?: AboutHandWorkComponent;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedBy
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedBy {
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByData}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedBy
+   */
+  data?: AboutPageListResponseDataItemAttributesCreatedByData;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByData
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByData {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByData
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributes}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByData
+   */
+  attributes?: AboutPageListResponseDataItemAttributesCreatedByDataAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  firstname?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  lastname?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  username?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  email?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  resetPasswordToken?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  registrationToken?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  isActive?: boolean;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRoles}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  roles?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRoles;
+  /**
+   *
+   * @type {boolean}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  blocked?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  preferedLanguage?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRoles
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRoles {
+  /**
+   *
+   * @type {Array<AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner>}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRoles
+   */
+  data?: Array<AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner>;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner
+   */
+  attributes?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  code?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  description?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  users?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  permissions?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions {
+  /**
+   *
+   * @type {Array<AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner>}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions
+   */
+  data?: Array<AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner>;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner
+   */
+  attributes?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  action?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  subject?: string;
+  /**
+   *
+   * @type {any}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  properties?: any;
+  /**
+   *
+   * @type {any}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  conditions?: any;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  role?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole {
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole
+   */
+  data?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers {
+  /**
+   *
+   * @type {Array<AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner>}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers
+   */
+  data?: Array<AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner>;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner
+ */
+export interface AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner
+   */
+  id?: number;
+  /**
+   *
+   * @type {object}
+   * @memberof AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner
+   */
+  attributes?: object;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseDataItemLocalized
+ */
+export interface AboutPageListResponseDataItemLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseDataItemLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributes}
+   * @memberof AboutPageListResponseDataItemLocalized
+   */
+  attributes?: AboutPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseMeta
+ */
+export interface AboutPageListResponseMeta {
+  /**
+   *
+   * @type {AboutPageListResponseMetaPagination}
+   * @memberof AboutPageListResponseMeta
+   */
+  pagination?: AboutPageListResponseMetaPagination;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageListResponseMetaPagination
+ */
+export interface AboutPageListResponseMetaPagination {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseMetaPagination
+   */
+  page?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseMetaPagination
+   */
+  pageSize?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseMetaPagination
+   */
+  pageCount?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageListResponseMetaPagination
+   */
+  total?: number;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageRequest
+ */
+export interface AboutPageRequest {
+  /**
+   *
+   * @type {AboutPageRequestData}
+   * @memberof AboutPageRequest
+   */
+  data: AboutPageRequestData;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageRequestData
+ */
+export interface AboutPageRequestData {
+  /**
+   *
+   * @type {AboutHeroComponent}
+   * @memberof AboutPageRequestData
+   */
+  Hero?: AboutHeroComponent;
+  /**
+   *
+   * @type {AboutComplexComponent}
+   * @memberof AboutPageRequestData
+   */
+  Complex?: AboutComplexComponent;
+  /**
+   *
+   * @type {AboutWarrantyComponent}
+   * @memberof AboutPageRequestData
+   */
+  Warranty?: AboutWarrantyComponent;
+  /**
+   *
+   * @type {AboutProductionComponent}
+   * @memberof AboutPageRequestData
+   */
+  Production?: AboutProductionComponent;
+  /**
+   *
+   * @type {AboutHandWorkComponent}
+   * @memberof AboutPageRequestData
+   */
+  HandWork?: AboutHandWorkComponent;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageResponse
+ */
+export interface AboutPageResponse {
+  /**
+   *
+   * @type {AboutPageResponseDataObject}
+   * @memberof AboutPageResponse
+   */
+  data?: AboutPageResponseDataObject;
+  /**
+   *
+   * @type {object}
+   * @memberof AboutPageResponse
+   */
+  meta?: object;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageResponseDataObject
+ */
+export interface AboutPageResponseDataObject {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageResponseDataObject
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributes}
+   * @memberof AboutPageResponseDataObject
+   */
+  attributes?: AboutPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutPageResponseDataObjectLocalized
+ */
+export interface AboutPageResponseDataObjectLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutPageResponseDataObjectLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributes}
+   * @memberof AboutPageResponseDataObjectLocalized
+   */
+  attributes?: AboutPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface AboutProductionComponent
+ */
+export interface AboutProductionComponent {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutProductionComponent
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutProductionComponent
+   */
+  title?: string;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutProductionComponent
+   */
+  img1?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutProductionComponent
+   */
+  img2?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {AboutComplexComponentRightTopCard}
+   * @memberof AboutProductionComponent
+   */
+  factory?: AboutComplexComponentRightTopCard;
+}
+/**
+ *
+ * @export
+ * @interface AboutWarrantyComponent
+ */
+export interface AboutWarrantyComponent {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutWarrantyComponent
+   */
+  id?: number;
+  /**
+   *
+   * @type {AboutComplexComponentRightTopCard}
+   * @memberof AboutWarrantyComponent
+   */
+  warranty?: AboutComplexComponentRightTopCard;
+  /**
+   *
+   * @type {AboutWarrantyComponentSupCard}
+   * @memberof AboutWarrantyComponent
+   */
+  supCard?: AboutWarrantyComponentSupCard;
+  /**
+   *
+   * @type {AboutWarrantyComponentSupCard}
+   * @memberof AboutWarrantyComponent
+   */
+  supCard2?: AboutWarrantyComponentSupCard;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof AboutWarrantyComponent
+   */
+  warrantyYearBg?: AboutHeroComponentImg1;
+}
+/**
+ *
+ * @export
+ * @interface AboutWarrantyComponentSupCard
+ */
+export interface AboutWarrantyComponentSupCard {
+  /**
+   *
+   * @type {number}
+   * @memberof AboutWarrantyComponentSupCard
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutWarrantyComponentSupCard
+   */
+  text?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AboutWarrantyComponentSupCard
+   */
+  desc?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof AboutWarrantyComponentSupCard
+   */
+  sup?: number;
+}
+/**
+ *
+ * @export
  * @interface AuthChangePasswordPostRequest
  */
 export interface AuthChangePasswordPostRequest {
@@ -168,6 +1479,474 @@ export type AuthSendEmailConfirmationPost200ResponseSentEnum =
   (typeof AuthSendEmailConfirmationPost200ResponseSentEnum)[keyof typeof AuthSendEmailConfirmationPost200ResponseSentEnum];
 
 /**
+ *
+ * @export
+ * @interface CatalogueListResponse
+ */
+export interface CatalogueListResponse {
+  /**
+   *
+   * @type {Array<CatalogueListResponseDataItem>}
+   * @memberof CatalogueListResponse
+   */
+  data?: Array<CatalogueListResponseDataItem>;
+  /**
+   *
+   * @type {AboutPageListResponseMeta}
+   * @memberof CatalogueListResponse
+   */
+  meta?: AboutPageListResponseMeta;
+}
+/**
+ *
+ * @export
+ * @interface CatalogueListResponseDataItem
+ */
+export interface CatalogueListResponseDataItem {
+  /**
+   *
+   * @type {number}
+   * @memberof CatalogueListResponseDataItem
+   */
+  id?: number;
+  /**
+   *
+   * @type {CatalogueListResponseDataItemAttributes}
+   * @memberof CatalogueListResponseDataItem
+   */
+  attributes?: CatalogueListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CatalogueListResponseDataItemAttributes
+ */
+export interface CatalogueListResponseDataItemAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  img?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {string}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  price?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof CatalogueListResponseDataItemAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface CatalogueListResponseDataItemLocalized
+ */
+export interface CatalogueListResponseDataItemLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof CatalogueListResponseDataItemLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {CatalogueListResponseDataItemAttributes}
+   * @memberof CatalogueListResponseDataItemLocalized
+   */
+  attributes?: CatalogueListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CatalogueRequest
+ */
+export interface CatalogueRequest {
+  /**
+   *
+   * @type {CatalogueRequestData}
+   * @memberof CatalogueRequest
+   */
+  data: CatalogueRequestData;
+}
+/**
+ *
+ * @export
+ * @interface CatalogueRequestData
+ */
+export interface CatalogueRequestData {
+  /**
+   *
+   * @type {string}
+   * @memberof CatalogueRequestData
+   */
+  title?: string;
+  /**
+   *
+   * @type {CatalogueRequestDataImg}
+   * @memberof CatalogueRequestData
+   */
+  img?: CatalogueRequestDataImg;
+  /**
+   *
+   * @type {string}
+   * @memberof CatalogueRequestData
+   */
+  price?: string;
+}
+/**
+ * @type CatalogueRequestDataImg
+ * @export
+ */
+export type CatalogueRequestDataImg = number | string;
+
+/**
+ *
+ * @export
+ * @interface CatalogueResponse
+ */
+export interface CatalogueResponse {
+  /**
+   *
+   * @type {CatalogueResponseDataObject}
+   * @memberof CatalogueResponse
+   */
+  data?: CatalogueResponseDataObject;
+  /**
+   *
+   * @type {object}
+   * @memberof CatalogueResponse
+   */
+  meta?: object;
+}
+/**
+ *
+ * @export
+ * @interface CatalogueResponseDataObject
+ */
+export interface CatalogueResponseDataObject {
+  /**
+   *
+   * @type {number}
+   * @memberof CatalogueResponseDataObject
+   */
+  id?: number;
+  /**
+   *
+   * @type {CatalogueListResponseDataItemAttributes}
+   * @memberof CatalogueResponseDataObject
+   */
+  attributes?: CatalogueListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CatalogueResponseDataObjectLocalized
+ */
+export interface CatalogueResponseDataObjectLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof CatalogueResponseDataObjectLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {CatalogueListResponseDataItemAttributes}
+   * @memberof CatalogueResponseDataObjectLocalized
+   */
+  attributes?: CatalogueListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageListResponse
+ */
+export interface ContactPageListResponse {
+  /**
+   *
+   * @type {Array<ContactPageListResponseDataItem>}
+   * @memberof ContactPageListResponse
+   */
+  data?: Array<ContactPageListResponseDataItem>;
+  /**
+   *
+   * @type {AboutPageListResponseMeta}
+   * @memberof ContactPageListResponse
+   */
+  meta?: AboutPageListResponseMeta;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageListResponseDataItem
+ */
+export interface ContactPageListResponseDataItem {
+  /**
+   *
+   * @type {number}
+   * @memberof ContactPageListResponseDataItem
+   */
+  id?: number;
+  /**
+   *
+   * @type {ContactPageListResponseDataItemAttributes}
+   * @memberof ContactPageListResponseDataItem
+   */
+  attributes?: ContactPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageListResponseDataItemAttributes
+ */
+export interface ContactPageListResponseDataItemAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  email?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  phone?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  phoneLabel?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  moreText?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  moreDesc?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  phoneText?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageListResponseDataItemLocalized
+ */
+export interface ContactPageListResponseDataItemLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof ContactPageListResponseDataItemLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {ContactPageListResponseDataItemAttributes}
+   * @memberof ContactPageListResponseDataItemLocalized
+   */
+  attributes?: ContactPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageRequest
+ */
+export interface ContactPageRequest {
+  /**
+   *
+   * @type {ContactPageRequestData}
+   * @memberof ContactPageRequest
+   */
+  data: ContactPageRequestData;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageRequestData
+ */
+export interface ContactPageRequestData {
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  email: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  phone: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  phoneLabel: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  moreText: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  moreDesc: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  title: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  phoneText: string;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageResponse
+ */
+export interface ContactPageResponse {
+  /**
+   *
+   * @type {ContactPageResponseDataObject}
+   * @memberof ContactPageResponse
+   */
+  data?: ContactPageResponseDataObject;
+  /**
+   *
+   * @type {object}
+   * @memberof ContactPageResponse
+   */
+  meta?: object;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageResponseDataObject
+ */
+export interface ContactPageResponseDataObject {
+  /**
+   *
+   * @type {number}
+   * @memberof ContactPageResponseDataObject
+   */
+  id?: number;
+  /**
+   *
+   * @type {ContactPageListResponseDataItemAttributes}
+   * @memberof ContactPageResponseDataObject
+   */
+  attributes?: ContactPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface ContactPageResponseDataObjectLocalized
+ */
+export interface ContactPageResponseDataObjectLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof ContactPageResponseDataObjectLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {ContactPageListResponseDataItemAttributes}
+   * @memberof ContactPageResponseDataObjectLocalized
+   */
+  attributes?: ContactPageListResponseDataItemAttributes;
+}
+/**
  * @type ErrorData
  * @export
  */
@@ -218,16 +1997,16 @@ export interface HomeACompComponent {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentCardText}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeACompComponent
    */
-  cardText?: HomeACompComponentCardText;
+  cardText?: AboutComplexComponentRightTopCard;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeACompComponent
    */
-  image?: HomeACompComponentImage;
+  image?: AboutHeroComponentImg1;
   /**
    *
    * @type {HomeACompComponentButton}
@@ -236,10 +2015,10 @@ export interface HomeACompComponent {
   button?: HomeACompComponentButton;
   /**
    *
-   * @type {Array<HomeACompComponentCardText>}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeACompComponent
    */
-  rightText?: Array<HomeACompComponentCardText>;
+  rightText?: AboutComplexComponentRightTopCard;
 }
 /**
  *
@@ -269,460 +2048,6 @@ export interface HomeACompComponentButton {
 /**
  *
  * @export
- * @interface HomeACompComponentCardText
- */
-export interface HomeACompComponentCardText {
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentCardText
-   */
-  id?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentCardText
-   */
-  title?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentCardText
-   */
-  description?: string;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImage
- */
-export interface HomeACompComponentImage {
-  /**
-   *
-   * @type {HomeACompComponentImageData}
-   * @memberof HomeACompComponentImage
-   */
-  data?: HomeACompComponentImageData;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageData
- */
-export interface HomeACompComponentImageData {
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageData
-   */
-  id?: number;
-  /**
-   *
-   * @type {HomeACompComponentImageDataAttributes}
-   * @memberof HomeACompComponentImageData
-   */
-  attributes?: HomeACompComponentImageDataAttributes;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageDataAttributes
- */
-export interface HomeACompComponentImageDataAttributes {
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  alternativeText?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  caption?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  width?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  height?: number;
-  /**
-   *
-   * @type {any}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  formats?: any;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  hash?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  ext?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  mime?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  size?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  url?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  previewUrl?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  provider?: string;
-  /**
-   *
-   * @type {any}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  provider_metadata?: any;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  related?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
-  /**
-   *
-   * @type {HomeACompComponentImageDataAttributesFolder}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  folder?: HomeACompComponentImageDataAttributesFolder;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  folderPath?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  createdAt?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  updatedAt?: string;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomeACompComponentImageDataAttributes
-   */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageDataAttributesFolder
- */
-export interface HomeACompComponentImageDataAttributesFolder {
-  /**
-   *
-   * @type {HomeACompComponentImageDataAttributesFolderData}
-   * @memberof HomeACompComponentImageDataAttributesFolder
-   */
-  data?: HomeACompComponentImageDataAttributesFolderData;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageDataAttributesFolderData
- */
-export interface HomeACompComponentImageDataAttributesFolderData {
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributesFolderData
-   */
-  id?: number;
-  /**
-   *
-   * @type {HomeACompComponentImageDataAttributesFolderDataAttributes}
-   * @memberof HomeACompComponentImageDataAttributesFolderData
-   */
-  attributes?: HomeACompComponentImageDataAttributesFolderDataAttributes;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageDataAttributesFolderDataAttributes
- */
-export interface HomeACompComponentImageDataAttributesFolderDataAttributes {
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  name?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  pathId?: number;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  parent?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  children?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
-  /**
-   *
-   * @type {HomeACompComponentImageDataAttributesFolderDataAttributesFiles}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  files?: HomeACompComponentImageDataAttributesFolderDataAttributesFiles;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  path?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  createdAt?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  updatedAt?: string;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributes
-   */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageDataAttributesFolderDataAttributesFiles
- */
-export interface HomeACompComponentImageDataAttributesFolderDataAttributesFiles {
-  /**
-   *
-   * @type {Array<HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInner>}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFiles
-   */
-  data?: Array<HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInner>;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInner
- */
-export interface HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInner {
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInner
-   */
-  id?: number;
-  /**
-   *
-   * @type {HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInner
-   */
-  attributes?: HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes;
-}
-/**
- *
- * @export
- * @interface HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
- */
-export interface HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes {
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  alternativeText?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  caption?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  width?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  height?: number;
-  /**
-   *
-   * @type {any}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  formats?: any;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  hash?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  ext?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  mime?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  size?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  url?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  previewUrl?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  provider?: string;
-  /**
-   *
-   * @type {any}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  provider_metadata?: any;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  related?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  folder?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  folderPath?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  createdAt?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  updatedAt?: string;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedBy}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedBy;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomeACompComponentImageDataAttributesFolderDataAttributesFilesDataInnerAttributes
-   */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-}
-/**
- *
- * @export
  * @interface HomeDcompComponent
  */
 export interface HomeDcompComponent {
@@ -734,10 +2059,10 @@ export interface HomeDcompComponent {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentCardText}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeDcompComponent
    */
-  cardText?: HomeACompComponentCardText;
+  cardText?: AboutComplexComponentRightTopCard;
   /**
    *
    * @type {HomeACompComponentButton}
@@ -746,22 +2071,22 @@ export interface HomeDcompComponent {
   button?: HomeACompComponentButton;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeDcompComponent
    */
-  letterImg?: HomeACompComponentImage;
+  letterImg?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeDcompComponent
    */
-  firstImg?: HomeACompComponentImage;
+  firstImg?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeDcompComponent
    */
-  secondImg?: HomeACompComponentImage;
+  secondImg?: AboutHeroComponentImg1;
 }
 /**
  *
@@ -777,16 +2102,16 @@ export interface HomeECompComponent {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeECompComponent
    */
-  leftImg?: HomeACompComponentImage;
+  leftImg?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentCardText}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeECompComponent
    */
-  cardText?: HomeACompComponentCardText;
+  cardText?: AboutComplexComponentRightTopCard;
   /**
    *
    * @type {HomeACompComponentButton}
@@ -795,10 +2120,10 @@ export interface HomeECompComponent {
   button?: HomeACompComponentButton;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeECompComponent
    */
-  letterImg?: HomeACompComponentImage;
+  letterImg?: AboutHeroComponentImg1;
 }
 /**
  *
@@ -814,52 +2139,77 @@ export interface HomeICompComponent {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeICompComponent
    */
-  letterImgLeft?: HomeACompComponentImage;
+  letterImgLeft?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeICompComponent
    */
-  letterImgRight?: HomeACompComponentImage;
+  letterImgRight?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentCardText}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeICompComponent
    */
-  cardTextFirst?: HomeACompComponentCardText;
+  cardTextFirst?: AboutComplexComponentRightTopCard;
   /**
    *
-   * @type {HomeACompComponentCardText}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeICompComponent
    */
-  cardTextSecond?: HomeACompComponentCardText;
+  cardTextSecond?: AboutComplexComponentRightTopCard;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeICompComponent
    */
-  bottomImg1?: HomeACompComponentImage;
+  bottomImg1?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeICompComponent
    */
-  bottomImg2?: HomeACompComponentImage;
+  bottomImg2?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeICompComponent
    */
-  bottomImg3?: HomeACompComponentImage;
+  bottomImg3?: AboutHeroComponentImg1;
+}
+/**
+ *
+ * @export
+ * @interface HomeLetterComponent
+ */
+export interface HomeLetterComponent {
   /**
    *
-   * @type {HomeACompComponentButton}
-   * @memberof HomeICompComponent
+   * @type {number}
+   * @memberof HomeLetterComponent
    */
-  button?: HomeACompComponentButton;
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof HomeLetterComponent
+   */
+  over?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof HomeLetterComponent
+   */
+  text?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof HomeLetterComponent
+   */
+  shortKey?: string;
 }
 /**
  *
@@ -875,10 +2225,10 @@ export interface HomePageListResponse {
   data?: Array<HomePageListResponseDataItem>;
   /**
    *
-   * @type {HomePageListResponseMeta}
+   * @type {AboutPageListResponseMeta}
    * @memberof HomePageListResponse
    */
-  meta?: HomePageListResponseMeta;
+  meta?: AboutPageListResponseMeta;
 }
 /**
  *
@@ -943,6 +2293,12 @@ export interface HomePageListResponseDataItemAttributes {
   SecondAComp?: HomeSecondACompComponent;
   /**
    *
+   * @type {Array<HomeLetterComponent>}
+   * @memberof HomePageListResponseDataItemAttributes
+   */
+  Letters?: Array<HomeLetterComponent>;
+  /**
+   *
    * @type {string}
    * @memberof HomePageListResponseDataItemAttributes
    */
@@ -961,370 +2317,16 @@ export interface HomePageListResponseDataItemAttributes {
   publishedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedBy}
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
    * @memberof HomePageListResponseDataItemAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedBy;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof HomePageListResponseDataItemAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedBy
- */
-export interface HomePageListResponseDataItemAttributesCreatedBy {
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByData}
-   * @memberof HomePageListResponseDataItemAttributesCreatedBy
-   */
-  data?: HomePageListResponseDataItemAttributesCreatedByData;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByData
- */
-export interface HomePageListResponseDataItemAttributesCreatedByData {
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByData
-   */
-  id?: number;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributes}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByData
-   */
-  attributes?: HomePageListResponseDataItemAttributesCreatedByDataAttributes;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributes
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributes {
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  firstname?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  lastname?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  username?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  email?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  resetPasswordToken?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  registrationToken?: string;
-  /**
-   *
-   * @type {boolean}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  isActive?: boolean;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRoles}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  roles?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRoles;
-  /**
-   *
-   * @type {boolean}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  blocked?: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  preferedLanguage?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  createdAt?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  updatedAt?: string;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributes
-   */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRoles
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRoles {
-  /**
-   *
-   * @type {Array<HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner>}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRoles
-   */
-  data?: Array<HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner>;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner {
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner
-   */
-  id?: number;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInner
-   */
-  attributes?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes {
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  code?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  description?: string;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  users?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  permissions?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  createdAt?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  updatedAt?: string;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributes
-   */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions {
-  /**
-   *
-   * @type {Array<HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner>}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissions
-   */
-  data?: Array<HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner>;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner {
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner
-   */
-  id?: number;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInner
-   */
-  attributes?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes {
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  action?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  subject?: string;
-  /**
-   *
-   * @type {any}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  properties?: any;
-  /**
-   *
-   * @type {any}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  conditions?: any;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  role?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  createdAt?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  updatedAt?: string;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributes
-   */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole {
-  /**
-   *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole
-   */
-  data?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers {
-  /**
-   *
-   * @type {Array<HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner>}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers
-   */
-  data?: Array<HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner>;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner
- */
-export interface HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner {
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner
-   */
-  id?: number;
-  /**
-   *
-   * @type {object}
-   * @memberof HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsersDataInner
-   */
-  attributes?: object;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -1344,50 +2346,6 @@ export interface HomePageListResponseDataItemLocalized {
    * @memberof HomePageListResponseDataItemLocalized
    */
   attributes?: HomePageListResponseDataItemAttributes;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseMeta
- */
-export interface HomePageListResponseMeta {
-  /**
-   *
-   * @type {HomePageListResponseMetaPagination}
-   * @memberof HomePageListResponseMeta
-   */
-  pagination?: HomePageListResponseMetaPagination;
-}
-/**
- *
- * @export
- * @interface HomePageListResponseMetaPagination
- */
-export interface HomePageListResponseMetaPagination {
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseMetaPagination
-   */
-  page?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseMetaPagination
-   */
-  pageSize?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseMetaPagination
-   */
-  pageCount?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof HomePageListResponseMetaPagination
-   */
-  total?: number;
 }
 /**
  *
@@ -1444,6 +2402,12 @@ export interface HomePageRequestData {
    * @memberof HomePageRequestData
    */
   SecondAComp?: HomeSecondACompComponent;
+  /**
+   *
+   * @type {Array<HomeLetterComponent>}
+   * @memberof HomePageRequestData
+   */
+  Letters: Array<HomeLetterComponent>;
 }
 /**
  *
@@ -1516,28 +2480,28 @@ export interface HomeRCompComponent {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeRCompComponent
    */
-  rightImg1?: HomeACompComponentImage;
+  rightImg1?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeRCompComponent
    */
-  rightImg2?: HomeACompComponentImage;
+  rightImg2?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeRCompComponent
    */
-  letterImg?: HomeACompComponentImage;
+  letterImg?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentCardText}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeRCompComponent
    */
-  cardText?: HomeACompComponentCardText;
+  cardText?: AboutComplexComponentRightTopCard;
 }
 /**
  *
@@ -1553,28 +2517,28 @@ export interface HomeSecondACompComponent {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeSecondACompComponent
    */
-  leftImg1?: HomeACompComponentImage;
+  leftImg1?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeSecondACompComponent
    */
-  leftImg2?: HomeACompComponentImage;
+  leftImg2?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentImage}
+   * @type {AboutHeroComponentImg1}
    * @memberof HomeSecondACompComponent
    */
-  leftImg3?: HomeACompComponentImage;
+  leftImg3?: AboutHeroComponentImg1;
   /**
    *
-   * @type {HomeACompComponentCardText}
+   * @type {AboutComplexComponentRightTopCard}
    * @memberof HomeSecondACompComponent
    */
-  cardText?: HomeACompComponentCardText;
+  cardText?: AboutComplexComponentRightTopCard;
 }
 /**
  *
@@ -1609,10 +2573,10 @@ export interface UploadFileListResponse {
   data?: Array<UploadFileListResponseDataItem>;
   /**
    *
-   * @type {HomePageListResponseMeta}
+   * @type {AboutPageListResponseMeta}
    * @memberof UploadFileListResponse
    */
-  meta?: HomePageListResponseMeta;
+  meta?: AboutPageListResponseMeta;
 }
 /**
  *
@@ -1628,10 +2592,10 @@ export interface UploadFileListResponseDataItem {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImageDataAttributes}
+   * @type {AboutHeroComponentImg1DataAttributes}
    * @memberof UploadFileListResponseDataItem
    */
-  attributes?: HomeACompComponentImageDataAttributes;
+  attributes?: AboutHeroComponentImg1DataAttributes;
 }
 /**
  *
@@ -1647,10 +2611,10 @@ export interface UploadFileListResponseDataItemLocalized {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImageDataAttributes}
+   * @type {AboutHeroComponentImg1DataAttributes}
    * @memberof UploadFileListResponseDataItemLocalized
    */
-  attributes?: HomeACompComponentImageDataAttributes;
+  attributes?: AboutHeroComponentImg1DataAttributes;
 }
 /**
  *
@@ -1757,16 +2721,16 @@ export interface UploadFileRequestData {
   provider_metadata?: any;
   /**
    *
-   * @type {Array<UploadFileRequestDataRelatedInner>}
+   * @type {Array<CatalogueRequestDataImg>}
    * @memberof UploadFileRequestData
    */
-  related?: Array<UploadFileRequestDataRelatedInner>;
+  related?: Array<CatalogueRequestDataImg>;
   /**
    *
-   * @type {UploadFileRequestDataRelatedInner}
+   * @type {CatalogueRequestDataImg}
    * @memberof UploadFileRequestData
    */
-  folder?: UploadFileRequestDataRelatedInner;
+  folder?: CatalogueRequestDataImg;
   /**
    *
    * @type {string}
@@ -1774,12 +2738,6 @@ export interface UploadFileRequestData {
    */
   folderPath: string;
 }
-/**
- * @type UploadFileRequestDataRelatedInner
- * @export
- */
-export type UploadFileRequestDataRelatedInner = number | string;
-
 /**
  *
  * @export
@@ -1813,10 +2771,10 @@ export interface UploadFileResponseDataObject {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImageDataAttributes}
+   * @type {AboutHeroComponentImg1DataAttributes}
    * @memberof UploadFileResponseDataObject
    */
-  attributes?: HomeACompComponentImageDataAttributes;
+  attributes?: AboutHeroComponentImg1DataAttributes;
 }
 /**
  *
@@ -1832,10 +2790,10 @@ export interface UploadFileResponseDataObjectLocalized {
   id?: number;
   /**
    *
-   * @type {HomeACompComponentImageDataAttributes}
+   * @type {AboutHeroComponentImg1DataAttributes}
    * @memberof UploadFileResponseDataObjectLocalized
    */
-  attributes?: HomeACompComponentImageDataAttributes;
+  attributes?: AboutHeroComponentImg1DataAttributes;
 }
 /**
  *
@@ -1851,10 +2809,10 @@ export interface UploadFolderListResponse {
   data?: Array<UploadFolderListResponseDataItem>;
   /**
    *
-   * @type {HomePageListResponseMeta}
+   * @type {AboutPageListResponseMeta}
    * @memberof UploadFolderListResponse
    */
-  meta?: HomePageListResponseMeta;
+  meta?: AboutPageListResponseMeta;
 }
 /**
  *
@@ -1895,22 +2853,22 @@ export interface UploadFolderListResponseDataItemAttributes {
   pathId?: number;
   /**
    *
-   * @type {HomeACompComponentImageDataAttributesFolder}
+   * @type {AboutHeroComponentImg1DataAttributesFolder}
    * @memberof UploadFolderListResponseDataItemAttributes
    */
-  parent?: HomeACompComponentImageDataAttributesFolder;
+  parent?: AboutHeroComponentImg1DataAttributesFolder;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
    * @memberof UploadFolderListResponseDataItemAttributes
    */
-  children?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  children?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
    * @memberof UploadFolderListResponseDataItemAttributes
    */
-  files?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  files?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
   /**
    *
    * @type {string}
@@ -1931,16 +2889,16 @@ export interface UploadFolderListResponseDataItemAttributes {
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UploadFolderListResponseDataItemAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UploadFolderListResponseDataItemAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -1994,22 +2952,22 @@ export interface UploadFolderRequestData {
   pathId: number;
   /**
    *
-   * @type {UploadFileRequestDataRelatedInner}
+   * @type {CatalogueRequestDataImg}
    * @memberof UploadFolderRequestData
    */
-  parent?: UploadFileRequestDataRelatedInner;
+  parent?: CatalogueRequestDataImg;
   /**
    *
-   * @type {Array<UploadFileRequestDataRelatedInner>}
+   * @type {Array<CatalogueRequestDataImg>}
    * @memberof UploadFolderRequestData
    */
-  children?: Array<UploadFileRequestDataRelatedInner>;
+  children?: Array<CatalogueRequestDataImg>;
   /**
    *
-   * @type {Array<UploadFileRequestDataRelatedInner>}
+   * @type {Array<CatalogueRequestDataImg>}
    * @memberof UploadFolderRequestData
    */
-  files?: Array<UploadFileRequestDataRelatedInner>;
+  files?: Array<CatalogueRequestDataImg>;
   /**
    *
    * @type {string}
@@ -2143,10 +3101,10 @@ export interface UsersPermissionsPermissionListResponse {
   data?: Array<UsersPermissionsPermissionListResponseDataItem>;
   /**
    *
-   * @type {HomePageListResponseMeta}
+   * @type {AboutPageListResponseMeta}
    * @memberof UsersPermissionsPermissionListResponse
    */
-  meta?: HomePageListResponseMeta;
+  meta?: AboutPageListResponseMeta;
 }
 /**
  *
@@ -2199,16 +3157,16 @@ export interface UsersPermissionsPermissionListResponseDataItemAttributes {
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -2292,16 +3250,16 @@ export interface UsersPermissionsPermissionListResponseDataItemAttributesRoleDat
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -2349,10 +3307,10 @@ export interface UsersPermissionsPermissionListResponseDataItemAttributesRoleDat
   action?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributesPermissionsDataInnerAttributes
    */
-  role?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  role?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
    * @type {string}
@@ -2367,16 +3325,16 @@ export interface UsersPermissionsPermissionListResponseDataItemAttributesRoleDat
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedBy}
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributesPermissionsDataInnerAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedBy;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributesPermissionsDataInnerAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -2460,10 +3418,10 @@ export interface UsersPermissionsPermissionListResponseDataItemAttributesRoleDat
   blocked?: boolean;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributesUsersDataInnerAttributes
    */
-  role?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  role?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
    * @type {string}
@@ -2478,16 +3436,16 @@ export interface UsersPermissionsPermissionListResponseDataItemAttributesRoleDat
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributesUsersDataInnerAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsPermissionListResponseDataItemAttributesRoleDataAttributesUsersDataInnerAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -2535,10 +3493,10 @@ export interface UsersPermissionsPermissionRequestData {
   action: string;
   /**
    *
-   * @type {UploadFileRequestDataRelatedInner}
+   * @type {CatalogueRequestDataImg}
    * @memberof UsersPermissionsPermissionRequestData
    */
-  role?: UploadFileRequestDataRelatedInner;
+  role?: CatalogueRequestDataImg;
 }
 /**
  *
@@ -2703,10 +3661,10 @@ export interface UsersPermissionsRoleListResponse {
   data?: Array<UsersPermissionsRoleListResponseDataItem>;
   /**
    *
-   * @type {HomePageListResponseMeta}
+   * @type {AboutPageListResponseMeta}
    * @memberof UsersPermissionsRoleListResponse
    */
-  meta?: HomePageListResponseMeta;
+  meta?: AboutPageListResponseMeta;
 }
 /**
  *
@@ -2759,10 +3717,10 @@ export interface UsersPermissionsRoleListResponseDataItemAttributes {
   permissions?: UsersPermissionsRoleListResponseDataItemAttributesPermissions;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributes
    */
-  users?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  users?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
   /**
    *
    * @type {string}
@@ -2777,16 +3735,16 @@ export interface UsersPermissionsRoleListResponseDataItemAttributes {
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -2852,16 +3810,16 @@ export interface UsersPermissionsRoleListResponseDataItemAttributesPermissionsDa
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -2921,10 +3879,10 @@ export interface UsersPermissionsRoleListResponseDataItemAttributesPermissionsDa
   type?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributesRoleDataAttributes
    */
-  permissions?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  permissions?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
   /**
    *
    * @type {UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributesRoleDataAttributesUsers}
@@ -2945,16 +3903,16 @@ export interface UsersPermissionsRoleListResponseDataItemAttributesPermissionsDa
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributesRoleDataAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributesRoleDataAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -3038,10 +3996,10 @@ export interface UsersPermissionsRoleListResponseDataItemAttributesPermissionsDa
   blocked?: boolean;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributesRoleDataAttributesUsersDataInnerAttributes
    */
-  role?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  role?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
    * @type {string}
@@ -3056,16 +4014,16 @@ export interface UsersPermissionsRoleListResponseDataItemAttributesPermissionsDa
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedBy}
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributesRoleDataAttributesUsersDataInnerAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedBy;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsRoleListResponseDataItemAttributesPermissionsDataInnerAttributesRoleDataAttributesUsersDataInnerAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -3125,16 +4083,16 @@ export interface UsersPermissionsRoleRequestData {
   type?: string;
   /**
    *
-   * @type {Array<UploadFileRequestDataRelatedInner>}
+   * @type {Array<CatalogueRequestDataImg>}
    * @memberof UsersPermissionsRoleRequestData
    */
-  permissions?: Array<UploadFileRequestDataRelatedInner>;
+  permissions?: Array<CatalogueRequestDataImg>;
   /**
    *
-   * @type {Array<UploadFileRequestDataRelatedInner>}
+   * @type {Array<CatalogueRequestDataImg>}
    * @memberof UsersPermissionsRoleRequestData
    */
-  users?: Array<UploadFileRequestDataRelatedInner>;
+  users?: Array<CatalogueRequestDataImg>;
 }
 /**
  *
@@ -3402,10 +4360,10 @@ export interface UsersPermissionsUserListResponse {
   data?: Array<UsersPermissionsUserListResponseDataItem>;
   /**
    *
-   * @type {HomePageListResponseMeta}
+   * @type {AboutPageListResponseMeta}
    * @memberof UsersPermissionsUserListResponse
    */
-  meta?: HomePageListResponseMeta;
+  meta?: AboutPageListResponseMeta;
 }
 /**
  *
@@ -3494,16 +4452,16 @@ export interface UsersPermissionsUserListResponseDataItemAttributes {
   updatedAt?: string;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsUserListResponseDataItemAttributes
    */
-  createdBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
   /**
    *
-   * @type {HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
    * @memberof UsersPermissionsUserListResponseDataItemAttributes
    */
-  updatedBy?: HomePageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
 }
 /**
  *
@@ -3612,10 +4570,10 @@ export interface UsersPermissionsUserRequestData {
   blocked?: boolean;
   /**
    *
-   * @type {UploadFileRequestDataRelatedInner}
+   * @type {CatalogueRequestDataImg}
    * @memberof UsersPermissionsUserRequestData
    */
-  role?: UploadFileRequestDataRelatedInner;
+  role?: CatalogueRequestDataImg;
 }
 /**
  *
@@ -3759,6 +4717,1694 @@ export interface UsersPostRequest {
    * @memberof UsersPostRequest
    */
   password: string;
+}
+
+/**
+ * AboutPageApi - axios parameter creator
+ * @export
+ */
+export const AboutPageApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
+  return {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAboutPage: async (
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/about-page`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "DELETE",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAboutPage: async (
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/about-page`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      if (sort !== undefined) {
+        localVarQueryParameter["sort"] = sort;
+      }
+
+      if (paginationWithCount !== undefined) {
+        localVarQueryParameter["pagination[withCount]"] = paginationWithCount;
+      }
+
+      if (paginationPage !== undefined) {
+        localVarQueryParameter["pagination[page]"] = paginationPage;
+      }
+
+      if (paginationPageSize !== undefined) {
+        localVarQueryParameter["pagination[pageSize]"] = paginationPageSize;
+      }
+
+      if (paginationStart !== undefined) {
+        localVarQueryParameter["pagination[start]"] = paginationStart;
+      }
+
+      if (paginationLimit !== undefined) {
+        localVarQueryParameter["pagination[limit]"] = paginationLimit;
+      }
+
+      if (fields !== undefined) {
+        localVarQueryParameter["fields"] = fields;
+      }
+
+      if (populate !== undefined) {
+        localVarQueryParameter["populate"] = populate;
+      }
+
+      if (filters !== undefined) {
+        localVarQueryParameter["filters"] = filters;
+      }
+
+      if (locale !== undefined) {
+        localVarQueryParameter["locale"] = locale;
+      }
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {AboutPageRequest} aboutPageRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putAboutPage: async (
+      aboutPageRequest: AboutPageRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'aboutPageRequest' is not null or undefined
+      assertParamExists("putAboutPage", "aboutPageRequest", aboutPageRequest);
+      const localVarPath = `/about-page`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "PUT",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        aboutPageRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+  };
+};
+
+/**
+ * AboutPageApi - functional programming interface
+ * @export
+ */
+export const AboutPageApiFp = function (configuration?: Configuration) {
+  const localVarAxiosParamCreator =
+    AboutPageApiAxiosParamCreator(configuration);
+  return {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async deleteAboutPage(
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAboutPage(
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getAboutPage(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<AboutPageListResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getAboutPage(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {AboutPageRequest} aboutPageRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async putAboutPage(
+      aboutPageRequest: AboutPageRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<AboutPageResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.putAboutPage(
+        aboutPageRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+  };
+};
+
+/**
+ * AboutPageApi - factory interface
+ * @export
+ */
+export const AboutPageApiFactory = function (
+  configuration?: Configuration,
+  basePath?: string,
+  axios?: AxiosInstance
+) {
+  const localVarFp = AboutPageApiFp(configuration);
+  return {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAboutPage(options?: any): AxiosPromise<number> {
+      return localVarFp
+        .deleteAboutPage(options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAboutPage(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: any
+    ): AxiosPromise<AboutPageListResponse> {
+      return localVarFp
+        .getAboutPage(
+          sort,
+          paginationWithCount,
+          paginationPage,
+          paginationPageSize,
+          paginationStart,
+          paginationLimit,
+          fields,
+          populate,
+          filters,
+          locale,
+          options
+        )
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {AboutPageRequest} aboutPageRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putAboutPage(
+      aboutPageRequest: AboutPageRequest,
+      options?: any
+    ): AxiosPromise<AboutPageResponse> {
+      return localVarFp
+        .putAboutPage(aboutPageRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+  };
+};
+
+/**
+ * AboutPageApi - object-oriented interface
+ * @export
+ * @class AboutPageApi
+ * @extends {BaseAPI}
+ */
+export class AboutPageApi extends BaseAPI {
+  /**
+   *
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof AboutPageApi
+   */
+  public deleteAboutPage(options?: AxiosRequestConfig) {
+    return AboutPageApiFp(this.configuration)
+      .deleteAboutPage(options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+   * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+   * @param {number} [paginationPage] Page number (default: 0)
+   * @param {number} [paginationPageSize] Page size (default: 25)
+   * @param {number} [paginationStart] Offset value (default: 0)
+   * @param {number} [paginationLimit] Number of entities to return (default: 25)
+   * @param {string} [fields] Fields to return (ex: title,author)
+   * @param {string} [populate] Relations to return
+   * @param {object} [filters] Filters to apply
+   * @param {string} [locale] Locale to apply
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof AboutPageApi
+   */
+  public getAboutPage(
+    sort?: string,
+    paginationWithCount?: boolean,
+    paginationPage?: number,
+    paginationPageSize?: number,
+    paginationStart?: number,
+    paginationLimit?: number,
+    fields?: string,
+    populate?: string,
+    filters?: object,
+    locale?: string,
+    options?: AxiosRequestConfig
+  ) {
+    return AboutPageApiFp(this.configuration)
+      .getAboutPage(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      )
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {AboutPageRequest} aboutPageRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof AboutPageApi
+   */
+  public putAboutPage(
+    aboutPageRequest: AboutPageRequest,
+    options?: AxiosRequestConfig
+  ) {
+    return AboutPageApiFp(this.configuration)
+      .putAboutPage(aboutPageRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+}
+
+/**
+ * CatalogueApi - axios parameter creator
+ * @export
+ */
+export const CatalogueApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteCataloguesId: async (
+      id: number,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("deleteCataloguesId", "id", id);
+      const localVarPath = `/catalogues/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "DELETE",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCatalogues: async (
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/catalogues`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      if (sort !== undefined) {
+        localVarQueryParameter["sort"] = sort;
+      }
+
+      if (paginationWithCount !== undefined) {
+        localVarQueryParameter["pagination[withCount]"] = paginationWithCount;
+      }
+
+      if (paginationPage !== undefined) {
+        localVarQueryParameter["pagination[page]"] = paginationPage;
+      }
+
+      if (paginationPageSize !== undefined) {
+        localVarQueryParameter["pagination[pageSize]"] = paginationPageSize;
+      }
+
+      if (paginationStart !== undefined) {
+        localVarQueryParameter["pagination[start]"] = paginationStart;
+      }
+
+      if (paginationLimit !== undefined) {
+        localVarQueryParameter["pagination[limit]"] = paginationLimit;
+      }
+
+      if (fields !== undefined) {
+        localVarQueryParameter["fields"] = fields;
+      }
+
+      if (populate !== undefined) {
+        localVarQueryParameter["populate"] = populate;
+      }
+
+      if (filters !== undefined) {
+        localVarQueryParameter["filters"] = filters;
+      }
+
+      if (locale !== undefined) {
+        localVarQueryParameter["locale"] = locale;
+      }
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCataloguesId: async (
+      id: number,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("getCataloguesId", "id", id);
+      const localVarPath = `/catalogues/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {CatalogueRequest} catalogueRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    postCatalogues: async (
+      catalogueRequest: CatalogueRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'catalogueRequest' is not null or undefined
+      assertParamExists("postCatalogues", "catalogueRequest", catalogueRequest);
+      const localVarPath = `/catalogues`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "POST",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        catalogueRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {CatalogueRequest} catalogueRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putCataloguesId: async (
+      id: number,
+      catalogueRequest: CatalogueRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("putCataloguesId", "id", id);
+      // verify required parameter 'catalogueRequest' is not null or undefined
+      assertParamExists(
+        "putCataloguesId",
+        "catalogueRequest",
+        catalogueRequest
+      );
+      const localVarPath = `/catalogues/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "PUT",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        catalogueRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+  };
+};
+
+/**
+ * CatalogueApi - functional programming interface
+ * @export
+ */
+export const CatalogueApiFp = function (configuration?: Configuration) {
+  const localVarAxiosParamCreator =
+    CatalogueApiAxiosParamCreator(configuration);
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async deleteCataloguesId(
+      id: number,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.deleteCataloguesId(id, options);
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getCatalogues(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CatalogueListResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getCatalogues(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getCataloguesId(
+      id: number,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CatalogueResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getCataloguesId(
+        id,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {CatalogueRequest} catalogueRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async postCatalogues(
+      catalogueRequest: CatalogueRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CatalogueResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.postCatalogues(
+        catalogueRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {CatalogueRequest} catalogueRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async putCataloguesId(
+      id: number,
+      catalogueRequest: CatalogueRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CatalogueResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.putCataloguesId(
+        id,
+        catalogueRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+  };
+};
+
+/**
+ * CatalogueApi - factory interface
+ * @export
+ */
+export const CatalogueApiFactory = function (
+  configuration?: Configuration,
+  basePath?: string,
+  axios?: AxiosInstance
+) {
+  const localVarFp = CatalogueApiFp(configuration);
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteCataloguesId(id: number, options?: any): AxiosPromise<number> {
+      return localVarFp
+        .deleteCataloguesId(id, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCatalogues(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: any
+    ): AxiosPromise<CatalogueListResponse> {
+      return localVarFp
+        .getCatalogues(
+          sort,
+          paginationWithCount,
+          paginationPage,
+          paginationPageSize,
+          paginationStart,
+          paginationLimit,
+          fields,
+          populate,
+          filters,
+          locale,
+          options
+        )
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCataloguesId(
+      id: number,
+      options?: any
+    ): AxiosPromise<CatalogueResponse> {
+      return localVarFp
+        .getCataloguesId(id, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {CatalogueRequest} catalogueRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    postCatalogues(
+      catalogueRequest: CatalogueRequest,
+      options?: any
+    ): AxiosPromise<CatalogueResponse> {
+      return localVarFp
+        .postCatalogues(catalogueRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {CatalogueRequest} catalogueRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putCataloguesId(
+      id: number,
+      catalogueRequest: CatalogueRequest,
+      options?: any
+    ): AxiosPromise<CatalogueResponse> {
+      return localVarFp
+        .putCataloguesId(id, catalogueRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+  };
+};
+
+/**
+ * CatalogueApi - object-oriented interface
+ * @export
+ * @class CatalogueApi
+ * @extends {BaseAPI}
+ */
+export class CatalogueApi extends BaseAPI {
+  /**
+   *
+   * @param {number} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CatalogueApi
+   */
+  public deleteCataloguesId(id: number, options?: AxiosRequestConfig) {
+    return CatalogueApiFp(this.configuration)
+      .deleteCataloguesId(id, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+   * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+   * @param {number} [paginationPage] Page number (default: 0)
+   * @param {number} [paginationPageSize] Page size (default: 25)
+   * @param {number} [paginationStart] Offset value (default: 0)
+   * @param {number} [paginationLimit] Number of entities to return (default: 25)
+   * @param {string} [fields] Fields to return (ex: title,author)
+   * @param {string} [populate] Relations to return
+   * @param {object} [filters] Filters to apply
+   * @param {string} [locale] Locale to apply
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CatalogueApi
+   */
+  public getCatalogues(
+    sort?: string,
+    paginationWithCount?: boolean,
+    paginationPage?: number,
+    paginationPageSize?: number,
+    paginationStart?: number,
+    paginationLimit?: number,
+    fields?: string,
+    populate?: string,
+    filters?: object,
+    locale?: string,
+    options?: AxiosRequestConfig
+  ) {
+    return CatalogueApiFp(this.configuration)
+      .getCatalogues(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      )
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {number} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CatalogueApi
+   */
+  public getCataloguesId(id: number, options?: AxiosRequestConfig) {
+    return CatalogueApiFp(this.configuration)
+      .getCataloguesId(id, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {CatalogueRequest} catalogueRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CatalogueApi
+   */
+  public postCatalogues(
+    catalogueRequest: CatalogueRequest,
+    options?: AxiosRequestConfig
+  ) {
+    return CatalogueApiFp(this.configuration)
+      .postCatalogues(catalogueRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {number} id
+   * @param {CatalogueRequest} catalogueRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CatalogueApi
+   */
+  public putCataloguesId(
+    id: number,
+    catalogueRequest: CatalogueRequest,
+    options?: AxiosRequestConfig
+  ) {
+    return CatalogueApiFp(this.configuration)
+      .putCataloguesId(id, catalogueRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+}
+
+/**
+ * ContactPageApi - axios parameter creator
+ * @export
+ */
+export const ContactPageApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
+  return {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteContactPage: async (
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/contact-page`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "DELETE",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getContactPage: async (
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/contact-page`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      if (sort !== undefined) {
+        localVarQueryParameter["sort"] = sort;
+      }
+
+      if (paginationWithCount !== undefined) {
+        localVarQueryParameter["pagination[withCount]"] = paginationWithCount;
+      }
+
+      if (paginationPage !== undefined) {
+        localVarQueryParameter["pagination[page]"] = paginationPage;
+      }
+
+      if (paginationPageSize !== undefined) {
+        localVarQueryParameter["pagination[pageSize]"] = paginationPageSize;
+      }
+
+      if (paginationStart !== undefined) {
+        localVarQueryParameter["pagination[start]"] = paginationStart;
+      }
+
+      if (paginationLimit !== undefined) {
+        localVarQueryParameter["pagination[limit]"] = paginationLimit;
+      }
+
+      if (fields !== undefined) {
+        localVarQueryParameter["fields"] = fields;
+      }
+
+      if (populate !== undefined) {
+        localVarQueryParameter["populate"] = populate;
+      }
+
+      if (filters !== undefined) {
+        localVarQueryParameter["filters"] = filters;
+      }
+
+      if (locale !== undefined) {
+        localVarQueryParameter["locale"] = locale;
+      }
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {ContactPageRequest} contactPageRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putContactPage: async (
+      contactPageRequest: ContactPageRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'contactPageRequest' is not null or undefined
+      assertParamExists(
+        "putContactPage",
+        "contactPageRequest",
+        contactPageRequest
+      );
+      const localVarPath = `/contact-page`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "PUT",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        contactPageRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+  };
+};
+
+/**
+ * ContactPageApi - functional programming interface
+ * @export
+ */
+export const ContactPageApiFp = function (configuration?: Configuration) {
+  const localVarAxiosParamCreator =
+    ContactPageApiAxiosParamCreator(configuration);
+  return {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async deleteContactPage(
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.deleteContactPage(options);
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getContactPage(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<ContactPageListResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getContactPage(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {ContactPageRequest} contactPageRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async putContactPage(
+      contactPageRequest: ContactPageRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<ContactPageResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.putContactPage(
+        contactPageRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+  };
+};
+
+/**
+ * ContactPageApi - factory interface
+ * @export
+ */
+export const ContactPageApiFactory = function (
+  configuration?: Configuration,
+  basePath?: string,
+  axios?: AxiosInstance
+) {
+  const localVarFp = ContactPageApiFp(configuration);
+  return {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteContactPage(options?: any): AxiosPromise<number> {
+      return localVarFp
+        .deleteContactPage(options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getContactPage(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: any
+    ): AxiosPromise<ContactPageListResponse> {
+      return localVarFp
+        .getContactPage(
+          sort,
+          paginationWithCount,
+          paginationPage,
+          paginationPageSize,
+          paginationStart,
+          paginationLimit,
+          fields,
+          populate,
+          filters,
+          locale,
+          options
+        )
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {ContactPageRequest} contactPageRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putContactPage(
+      contactPageRequest: ContactPageRequest,
+      options?: any
+    ): AxiosPromise<ContactPageResponse> {
+      return localVarFp
+        .putContactPage(contactPageRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+  };
+};
+
+/**
+ * ContactPageApi - object-oriented interface
+ * @export
+ * @class ContactPageApi
+ * @extends {BaseAPI}
+ */
+export class ContactPageApi extends BaseAPI {
+  /**
+   *
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof ContactPageApi
+   */
+  public deleteContactPage(options?: AxiosRequestConfig) {
+    return ContactPageApiFp(this.configuration)
+      .deleteContactPage(options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+   * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+   * @param {number} [paginationPage] Page number (default: 0)
+   * @param {number} [paginationPageSize] Page size (default: 25)
+   * @param {number} [paginationStart] Offset value (default: 0)
+   * @param {number} [paginationLimit] Number of entities to return (default: 25)
+   * @param {string} [fields] Fields to return (ex: title,author)
+   * @param {string} [populate] Relations to return
+   * @param {object} [filters] Filters to apply
+   * @param {string} [locale] Locale to apply
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof ContactPageApi
+   */
+  public getContactPage(
+    sort?: string,
+    paginationWithCount?: boolean,
+    paginationPage?: number,
+    paginationPageSize?: number,
+    paginationStart?: number,
+    paginationLimit?: number,
+    fields?: string,
+    populate?: string,
+    filters?: object,
+    locale?: string,
+    options?: AxiosRequestConfig
+  ) {
+    return ContactPageApiFp(this.configuration)
+      .getContactPage(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      )
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {ContactPageRequest} contactPageRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof ContactPageApi
+   */
+  public putContactPage(
+    contactPageRequest: ContactPageRequest,
+    options?: AxiosRequestConfig
+  ) {
+    return ContactPageApiFp(this.configuration)
+      .putContactPage(contactPageRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
 }
 
 /**
