@@ -8,6 +8,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.7",
     "@openapitools/openapi-generator-cli": "^2.6.0",
+    "@qubixstudio/sphere": "^1.0.15",
     "@react-spring/parallax": "^9.6.1",
     "@react-spring/web": "^9.6.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -33,7 +34,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky install",
-    "gen-client-local": "openapi-generator-cli generate -i http://localhost:1337/api/docs/openapi.json -g typescript-axios -o src/ts/REST/api/generated --additional-properties=supportsES6=true,typescriptThreePlus=true --skip-validate-spec --type-mappings=datetime=string"
+    "gen-client-local": "openapi-generator-cli generate -i http://localhost:1337/api/docs/openapi.json -g typescript-axios -o src/ts/REST/api/generated --additional-properties=supportsES6=true,typescriptThreePlus=true --skip-validate-spec --type-mappings=datetime=string",
+    "gen-client": "openapi-generator-cli generate -i http://16.16.25.190:1337/api/docs/openapi.json -g typescript-axios -o src/ts/REST/api/generated --additional-properties=supportsES6=true,typescriptThreePlus=true --skip-validate-spec --type-mappings=datetime=string"
   },
   "eslintConfig": {
     "extends": [
