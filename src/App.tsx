@@ -19,7 +19,7 @@ function App(): JSX.Element {
           <Route path="catalogue" element={<CataloguePage />}>
             <Route path="" element={<ErrorPage />} />
           </Route>
-            <Route path="/catalogue/:id" element={<ProductDetailPage />} />
+          <Route path="/catalogue/:id" element={<ProductDetailPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
