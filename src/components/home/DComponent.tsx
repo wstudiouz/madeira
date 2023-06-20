@@ -1,28 +1,15 @@
-import React, {ReactElement, useState, useEffect} from "react";
+import React, {ReactElement} from "react";
 import {Stack, SxProps, Box, SvgIcon, Grid} from "@mui/material";
 import MiniCardTextAndBtn from "./MiniCardTextAndBtn";
 import {DSvg} from "../../imports";
 import {ScrollParallax} from "react-just-parallax";
-import {getter} from "../../ts/utils/Fetcher";
-import {DCompData} from "../../ts/REST/types/HomePageTypes";
+import {HomeDcompComponent} from "../../ts/REST/api/generated";
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
   sx?: SxProps;
+  value: HomeDcompComponent;
 };
-const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
-  const [data, setData] = useState<DCompData>();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getter(
-        "home-page?populate=DComp.cardText,DComp.letterImg,DComp.button,DComp.firstImg,DComp.secondImg"
-      );
-      if (result.ok && result.data) {
-        setData(result.data);
-      }
-    };
-
-    getData();
-  }, []);
+const DComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
   return (
     <Grid
       container
@@ -35,17 +22,23 @@ const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
       }}
     >
       <Grid item md={3}>
-        {data && (
-          <MiniCardTextAndBtn
-            fisrtBtnText="II"
-            text={data.DComp.cardText.title}
-            textSx={{margin: "30px auto"}}
-            desc={data.DComp.cardText.description}
-            secondBtntext={data.DComp.button.btnName}
-            secondBtnUrl={data.DComp.button.btnLink}
-            secondBtnSx={{width: "130px", marginTop: {md: "80px", xs: "30px"}}}
-          />
-        )}
+        {value &&
+          value?.cardText?.title &&
+          value.cardText.description &&
+          value?.button?.btnName && (
+            <MiniCardTextAndBtn
+              fisrtBtnText="II"
+              text={value.cardText.title}
+              textSx={{margin: "30px auto"}}
+              desc={value.cardText.description}
+              secondBtntext={value.button.btnName}
+              secondBtnUrl={value.button.btnLink}
+              secondBtnSx={{
+                width: "130px",
+                marginTop: {md: "80px", xs: "30px"},
+              }}
+            />
+          )}
       </Grid>
 
       <Grid
@@ -95,10 +88,10 @@ const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
             }}
           >
             <ScrollParallax>
-              {data && (
+              {value && value?.letterImg?.data?.attributes?.url && (
                 <Box
                   component="img"
-                  src={`${process.env.REACT_APP_BACKEND_URL}${data.DComp.letterImg.data.attributes.url}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}${value.letterImg.data.attributes.url}`}
                   sx={{
                     height: "calc(100% + 100px)",
                     marginTop: "-50px",
@@ -124,10 +117,10 @@ const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
           }}
         >
           <ScrollParallax strength={0.01}>
-            {data && (
+            {value && value?.firstImg?.data?.attributes?.url && (
               <Box
                 component="img"
-                src={`${process.env.REACT_APP_BACKEND_URL}${data.DComp.firstImg.data.attributes.url}`}
+                src={`${process.env.REACT_APP_BACKEND_URL}${value.firstImg.data.attributes.url}`}
                 sx={{
                   width: {
                     md: "210px",
@@ -145,10 +138,10 @@ const DComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
             )}
           </ScrollParallax>
           <ScrollParallax strength={0.03}>
-            {data && (
+            {value && value?.secondImg?.data?.attributes?.url && (
               <Box
                 component="img"
-                src={`${process.env.REACT_APP_BACKEND_URL}${data.DComp.secondImg.data.attributes.url}`}
+                src={`${process.env.REACT_APP_BACKEND_URL}${value.secondImg.data.attributes.url}`}
                 sx={{
                   zIndex: 4,
                   position: "absolute",

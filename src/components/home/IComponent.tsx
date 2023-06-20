@@ -18,32 +18,18 @@ import {theme} from "../../theme";
 import MiniTextCard from "../about/MiniTextCard";
 import {ISvg} from "../../imports";
 import {ScrollParallax} from "react-just-parallax";
-import {getter} from "../../ts/utils/Fetcher";
-import {ICompData} from "../../ts/REST/types/HomePageTypes";
+import {HomeICompComponent} from "../../ts/REST/api/generated";
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
   sx?: SxProps;
+  value: HomeICompComponent;
 };
-const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
+const IComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
   const svgRef = useRef<HTMLDivElement>();
   const [svgHeight, setSvgHeight] = useState<number>(0);
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const resizeCalback = useCallback(() => {
     if (svgRef.current) setSvgHeight(svgRef.current.clientHeight + 100);
-  }, []);
-
-  const [data, setData] = useState<ICompData>();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getter(
-        "home-page?populate=IComp.cardTextFirst,IComp.cardTextSecond,IComp.letterImgLeft,IComp.letterImgRight,IComp.bottomImg1,IComp.bottomImg2,IComp.bottomImg3"
-      );
-      if (result.ok && result.data) {
-        setData(result.data);
-      }
-    };
-
-    getData();
   }, []);
 
   useEffect(() => {
@@ -53,6 +39,7 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
       window.removeEventListener("resize", resizeCalback);
     };
   }, [resizeCalback]);
+
   return (
     <Stack
       ref={SectionRef}
@@ -64,18 +51,20 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
       }}
     >
       <Stack sx={{alignItems: "center", width: "30%"}}>
-        {data && (
-          <MiniCardTextAndBtn
-            stackSx={{
-              width: {xs: "100%"},
-              minWidth: "300px",
-            }}
-            fisrtBtnText="IV"
-            text={data.IComp.cardTextFirst.title}
-            textSx={{marginY: "30px"}}
-            desc={data.IComp.cardTextFirst.description}
-          />
-        )}
+        {value &&
+          value?.cardTextFirst?.title &&
+          value.cardTextFirst?.description && (
+            <MiniCardTextAndBtn
+              stackSx={{
+                width: {xs: "100%"},
+                minWidth: "300px",
+              }}
+              fisrtBtnText="IV"
+              text={value.cardTextFirst.title}
+              textSx={{marginY: "30px"}}
+              desc={value.cardTextFirst.description}
+            />
+          )}
       </Stack>
       <Stack
         sx={{
@@ -96,10 +85,10 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
         >
           <Stack sx={{width: "50vw"}}>
             <ScrollParallax strength={isMobile ? 0.01 : 0.04}>
-              {data && (
+              {value && value?.letterImgLeft?.data?.attributes?.url && (
                 <Box
                   component="img"
-                  src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.letterImgLeft.data.attributes.url}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}${value.letterImgLeft.data.attributes.url}`}
                   sx={{
                     width: "100%",
                     height: svgHeight,
@@ -111,10 +100,10 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
           </Stack>
           <Stack sx={{width: "50vw"}}>
             <ScrollParallax strength={isMobile ? 0.02 : 0.08}>
-              {data && (
+              {value && value?.letterImgRight?.data?.attributes?.url && (
                 <Box
                   component="img"
-                  src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.letterImgRight.data.attributes.url}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}${value.letterImgRight.data.attributes.url}`}
                   sx={{
                     width: "100%",
                     height: svgHeight,
@@ -147,18 +136,20 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
         >
           Quality
         </Typography>
-        {data && (
-          <MiniTextCard
-            stackSx={{
-              width: {xs: "100%"},
-              textAlign: "center",
-              marginTop: "-40px",
-            }}
-            text={data.IComp.cardTextSecond.title}
-            descSx={{textAlign: "justify"}}
-            desc={data.IComp.cardTextSecond.description}
-          />
-        )}
+        {value &&
+          value?.cardTextSecond?.title &&
+          value?.cardTextSecond?.description && (
+            <MiniTextCard
+              stackSx={{
+                width: {xs: "100%"},
+                textAlign: "center",
+                marginTop: "-40px",
+              }}
+              text={value.cardTextSecond.title}
+              descSx={{textAlign: "justify"}}
+              desc={value.cardTextSecond.description}
+            />
+          )}
       </Stack>
       <Stack
         sx={{
@@ -168,29 +159,55 @@ const IComponent = ({SectionRef, sx}: ComponentProps): ReactElement => {
           margin: {xs: "30px 0", sm: "40px 0", lg: "80px 0"},
         }}
       >
-        {data && (
-          <>
-            <Box
-              component="img"
-              src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.bottomImg1.data.attributes.url}`}
-              sx={{width: {md: "33%", xs: "48%"}, height: "auto"}}
-            />
-            <Box
-              component="img"
-              src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.bottomImg2.data.attributes.url}`}
-              sx={{width: {md: "33%", xs: "48%"}, height: "auto"}}
-            />
-            <Box
-              component="img"
-              src={`${process.env.REACT_APP_BACKEND_URL}${data.IComp.bottomImg3.data.attributes.url}`}
-              sx={{
-                width: "33%",
-                height: "auto",
-                display: {xs: "none", md: "block"},
-              }}
-            />
-          </>
-        )}
+        {value &&
+          value?.bottomImg1?.data?.attributes?.url &&
+          value?.bottomImg2?.data?.attributes?.url &&
+          value?.bottomImg3?.data?.attributes?.url && (
+            <>
+              <Box
+                component="img"
+                src={`${process.env.REACT_APP_BACKEND_URL}${value.bottomImg1.data.attributes.url}`}
+                sx={{
+                  width: "33%",
+                  height: {
+                    xs: "100px",
+                    sm: "185px",
+                    md: "250px",
+                    lg: "330px",
+                    xl: "380px",
+                  },
+                }}
+              />
+              <Box
+                component="img"
+                src={`${process.env.REACT_APP_BACKEND_URL}${value.bottomImg2.data.attributes.url}`}
+                sx={{
+                  width: "33%",
+                  height: {
+                    xs: "100px",
+                    sm: "185px",
+                    md: "250px",
+                    lg: "330px",
+                    xl: "380px",
+                  },
+                }}
+              />
+              <Box
+                component="img"
+                src={`${process.env.REACT_APP_BACKEND_URL}${value.bottomImg3.data.attributes.url}`}
+                sx={{
+                  width: "33%",
+                  height: {
+                    xs: "100px",
+                    sm: "185px",
+                    md: "250px",
+                    lg: "330px",
+                    xl: "380px",
+                  },
+                }}
+              />
+            </>
+          )}
       </Stack>
     </Stack>
   );

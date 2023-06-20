@@ -11,24 +11,70 @@ import RComponent from "./RComponent";
 import SeacondAComponent from "./SecondAComponent";
 import MainContainer from "../MainContainer";
 import LetterContainer from "./LetterContainer";
-import {getter} from "../../ts/utils/Fetcher";
-import {LettersData} from "../../ts/REST/types/HomePageTypes";
+import {getWithEndPoint} from "../../ts/utils/Fetcher";
+import {HomePageEndpoint} from "../../ts/REST/endpoints/HomePageApi";
+import {
+  HomeACompComponent,
+  HomePageListResponseDataItem,
+} from "../../ts/REST/api/generated";
+import {useIsMounted} from "@qubixstudio/sphere";
 
 const Home = (): ReactElement => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [order, setOrder] = useState<string | undefined>(undefined);
 
-  const [data, setData] = useState<LettersData>();
+  const isMounted = useIsMounted();
+  const [homepage, setHomepage] = useState<
+    HomePageListResponseDataItem | undefined
+  >();
+
+  const [populateProps] = useState<string[]>([
+    "AComp.cardText",
+    "AComp.image",
+    "AComp.button",
+    "AComp.rightText",
+    "DComp.cardText",
+    "DComp.letterImg",
+    "DComp.button",
+    "DComp.firstImg",
+    "DComp.secondImg",
+    "EComp.cardText",
+    "EComp.letterImg",
+    "EComp.button",
+    "EComp.leftImg",
+    "IComp.cardTextFirst",
+    "IComp.cardTextSecond",
+    "IComp.letterImgLeft",
+    "IComp.letterImgRight",
+    "IComp.bottomImg1",
+    "IComp.bottomImg2",
+    "IComp.bottomImg3",
+    "RComp.cardText",
+    "RComp.letterImg",
+    "RComp.rightImg1",
+    "RComp.rightImg2",
+    "SecondAComp.cardText",
+    "SecondAComp.leftImg1",
+    "SecondAComp.leftImg2",
+    "SecondAComp.leftImg3",
+    "Letters",
+  ]);
+
   useEffect(() => {
-    const getData = async () => {
-      const result = await getter("home-page?populate=Letters");
-      if (result.ok && result.data) {
-        setData(result.data);
+    const getValue = async () => {
+      const result = await getWithEndPoint({
+        endPoint: HomePageEndpoint,
+        populate: populateProps,
+      });
+      if (result.ok && result.result) {
+        setHomepage(result.result as HomeACompComponent);
       }
     };
+    if (isMounted()) {
+      getValue();
+    }
+  }, [isMounted, populateProps]);
 
-    getData();
-  }, []);
   return (
     <Stack ref={containerRef} sx={{overflow: "hidden"}}>
       <IntroAnimation />
@@ -66,8 +112,8 @@ const Home = (): ReactElement => {
             transform: "translate3d(0, 0, 0) rotate(-90deg)",
           }}
         >
-          {data &&
-            data.Letters.map((letter) =>
+          {homepage &&
+            homepage.attributes?.Letters?.map((letter) =>
               letter.shortKey === order ? letter.over : ""
             )}
         </Typography>
@@ -80,20 +126,28 @@ const Home = (): ReactElement => {
             marginTop: "-30px",
           }}
         >
-          {data &&
-            data.Letters.map((letter, index) => (
-              <SingleMap
-                key={index}
-                text={letter.text}
-                active={letter.shortKey == order}
-                onClick={() =>
-                  document?.getElementById(letter.shortKey)?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  })
-                }
-              />
-            ))}
+          {homepage &&
+            homepage.attributes?.Letters?.map((letter, index) => {
+              if (letter.text) {
+                return (
+                  <SingleMap
+                    key={index}
+                    text={letter.text}
+                    active={letter.shortKey === order}
+                    onClick={() =>
+                      letter.shortKey &&
+                      document
+                        ?.getElementById(letter.shortKey)
+                        ?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        })
+                    }
+                  />
+                );
+              }
+              return null;
+            })}
         </Stack>
       </Stack>
       <MainContainer>
@@ -104,24 +158,36 @@ const Home = (): ReactElement => {
         >
           <MComponent />
         </LetterContainer>
-        <LetterContainer setOrder={setOrder} shortKey={"A"}>
-          <AComponent />
-        </LetterContainer>
-        <LetterContainer setOrder={setOrder} shortKey={"D"}>
-          <DComponent />
-        </LetterContainer>
-        <LetterContainer setOrder={setOrder} shortKey={"E"}>
-          <EComponent />
-        </LetterContainer>
-        <LetterContainer setOrder={setOrder} shortKey={"I"}>
-          <IComponent />
-        </LetterContainer>
-        <LetterContainer setOrder={setOrder} shortKey={"R"}>
-          <RComponent />
-        </LetterContainer>
-        <LetterContainer setOrder={setOrder} shortKey={"A2"}>
-          <SeacondAComponent />
-        </LetterContainer>
+        {homepage && homepage.attributes?.AComp && (
+          <LetterContainer setOrder={setOrder} shortKey={"A"}>
+            <AComponent value={homepage.attributes.AComp} />
+          </LetterContainer>
+        )}
+        {homepage && homepage.attributes?.DComp && (
+          <LetterContainer setOrder={setOrder} shortKey={"D"}>
+            <DComponent value={homepage.attributes.DComp} />
+          </LetterContainer>
+        )}
+        {homepage && homepage.attributes?.EComp && (
+          <LetterContainer setOrder={setOrder} shortKey={"E"}>
+            <EComponent value={homepage.attributes.EComp} />
+          </LetterContainer>
+        )}
+        {homepage && homepage.attributes?.IComp && (
+          <LetterContainer setOrder={setOrder} shortKey={"I"}>
+            <IComponent value={homepage.attributes.IComp} />
+          </LetterContainer>
+        )}
+        {homepage && homepage.attributes?.RComp && (
+          <LetterContainer setOrder={setOrder} shortKey={"R"}>
+            <RComponent value={homepage.attributes.RComp} />
+          </LetterContainer>
+        )}
+        {homepage && homepage.attributes?.SecondAComp && (
+          <LetterContainer setOrder={setOrder} shortKey={"A2"}>
+            <SeacondAComponent value={homepage.attributes.SecondAComp} />
+          </LetterContainer>
+        )}
       </MainContainer>
     </Stack>
   );
