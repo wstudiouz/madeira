@@ -1,29 +1,12 @@
 import {Stack, Typography, Grid} from "@mui/material";
 import {Box} from "@mui/system";
-import React, {ReactElement, useEffect, useState} from "react";
+import React, {ReactElement} from "react";
 import {theme} from "../../theme";
-import {getter} from "../../ts/utils/Fetcher";
-type HeroData = {
-  email: string;
-  phone: string;
-  phoneText: string;
-  phoneLabel: string;
-  title: string;
-  moreText: string;
-  moreDesc: string;
+import {ContactPageListResponseDataItem} from "../../ts/REST/api/generated";
+type Props = {
+  data: ContactPageListResponseDataItem;
 };
-const Hero = (): ReactElement => {
-  const [data, setData] = useState<HeroData>();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getter("contact-page");
-      if (result.ok && result.data) {
-        setData(result.data);
-      }
-    };
-
-    getData();
-  }, []);
+const Hero = ({data}: Props): ReactElement => {
   return (
     <>
       {data && (
@@ -39,7 +22,7 @@ const Hero = (): ReactElement => {
               color: theme.palette.primary.main,
             }}
           >
-            {data.title}
+            {data.attributes?.title}
           </Typography>
           <Grid container justifyContent="center">
             <Grid item xs={12} md={10}>
@@ -63,13 +46,13 @@ const Hero = (): ReactElement => {
                   <Typography
                     variant="h2"
                     onClick={() =>
-                      (window.location.href = `mailto:${data.email}`)
+                      (window.location.href = `mailto:${data.attributes?.email}`)
                     }
                     sx={{
                       cursor: "pointer",
                     }}
                   >
-                    {data.email}
+                    {data.attributes?.email}
                   </Typography>
                 </Stack>
                 <Box
@@ -89,7 +72,9 @@ const Hero = (): ReactElement => {
                 >
                   <Typography
                     variant="heroText1"
-                    onClick={() => (window.location.href = `tel:${data.phone}`)}
+                    onClick={() =>
+                      (window.location.href = `tel:${data.attributes?.phone}`)
+                    }
                     sx={{
                       cursor: "pointer",
                       fontWeight: 700,
@@ -99,7 +84,7 @@ const Hero = (): ReactElement => {
                       fontStyle: "normal",
                     }}
                   >
-                    {data.phoneText}
+                    {data.attributes?.phoneText}
                   </Typography>
                   <Typography
                     variant="paragraph"
@@ -112,7 +97,7 @@ const Hero = (): ReactElement => {
                       textTransform: "uppercase",
                     }}
                   >
-                    {data.phoneLabel}
+                    {data.attributes?.phoneLabel}
                   </Typography>
                 </Stack>
               </Stack>
@@ -125,13 +110,13 @@ const Hero = (): ReactElement => {
                   variant="h2"
                   sx={{color: theme.palette.primary.main}}
                 >
-                  {data.moreText}
+                  {data.attributes?.moreText}
                 </Typography>
                 <Typography
                   variant="paragraph"
                   sx={{color: theme.palette.background.paper, margin: "20px 0"}}
                 >
-                  {data.moreDesc}
+                  {data.attributes?.moreDesc}
                 </Typography>
               </Stack>
             </Grid>

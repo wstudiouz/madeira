@@ -11,7 +11,7 @@ import RComponent from "./RComponent";
 import SeacondAComponent from "./SecondAComponent";
 import MainContainer from "../MainContainer";
 import LetterContainer from "./LetterContainer";
-import {getWithEndPoint} from "../../ts/utils/Fetcher";
+import {getWithEndPoint} from "../../ts/utils/getWithEndpoint";
 import {HomePageEndpoint} from "../../ts/REST/endpoints/HomePageApi";
 import {
   HomeACompComponent,

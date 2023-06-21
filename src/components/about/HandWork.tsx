@@ -4,26 +4,16 @@ import React, {ReactElement, useEffect, useRef, useState} from "react";
 import {theme} from "../../theme";
 import {ScrollParallax} from "react-just-parallax";
 import useIntersectionObserver from "../../ts/utils/Hooks";
-import {getter} from "../../ts/utils/Fetcher";
-import {HandWorkData} from "../../ts/REST/types/AboutPageTypes";
+import {AboutHandWorkComponent} from "../../ts/REST/api/generated";
 
-const HandWork = (): ReactElement => {
+type Props = {
+  data: AboutHandWorkComponent;
+};
+const HandWork = ({data}: Props): ReactElement => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, {});
   const [active, setActive] = useState<boolean>(false);
-  const [data, setData] = useState<HandWorkData>();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getter(
-        "about-page?populate=HandWork.topImg,HandWork.bottomImg"
-      );
-      if (result.ok && result.data) {
-        setData(result.data);
-      }
-    };
 
-    getData();
-  }, []);
   useEffect(() => {
     if (isVisible?.isIntersecting) {
       setActive(true);
@@ -74,7 +64,7 @@ const HandWork = (): ReactElement => {
                 color: theme.palette.primary.contrastText,
               }}
             >
-              {data && data.HandWork.title}
+              {data && data.title}
             </Typography>
           </ScrollParallax>
         </Grid>
@@ -108,7 +98,7 @@ const HandWork = (): ReactElement => {
                 },
               }}
             >
-              {data && (
+              {data && data?.topImg?.data?.attributes?.url && (
                 <Box
                   component="img"
                   sx={{
@@ -119,8 +109,7 @@ const HandWork = (): ReactElement => {
                       ? "translate3d(-5px, 0, 0)"
                       : "translate3d(0, 0, 0)",
                   }}
-                  // src="https://picsum.photos/500/300"
-                  src={`${process.env.REACT_APP_BACKEND_URL}${data.HandWork.topImg.data.attributes.formats.large?.url}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}${data.topImg.data.attributes.url}`}
                   alt="our group"
                 />
               )}
@@ -141,11 +130,11 @@ const HandWork = (): ReactElement => {
           }}
         >
           <ScrollParallax strength={0.1}>
-            {data && (
+            {data && data?.bottomImg?.data?.attributes?.url && (
               <Box
                 component="img"
                 alt="handworks"
-                src={`${process.env.REACT_APP_BACKEND_URL}${data.HandWork.bottomImg.data.attributes.formats.large?.url}`}
+                src={`${process.env.REACT_APP_BACKEND_URL}${data.bottomImg.data.attributes.url}`}
                 sx={{
                   width: "100%",
                   height: "auto",

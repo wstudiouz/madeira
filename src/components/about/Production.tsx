@@ -1,24 +1,13 @@
 import {Stack, Typography, Grid} from "@mui/material";
 import {Box} from "@mui/system";
-import React, {ReactElement, useEffect, useState} from "react";
+import React, {ReactElement} from "react";
 import MiniTextCard from "./MiniTextCard";
 import {theme} from "../../theme";
-import {getter} from "../../ts/utils/Fetcher";
-import {ProductionData} from "../../ts/REST/types/AboutPageTypes";
-const Production = (): ReactElement => {
-  const [data, setData] = useState<ProductionData>();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getter(
-        "about-page?populate=Production.img1,Production.img2,Production.factory"
-      );
-      if (result.ok && result.data) {
-        setData(result.data);
-      }
-    };
-
-    getData();
-  }, []);
+import {AboutProductionComponent} from "../../ts/REST/api/generated";
+type Props = {
+  data: AboutProductionComponent;
+};
+const Production = ({data}: Props): ReactElement => {
   return (
     <Stack
       sx={{
@@ -26,7 +15,7 @@ const Production = (): ReactElement => {
       }}
     >
       <Typography variant="h3" color={theme.palette.primary.main}>
-        {data && data.Production.title}
+        {data && data.title}
       </Typography>
       <Grid
         container
@@ -63,7 +52,7 @@ const Production = (): ReactElement => {
           }}
         >
           <Grid item xs={6}>
-            {data && (
+            {data && data?.img1?.data?.attributes?.url && (
               <Box
                 component="img"
                 alt="own production"
@@ -71,12 +60,12 @@ const Production = (): ReactElement => {
                   width: "100%",
                   height: "auto",
                 }}
-                src={`${process.env.REACT_APP_BACKEND_URL}${data.Production.img1.data.attributes.formats.large?.url}`}
+                src={`${process.env.REACT_APP_BACKEND_URL}${data.img1.data.attributes.url}`}
               />
             )}
           </Grid>
           <Grid item xs={6} sx={{marginLeft: {xs: "20px", lg: "30px"}}}>
-            {data && (
+            {data && data?.img2?.data?.attributes?.url && (
               <Box
                 component="img"
                 alt="own production"
@@ -84,17 +73,17 @@ const Production = (): ReactElement => {
                   width: "100%",
                   height: "auto",
                 }}
-                src={`${process.env.REACT_APP_BACKEND_URL}${data.Production.img2.data.attributes.formats.large?.url}`}
+                src={`${process.env.REACT_APP_BACKEND_URL}${data.img2.data.attributes.url}`}
               />
             )}
           </Grid>
         </Grid>
         <Grid item md={6} lg={5}>
-          {data && (
+          {data && data?.factory?.title && data?.factory?.description && (
             <MiniTextCard
               stackSx={{width: "100%"}}
-              text={data.Production.factory.title}
-              desc={data.Production.factory.description}
+              text={data.factory.title}
+              desc={data.factory.description}
             />
           )}
         </Grid>

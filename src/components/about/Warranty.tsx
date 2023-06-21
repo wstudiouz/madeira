@@ -5,26 +5,16 @@ import {ScrollParallax} from "react-just-parallax";
 import MiniTextCard from "./MiniTextCard";
 import useIntersectionObserver from "../../ts/utils/Hooks";
 import {zIndex} from "../../ts/utils/ZIndexs";
-import {getter} from "../../ts/utils/Fetcher";
-import {WarrantyData} from "../../ts/REST/types/AboutPageTypes";
+import {AboutWarrantyComponent} from "../../ts/REST/api/generated";
 
-const Warranty = (): ReactElement => {
+type Props = {
+  data: AboutWarrantyComponent;
+};
+const Warranty = ({data}: Props): ReactElement => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, {});
   const [active, setActive] = useState<boolean>(false);
-  const [data, setData] = useState<WarrantyData>();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getter(
-        "about-page?populate=Warranty.warranty,Warranty.supCard,Warranty.supCard2,Warranty.warrantyYearBg"
-      );
-      if (result.ok && result.data) {
-        setData(result.data);
-      }
-    };
 
-    getData();
-  }, []);
   useEffect(() => {
     if (isVisible?.isIntersecting) {
       setActive(true);
@@ -105,10 +95,10 @@ const Warranty = (): ReactElement => {
           }}
         >
           <ScrollParallax>
-            {data && (
+            {data && data?.warrantyYearBg?.data?.attributes?.url && (
               <Box
                 component="img"
-                src={`${process.env.REACT_APP_BACKEND_URL}${data.Warranty.warrantyYearBg.data.attributes.url}`}
+                src={`${process.env.REACT_APP_BACKEND_URL}${data.warrantyYearBg.data.attributes.url}`}
                 sx={{
                   height: "calc(100% + 100px)",
                   marginTop: "-50px",
@@ -142,11 +132,11 @@ const Warranty = (): ReactElement => {
           xl={6}
           sx={{margin: {xs: "0 auto", md: "0"}}}
         >
-          {data && (
+          {data && data?.warranty?.title && data?.warranty?.description && (
             <MiniTextCard
               stackSx={{width: "100%"}}
-              text={data.Warranty.warranty.title}
-              desc={data.Warranty.warranty.description}
+              text={data.warranty.title}
+              desc={data.warranty.description}
             />
           )}
         </Grid>
@@ -156,23 +146,29 @@ const Warranty = (): ReactElement => {
             flexDirection: {xs: "column", lg: "row"},
           }}
         >
-          {data && (
-            <MiniTextCard
-              variantMy="heroText2"
-              text={data.Warranty.supCard.text}
-              textSup={data.Warranty.supCard.sup}
-              desc={data.Warranty.supCard.desc}
-            />
-          )}
-          {data && (
-            <MiniTextCard
-              stackSx={{marginLeft: {sm: "0", lg: "30px", xl: "40px"}}}
-              variantMy="heroText2"
-              text={data.Warranty.supCard2.text}
-              textSup={data.Warranty.supCard2.sup}
-              desc={data.Warranty.supCard2.desc}
-            />
-          )}
+          {data &&
+            data?.supCard?.text &&
+            data?.supCard?.sup &&
+            data?.supCard?.desc && (
+              <MiniTextCard
+                variantMy="heroText2"
+                text={data.supCard.text}
+                textSup={data.supCard.sup}
+                desc={data.supCard.desc}
+              />
+            )}
+          {data &&
+            data?.supCard2?.text &&
+            data?.supCard2?.sup &&
+            data?.supCard2?.desc && (
+              <MiniTextCard
+                stackSx={{marginLeft: {sm: "0", lg: "30px", xl: "40px"}}}
+                variantMy="heroText2"
+                text={data.supCard2.text}
+                textSup={data.supCard2.sup}
+                desc={data.supCard2.desc}
+              />
+            )}
         </Stack>
       </Grid>
     </Grid>

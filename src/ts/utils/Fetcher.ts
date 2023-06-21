@@ -1,59 +1,3 @@
-import {HomePageApi} from "../REST/api/generated";
-
-type Props = {
-  endPoint: HomePageApi; //altype yoziladi
-  populate: string[];
-};
-
-type objKeys = {
-  [key: string]: string;
-};
-
-const populateparams = (arr: string[]) => {
-  const result: objKeys = {};
-  arr.map((i, index) => {
-    result[`populate[${index}]`] = i;
-  });
-  return result;
-};
-
-export const getWithEndPoint = async ({endPoint, populate}: Props) => {
-  const fetchData = async () => {
-    try {
-      const {data} = await endPoint.getHomePage(
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        {
-          params: populateparams(populate),
-        }
-      );
-      return {
-        ok: true,
-        msg: "",
-        result: data?.data,
-      };
-    } catch (e) {
-      return {
-        ok: false,
-        msg: String(e),
-        result: null,
-      };
-    }
-  };
-
-  const data = await fetchData();
-
-  return data;
-};
-
 export const getter = async (url: string) => {
   const result = {ok: false, data: null, msg: ""};
 
@@ -65,7 +9,7 @@ export const getter = async (url: string) => {
 
     if (data.data) {
       result.ok = true;
-      result.data = data.data.attributes;
+      result.data = data.data;
       result.msg = "ok";
     } else {
       result.ok = false;

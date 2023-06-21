@@ -1,25 +1,15 @@
 import {Box, Stack, Typography, Grid} from "@mui/material";
-import React, {ReactElement, useState, useEffect} from "react";
+import React, {ReactElement} from "react";
 import {theme} from "../../theme";
 import MiniTextCard from "./MiniTextCard";
 import {LeonHandleSvg} from "../../imports/index";
 import {ScrollParallax} from "react-just-parallax";
-import {getter} from "../../ts/utils/Fetcher";
-import {ComplexData} from "../../ts/REST/types/AboutPageTypes";
-const Complex = (): ReactElement => {
-  const [data, setData] = useState<ComplexData>();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await getter(
-        "about-page?populate=Complex.rightTopCard,Complex.rightBottomCard"
-      );
-      if (result.ok && result.data) {
-        setData(result.data);
-      }
-    };
+import {AboutComplexComponent} from "../../ts/REST/api/generated";
 
-    getData();
-  }, []);
+type Props = {
+  data: AboutComplexComponent;
+};
+const Complex = ({data}: Props): ReactElement => {
   return (
     <Grid
       container
@@ -40,7 +30,7 @@ const Complex = (): ReactElement => {
               color: theme.palette.primary.contrastText,
             }}
           >
-            {data && data.Complex.title}
+            {data && data.title}
           </Typography>
         </ScrollParallax>
       </Grid>
@@ -55,32 +45,36 @@ const Complex = (): ReactElement => {
             position: "relative",
           }}
         >
-          {data && (
-            <MiniTextCard
-              stackSx={{width: "300px", maxWidth: "100%"}}
-              text={data.Complex.rightTopCard.title}
-              desc={data.Complex.rightTopCard.description}
-            />
-          )}
+          {data &&
+            data?.rightTopCard?.title &&
+            data.rightTopCard?.description && (
+              <MiniTextCard
+                stackSx={{width: "300px", maxWidth: "100%"}}
+                text={data.rightTopCard.title}
+                desc={data.rightTopCard.description}
+              />
+            )}
 
-          {data && (
-            <MiniTextCard
-              stackSx={{
-                width: "300px",
-                maxWidth: "100%",
-                padding: "7px 10px 50px 7px",
-                border: `1px solid ${theme.palette.secondary.main}`,
-                alignItems: "flex-start",
-                flexDirection: "column",
-                marginTop: "50px",
-                position: "relative",
-              }}
-              variantMy="heroText2"
-              text={data.Complex.rightBottomCard.title}
-              textSx={{marginTop: "-20px"}}
-              desc={data.Complex.rightBottomCard.description}
-            />
-          )}
+          {data &&
+            data?.rightBottomCard?.title &&
+            data?.rightBottomCard?.description && (
+              <MiniTextCard
+                stackSx={{
+                  width: "300px",
+                  maxWidth: "100%",
+                  padding: "7px 10px 50px 7px",
+                  border: `1px solid ${theme.palette.secondary.main}`,
+                  alignItems: "flex-start",
+                  flexDirection: "column",
+                  marginTop: "50px",
+                  position: "relative",
+                }}
+                variantMy="heroText2"
+                text={data.rightBottomCard.title}
+                textSx={{marginTop: "-20px"}}
+                desc={data.rightBottomCard.description}
+              />
+            )}
           <ScrollParallax strength={0.02}>
             <Box
               sx={{
