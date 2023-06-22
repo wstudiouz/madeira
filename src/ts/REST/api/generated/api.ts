@@ -1694,6 +1694,406 @@ export interface CatalogueResponseDataObjectLocalized {
 /**
  *
  * @export
+ * @interface CategoryListResponse
+ */
+export interface CategoryListResponse {
+  /**
+   *
+   * @type {Array<CategoryListResponseDataItem>}
+   * @memberof CategoryListResponse
+   */
+  data?: Array<CategoryListResponseDataItem>;
+  /**
+   *
+   * @type {AboutPageListResponseMeta}
+   * @memberof CategoryListResponse
+   */
+  meta?: AboutPageListResponseMeta;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItem
+ */
+export interface CategoryListResponseDataItem {
+  /**
+   *
+   * @type {number}
+   * @memberof CategoryListResponseDataItem
+   */
+  id?: number;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributes}
+   * @memberof CategoryListResponseDataItem
+   */
+  attributes?: CategoryListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributes
+ */
+export interface CategoryListResponseDataItemAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoors}
+   * @memberof CategoryListResponseDataItemAttributes
+   */
+  doors?: CategoryListResponseDataItemAttributesDoors;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof CategoryListResponseDataItemAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof CategoryListResponseDataItemAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributesDoors
+ */
+export interface CategoryListResponseDataItemAttributesDoors {
+  /**
+   *
+   * @type {Array<CategoryListResponseDataItemAttributesDoorsDataInner>}
+   * @memberof CategoryListResponseDataItemAttributesDoors
+   */
+  data?: Array<CategoryListResponseDataItemAttributesDoorsDataInner>;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributesDoorsDataInner
+ */
+export interface CategoryListResponseDataItemAttributesDoorsDataInner {
+  /**
+   *
+   * @type {number}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInner
+   */
+  id?: number;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoorsDataInnerAttributes}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInner
+   */
+  attributes?: CategoryListResponseDataItemAttributesDoorsDataInnerAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+ */
+export interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategory}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  category?: CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategory;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  mainImg?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  images?: CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  price?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  shortDescription?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  description?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategory
+ */
+export interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategory {
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryData}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategory
+   */
+  data?: CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryData;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryData
+ */
+export interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryData {
+  /**
+   *
+   * @type {number}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryData
+   */
+  id?: number;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryData
+   */
+  attributes?: CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+ */
+export interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+   */
+  doors?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesUsers;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesCategoryDataAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages
+ */
+export interface CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages {
+  /**
+   *
+   * @type {Array<AboutHeroComponentImg1Data>}
+   * @memberof CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages
+   */
+  data?: Array<AboutHeroComponentImg1Data>;
+}
+/**
+ *
+ * @export
+ * @interface CategoryListResponseDataItemLocalized
+ */
+export interface CategoryListResponseDataItemLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof CategoryListResponseDataItemLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributes}
+   * @memberof CategoryListResponseDataItemLocalized
+   */
+  attributes?: CategoryListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CategoryRequest
+ */
+export interface CategoryRequest {
+  /**
+   *
+   * @type {CategoryRequestData}
+   * @memberof CategoryRequest
+   */
+  data: CategoryRequestData;
+}
+/**
+ *
+ * @export
+ * @interface CategoryRequestData
+ */
+export interface CategoryRequestData {
+  /**
+   *
+   * @type {string}
+   * @memberof CategoryRequestData
+   */
+  title: string;
+  /**
+   *
+   * @type {Array<CatalogueRequestDataImg>}
+   * @memberof CategoryRequestData
+   */
+  doors?: Array<CatalogueRequestDataImg>;
+}
+/**
+ *
+ * @export
+ * @interface CategoryResponse
+ */
+export interface CategoryResponse {
+  /**
+   *
+   * @type {CategoryResponseDataObject}
+   * @memberof CategoryResponse
+   */
+  data?: CategoryResponseDataObject;
+  /**
+   *
+   * @type {object}
+   * @memberof CategoryResponse
+   */
+  meta?: object;
+}
+/**
+ *
+ * @export
+ * @interface CategoryResponseDataObject
+ */
+export interface CategoryResponseDataObject {
+  /**
+   *
+   * @type {number}
+   * @memberof CategoryResponseDataObject
+   */
+  id?: number;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributes}
+   * @memberof CategoryResponseDataObject
+   */
+  attributes?: CategoryListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface CategoryResponseDataObjectLocalized
+ */
+export interface CategoryResponseDataObjectLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof CategoryResponseDataObjectLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributes}
+   * @memberof CategoryResponseDataObjectLocalized
+   */
+  attributes?: CategoryListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
  * @interface ContactPageListResponse
  */
 export interface ContactPageListResponse {
@@ -1945,6 +2345,453 @@ export interface ContactPageResponseDataObjectLocalized {
    * @memberof ContactPageResponseDataObjectLocalized
    */
   attributes?: ContactPageListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponse
+ */
+export interface DoorListResponse {
+  /**
+   *
+   * @type {Array<DoorListResponseDataItem>}
+   * @memberof DoorListResponse
+   */
+  data?: Array<DoorListResponseDataItem>;
+  /**
+   *
+   * @type {AboutPageListResponseMeta}
+   * @memberof DoorListResponse
+   */
+  meta?: AboutPageListResponseMeta;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItem
+ */
+export interface DoorListResponseDataItem {
+  /**
+   *
+   * @type {number}
+   * @memberof DoorListResponseDataItem
+   */
+  id?: number;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributes}
+   * @memberof DoorListResponseDataItem
+   */
+  attributes?: DoorListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemAttributes
+ */
+export interface DoorListResponseDataItemAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributesCategory}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  category?: DoorListResponseDataItemAttributesCategory;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  mainImg?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  images?: CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  price?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  shortDescription?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  description?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof DoorListResponseDataItemAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemAttributesCategory
+ */
+export interface DoorListResponseDataItemAttributesCategory {
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributesCategoryData}
+   * @memberof DoorListResponseDataItemAttributesCategory
+   */
+  data?: DoorListResponseDataItemAttributesCategoryData;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemAttributesCategoryData
+ */
+export interface DoorListResponseDataItemAttributesCategoryData {
+  /**
+   *
+   * @type {number}
+   * @memberof DoorListResponseDataItemAttributesCategoryData
+   */
+  id?: number;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributesCategoryDataAttributes}
+   * @memberof DoorListResponseDataItemAttributesCategoryData
+   */
+  attributes?: DoorListResponseDataItemAttributesCategoryDataAttributes;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemAttributesCategoryDataAttributes
+ */
+export interface DoorListResponseDataItemAttributesCategoryDataAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributesCategoryDataAttributesDoors}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributes
+   */
+  doors?: DoorListResponseDataItemAttributesCategoryDataAttributesDoors;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemAttributesCategoryDataAttributesDoors
+ */
+export interface DoorListResponseDataItemAttributesCategoryDataAttributesDoors {
+  /**
+   *
+   * @type {Array<DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInner>}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoors
+   */
+  data?: Array<DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInner>;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInner
+ */
+export interface DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInner {
+  /**
+   *
+   * @type {number}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInner
+   */
+  id?: number;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInner
+   */
+  attributes?: DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+ */
+export interface DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes {
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  title?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  category?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+  /**
+   *
+   * @type {AboutHeroComponentImg1}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  mainImg?: AboutHeroComponentImg1;
+  /**
+   *
+   * @type {CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  images?: CategoryListResponseDataItemAttributesDoorsDataInnerAttributesImages;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  price?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  shortDescription?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  description?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  createdAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  updatedAt?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  publishedAt?: string;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedBy}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  createdBy?: AboutPageListResponseDataItemAttributesCreatedBy;
+  /**
+   *
+   * @type {AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole}
+   * @memberof DoorListResponseDataItemAttributesCategoryDataAttributesDoorsDataInnerAttributes
+   */
+  updatedBy?: AboutPageListResponseDataItemAttributesCreatedByDataAttributesRolesDataInnerAttributesPermissionsDataInnerAttributesRole;
+}
+/**
+ *
+ * @export
+ * @interface DoorListResponseDataItemLocalized
+ */
+export interface DoorListResponseDataItemLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof DoorListResponseDataItemLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributes}
+   * @memberof DoorListResponseDataItemLocalized
+   */
+  attributes?: DoorListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface DoorRequest
+ */
+export interface DoorRequest {
+  /**
+   *
+   * @type {DoorRequestData}
+   * @memberof DoorRequest
+   */
+  data: DoorRequestData;
+}
+/**
+ *
+ * @export
+ * @interface DoorRequestData
+ */
+export interface DoorRequestData {
+  /**
+   *
+   * @type {string}
+   * @memberof DoorRequestData
+   */
+  title: string;
+  /**
+   *
+   * @type {CatalogueRequestDataImg}
+   * @memberof DoorRequestData
+   */
+  category?: CatalogueRequestDataImg;
+  /**
+   *
+   * @type {CatalogueRequestDataImg}
+   * @memberof DoorRequestData
+   */
+  mainImg: CatalogueRequestDataImg;
+  /**
+   *
+   * @type {Array<CatalogueRequestDataImg>}
+   * @memberof DoorRequestData
+   */
+  images: Array<CatalogueRequestDataImg>;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorRequestData
+   */
+  price: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorRequestData
+   */
+  shortDescription: string;
+  /**
+   *
+   * @type {string}
+   * @memberof DoorRequestData
+   */
+  description: string;
+}
+/**
+ *
+ * @export
+ * @interface DoorResponse
+ */
+export interface DoorResponse {
+  /**
+   *
+   * @type {DoorResponseDataObject}
+   * @memberof DoorResponse
+   */
+  data?: DoorResponseDataObject;
+  /**
+   *
+   * @type {object}
+   * @memberof DoorResponse
+   */
+  meta?: object;
+}
+/**
+ *
+ * @export
+ * @interface DoorResponseDataObject
+ */
+export interface DoorResponseDataObject {
+  /**
+   *
+   * @type {number}
+   * @memberof DoorResponseDataObject
+   */
+  id?: number;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributes}
+   * @memberof DoorResponseDataObject
+   */
+  attributes?: DoorListResponseDataItemAttributes;
+}
+/**
+ *
+ * @export
+ * @interface DoorResponseDataObjectLocalized
+ */
+export interface DoorResponseDataObjectLocalized {
+  /**
+   *
+   * @type {number}
+   * @memberof DoorResponseDataObjectLocalized
+   */
+  id?: number;
+  /**
+   *
+   * @type {DoorListResponseDataItemAttributes}
+   * @memberof DoorResponseDataObjectLocalized
+   */
+  attributes?: DoorListResponseDataItemAttributes;
 }
 /**
  * @type ErrorData
@@ -5923,6 +6770,719 @@ export class CatalogueApi extends BaseAPI {
 }
 
 /**
+ * CategoryApi - axios parameter creator
+ * @export
+ */
+export const CategoryApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteCategoriesId: async (
+      id: number,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("deleteCategoriesId", "id", id);
+      const localVarPath = `/categories/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "DELETE",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCategories: async (
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/categories`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      if (sort !== undefined) {
+        localVarQueryParameter["sort"] = sort;
+      }
+
+      if (paginationWithCount !== undefined) {
+        localVarQueryParameter["pagination[withCount]"] = paginationWithCount;
+      }
+
+      if (paginationPage !== undefined) {
+        localVarQueryParameter["pagination[page]"] = paginationPage;
+      }
+
+      if (paginationPageSize !== undefined) {
+        localVarQueryParameter["pagination[pageSize]"] = paginationPageSize;
+      }
+
+      if (paginationStart !== undefined) {
+        localVarQueryParameter["pagination[start]"] = paginationStart;
+      }
+
+      if (paginationLimit !== undefined) {
+        localVarQueryParameter["pagination[limit]"] = paginationLimit;
+      }
+
+      if (fields !== undefined) {
+        localVarQueryParameter["fields"] = fields;
+      }
+
+      if (populate !== undefined) {
+        localVarQueryParameter["populate"] = populate;
+      }
+
+      if (filters !== undefined) {
+        localVarQueryParameter["filters"] = filters;
+      }
+
+      if (locale !== undefined) {
+        localVarQueryParameter["locale"] = locale;
+      }
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCategoriesId: async (
+      id: number,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("getCategoriesId", "id", id);
+      const localVarPath = `/categories/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {CategoryRequest} categoryRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    postCategories: async (
+      categoryRequest: CategoryRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'categoryRequest' is not null or undefined
+      assertParamExists("postCategories", "categoryRequest", categoryRequest);
+      const localVarPath = `/categories`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "POST",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        categoryRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {CategoryRequest} categoryRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putCategoriesId: async (
+      id: number,
+      categoryRequest: CategoryRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("putCategoriesId", "id", id);
+      // verify required parameter 'categoryRequest' is not null or undefined
+      assertParamExists("putCategoriesId", "categoryRequest", categoryRequest);
+      const localVarPath = `/categories/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "PUT",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        categoryRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+  };
+};
+
+/**
+ * CategoryApi - functional programming interface
+ * @export
+ */
+export const CategoryApiFp = function (configuration?: Configuration) {
+  const localVarAxiosParamCreator = CategoryApiAxiosParamCreator(configuration);
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async deleteCategoriesId(
+      id: number,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.deleteCategoriesId(id, options);
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getCategories(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CategoryListResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getCategories(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getCategoriesId(
+      id: number,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CategoryResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getCategoriesId(
+        id,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {CategoryRequest} categoryRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async postCategories(
+      categoryRequest: CategoryRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CategoryResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.postCategories(
+        categoryRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {CategoryRequest} categoryRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async putCategoriesId(
+      id: number,
+      categoryRequest: CategoryRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<CategoryResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.putCategoriesId(
+        id,
+        categoryRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+  };
+};
+
+/**
+ * CategoryApi - factory interface
+ * @export
+ */
+export const CategoryApiFactory = function (
+  configuration?: Configuration,
+  basePath?: string,
+  axios?: AxiosInstance
+) {
+  const localVarFp = CategoryApiFp(configuration);
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteCategoriesId(id: number, options?: any): AxiosPromise<number> {
+      return localVarFp
+        .deleteCategoriesId(id, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCategories(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: any
+    ): AxiosPromise<CategoryListResponse> {
+      return localVarFp
+        .getCategories(
+          sort,
+          paginationWithCount,
+          paginationPage,
+          paginationPageSize,
+          paginationStart,
+          paginationLimit,
+          fields,
+          populate,
+          filters,
+          locale,
+          options
+        )
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getCategoriesId(id: number, options?: any): AxiosPromise<CategoryResponse> {
+      return localVarFp
+        .getCategoriesId(id, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {CategoryRequest} categoryRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    postCategories(
+      categoryRequest: CategoryRequest,
+      options?: any
+    ): AxiosPromise<CategoryResponse> {
+      return localVarFp
+        .postCategories(categoryRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {CategoryRequest} categoryRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putCategoriesId(
+      id: number,
+      categoryRequest: CategoryRequest,
+      options?: any
+    ): AxiosPromise<CategoryResponse> {
+      return localVarFp
+        .putCategoriesId(id, categoryRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+  };
+};
+
+/**
+ * CategoryApi - object-oriented interface
+ * @export
+ * @class CategoryApi
+ * @extends {BaseAPI}
+ */
+export class CategoryApi extends BaseAPI {
+  /**
+   *
+   * @param {number} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CategoryApi
+   */
+  public deleteCategoriesId(id: number, options?: AxiosRequestConfig) {
+    return CategoryApiFp(this.configuration)
+      .deleteCategoriesId(id, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+   * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+   * @param {number} [paginationPage] Page number (default: 0)
+   * @param {number} [paginationPageSize] Page size (default: 25)
+   * @param {number} [paginationStart] Offset value (default: 0)
+   * @param {number} [paginationLimit] Number of entities to return (default: 25)
+   * @param {string} [fields] Fields to return (ex: title,author)
+   * @param {string} [populate] Relations to return
+   * @param {object} [filters] Filters to apply
+   * @param {string} [locale] Locale to apply
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CategoryApi
+   */
+  public getCategories(
+    sort?: string,
+    paginationWithCount?: boolean,
+    paginationPage?: number,
+    paginationPageSize?: number,
+    paginationStart?: number,
+    paginationLimit?: number,
+    fields?: string,
+    populate?: string,
+    filters?: object,
+    locale?: string,
+    options?: AxiosRequestConfig
+  ) {
+    return CategoryApiFp(this.configuration)
+      .getCategories(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      )
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {number} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CategoryApi
+   */
+  public getCategoriesId(id: number, options?: AxiosRequestConfig) {
+    return CategoryApiFp(this.configuration)
+      .getCategoriesId(id, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {CategoryRequest} categoryRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CategoryApi
+   */
+  public postCategories(
+    categoryRequest: CategoryRequest,
+    options?: AxiosRequestConfig
+  ) {
+    return CategoryApiFp(this.configuration)
+      .postCategories(categoryRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {number} id
+   * @param {CategoryRequest} categoryRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof CategoryApi
+   */
+  public putCategoriesId(
+    id: number,
+    categoryRequest: CategoryRequest,
+    options?: AxiosRequestConfig
+  ) {
+    return CategoryApiFp(this.configuration)
+      .putCategoriesId(id, categoryRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+}
+
+/**
  * ContactPageApi - axios parameter creator
  * @export
  */
@@ -6403,6 +7963,709 @@ export class ContactPageApi extends BaseAPI {
   ) {
     return ContactPageApiFp(this.configuration)
       .putContactPage(contactPageRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+}
+
+/**
+ * DoorApi - axios parameter creator
+ * @export
+ */
+export const DoorApiAxiosParamCreator = function (
+  configuration?: Configuration
+) {
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteDoorsId: async (
+      id: number,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("deleteDoorsId", "id", id);
+      const localVarPath = `/doors/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "DELETE",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDoors: async (
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/doors`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      if (sort !== undefined) {
+        localVarQueryParameter["sort"] = sort;
+      }
+
+      if (paginationWithCount !== undefined) {
+        localVarQueryParameter["pagination[withCount]"] = paginationWithCount;
+      }
+
+      if (paginationPage !== undefined) {
+        localVarQueryParameter["pagination[page]"] = paginationPage;
+      }
+
+      if (paginationPageSize !== undefined) {
+        localVarQueryParameter["pagination[pageSize]"] = paginationPageSize;
+      }
+
+      if (paginationStart !== undefined) {
+        localVarQueryParameter["pagination[start]"] = paginationStart;
+      }
+
+      if (paginationLimit !== undefined) {
+        localVarQueryParameter["pagination[limit]"] = paginationLimit;
+      }
+
+      if (fields !== undefined) {
+        localVarQueryParameter["fields"] = fields;
+      }
+
+      if (populate !== undefined) {
+        localVarQueryParameter["populate"] = populate;
+      }
+
+      if (filters !== undefined) {
+        localVarQueryParameter["filters"] = filters;
+      }
+
+      if (locale !== undefined) {
+        localVarQueryParameter["locale"] = locale;
+      }
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDoorsId: async (
+      id: number,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("getDoorsId", "id", id);
+      const localVarPath = `/doors/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {DoorRequest} doorRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    postDoors: async (
+      doorRequest: DoorRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'doorRequest' is not null or undefined
+      assertParamExists("postDoors", "doorRequest", doorRequest);
+      const localVarPath = `/doors`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "POST",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        doorRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {DoorRequest} doorRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putDoorsId: async (
+      id: number,
+      doorRequest: DoorRequest,
+      options: AxiosRequestConfig = {}
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists("putDoorsId", "id", id);
+      // verify required parameter 'doorRequest' is not null or undefined
+      assertParamExists("putDoorsId", "doorRequest", doorRequest);
+      const localVarPath = `/doors/{id}`.replace(
+        `{${"id"}}`,
+        encodeURIComponent(String(id))
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "PUT",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication bearerAuth required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        doorRequest,
+        localVarRequestOptions,
+        configuration
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+  };
+};
+
+/**
+ * DoorApi - functional programming interface
+ * @export
+ */
+export const DoorApiFp = function (configuration?: Configuration) {
+  const localVarAxiosParamCreator = DoorApiAxiosParamCreator(configuration);
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async deleteDoorsId(
+      id: number,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.deleteDoorsId(
+        id,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getDoors(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (
+        axios?: AxiosInstance,
+        basePath?: string
+      ) => AxiosPromise<DoorListResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getDoors(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async getDoorsId(
+      id: number,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoorResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getDoorsId(
+        id,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {DoorRequest} doorRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async postDoors(
+      doorRequest: DoorRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoorResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.postDoors(
+        doorRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {DoorRequest} doorRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async putDoorsId(
+      id: number,
+      doorRequest: DoorRequest,
+      options?: AxiosRequestConfig
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoorResponse>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.putDoorsId(
+        id,
+        doorRequest,
+        options
+      );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration
+      );
+    },
+  };
+};
+
+/**
+ * DoorApi - factory interface
+ * @export
+ */
+export const DoorApiFactory = function (
+  configuration?: Configuration,
+  basePath?: string,
+  axios?: AxiosInstance
+) {
+  const localVarFp = DoorApiFp(configuration);
+  return {
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteDoorsId(id: number, options?: any): AxiosPromise<number> {
+      return localVarFp
+        .deleteDoorsId(id, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+     * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+     * @param {number} [paginationPage] Page number (default: 0)
+     * @param {number} [paginationPageSize] Page size (default: 25)
+     * @param {number} [paginationStart] Offset value (default: 0)
+     * @param {number} [paginationLimit] Number of entities to return (default: 25)
+     * @param {string} [fields] Fields to return (ex: title,author)
+     * @param {string} [populate] Relations to return
+     * @param {object} [filters] Filters to apply
+     * @param {string} [locale] Locale to apply
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDoors(
+      sort?: string,
+      paginationWithCount?: boolean,
+      paginationPage?: number,
+      paginationPageSize?: number,
+      paginationStart?: number,
+      paginationLimit?: number,
+      fields?: string,
+      populate?: string,
+      filters?: object,
+      locale?: string,
+      options?: any
+    ): AxiosPromise<DoorListResponse> {
+      return localVarFp
+        .getDoors(
+          sort,
+          paginationWithCount,
+          paginationPage,
+          paginationPageSize,
+          paginationStart,
+          paginationLimit,
+          fields,
+          populate,
+          filters,
+          locale,
+          options
+        )
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDoorsId(id: number, options?: any): AxiosPromise<DoorResponse> {
+      return localVarFp
+        .getDoorsId(id, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {DoorRequest} doorRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    postDoors(
+      doorRequest: DoorRequest,
+      options?: any
+    ): AxiosPromise<DoorResponse> {
+      return localVarFp
+        .postDoors(doorRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {number} id
+     * @param {DoorRequest} doorRequest
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putDoorsId(
+      id: number,
+      doorRequest: DoorRequest,
+      options?: any
+    ): AxiosPromise<DoorResponse> {
+      return localVarFp
+        .putDoorsId(id, doorRequest, options)
+        .then((request) => request(axios, basePath));
+    },
+  };
+};
+
+/**
+ * DoorApi - object-oriented interface
+ * @export
+ * @class DoorApi
+ * @extends {BaseAPI}
+ */
+export class DoorApi extends BaseAPI {
+  /**
+   *
+   * @param {number} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DoorApi
+   */
+  public deleteDoorsId(id: number, options?: AxiosRequestConfig) {
+    return DoorApiFp(this.configuration)
+      .deleteDoorsId(id, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+   * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+   * @param {number} [paginationPage] Page number (default: 0)
+   * @param {number} [paginationPageSize] Page size (default: 25)
+   * @param {number} [paginationStart] Offset value (default: 0)
+   * @param {number} [paginationLimit] Number of entities to return (default: 25)
+   * @param {string} [fields] Fields to return (ex: title,author)
+   * @param {string} [populate] Relations to return
+   * @param {object} [filters] Filters to apply
+   * @param {string} [locale] Locale to apply
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DoorApi
+   */
+  public getDoors(
+    sort?: string,
+    paginationWithCount?: boolean,
+    paginationPage?: number,
+    paginationPageSize?: number,
+    paginationStart?: number,
+    paginationLimit?: number,
+    fields?: string,
+    populate?: string,
+    filters?: object,
+    locale?: string,
+    options?: AxiosRequestConfig
+  ) {
+    return DoorApiFp(this.configuration)
+      .getDoors(
+        sort,
+        paginationWithCount,
+        paginationPage,
+        paginationPageSize,
+        paginationStart,
+        paginationLimit,
+        fields,
+        populate,
+        filters,
+        locale,
+        options
+      )
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {number} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DoorApi
+   */
+  public getDoorsId(id: number, options?: AxiosRequestConfig) {
+    return DoorApiFp(this.configuration)
+      .getDoorsId(id, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {DoorRequest} doorRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DoorApi
+   */
+  public postDoors(doorRequest: DoorRequest, options?: AxiosRequestConfig) {
+    return DoorApiFp(this.configuration)
+      .postDoors(doorRequest, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {number} id
+   * @param {DoorRequest} doorRequest
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DoorApi
+   */
+  public putDoorsId(
+    id: number,
+    doorRequest: DoorRequest,
+    options?: AxiosRequestConfig
+  ) {
+    return DoorApiFp(this.configuration)
+      .putDoorsId(id, doorRequest, options)
       .then((request) => request(this.axios, this.basePath));
   }
 }

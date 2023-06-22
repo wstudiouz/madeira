@@ -1,4 +1,4 @@
-export const getter = async (url: string) => {
+export const getter = async (url: string, withMeta?: boolean) => {
   const result = {ok: false, data: null, msg: ""};
 
   try {
@@ -9,7 +9,7 @@ export const getter = async (url: string) => {
 
     if (data.data) {
       result.ok = true;
-      result.data = data.data;
+      result.data = withMeta ? data : data.data;
       result.msg = "ok";
     } else {
       result.ok = false;

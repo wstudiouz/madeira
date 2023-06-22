@@ -3,19 +3,8 @@ import {Box, Stack} from "@mui/system";
 import React, {ReactElement, Dispatch, SetStateAction} from "react";
 import {useNavigate} from "react-router-dom";
 import {keyframes} from "@mui/material";
-import { theme } from "../../theme";
-
-interface ObjectTypes {
-  [key: string]: string;
-}
-
-type StateTypes = {
-  get?: boolean;
-  data?: Array<ObjectTypes>;
-  error?: boolean;
-  page?: number;
-  totalPages?: number;
-};
+import {theme} from "../../theme";
+import {StateTypes} from ".";
 
 type ComponentProps = {
   data: StateTypes;
@@ -37,12 +26,14 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
   const navigate = useNavigate();
   return (
     <Stack sx={{width: "100%", marginTop: "50px"}}>
-      <Grid
-        container spacing={3} 
-      >
+      <Grid container spacing={3} sx={{width: "100%"}}>
         {data.get && data.data ? (
           data.data.map((e, ind) => (
-            <Grid item xs={12} md={6} lg={4}
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={4}
               onClick={() => navigate(`/catalogue/${e.id}`)}
               key={ind}
               sx={{
@@ -80,7 +71,8 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
               >
                 <Box
                   component="img"
-                  src={`https://image.tmdb.org/t/p/original${e.poster_path}`}
+                  alt="product img"
+                  src={`${process.env.REACT_APP_BACKEND_URL}${e.attributes?.mainImg?.data?.attributes?.url}`}
                   sx={{
                     marginTop: "-10px",
                     maxWidth: "100%",
@@ -109,7 +101,7 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
                     "display": "block",
                     "fontSize": "18px",
                     "lineHeight": "1.57em",
-                    fontFamily: "'Libre Caslon Text'",
+                    "fontFamily": "'Libre Caslon Text'",
                     "textTransform": "uppercase",
                     "color": theme.palette.secondary.main,
                     "letterSpacing": "0.2em",
@@ -129,7 +121,7 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
                     },
                   }}
                 >
-                  {e.title.substring(0, 15)}
+                  {e.attributes?.title && e.attributes.title.substring(0, 15)}
                 </Typography>
                 <Typography
                   variant="product"
@@ -154,7 +146,7 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
                     display: "block",
                     fontSize: "15px",
                     fontFamily: "'Roboto'",
-                    fontWeight:400,
+                    fontWeight: 400,
                     color: theme.palette.primary.contrastText,
                     transition: "all 0.3s ease",
                   }}
@@ -165,16 +157,21 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
             </Grid>
           ))
         ) : data.error ? (
-          <Typography sx={{textAlign:"center",margin:"0 auto"}}>error :(</Typography>
+          <Typography sx={{textAlign: "center", margin: "0 auto"}}>
+            error :(
+          </Typography>
         ) : (
-          <Typography sx={{textAlign:"center",margin:"0 auto"}}>Loading...</Typography>
+          <Typography sx={{textAlign: "center", margin: "0 auto"}}>
+            Loading...
+          </Typography>
         )}
       </Grid>
-      {data.get && data.data ? (
-        <Stack onClick={() => setPage(page + 1 - 0)}>more</Stack>
-      ) : (
-        <></>
-      )}
+      {data.get &&
+        data.data &&
+        data?.totalPages &&
+        data.totalPages > 20 * page && (
+          <Stack onClick={() => setPage(page + 1 - 0)}>more</Stack>
+        )}
     </Stack>
   );
 };

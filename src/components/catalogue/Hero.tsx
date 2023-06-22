@@ -5,16 +5,19 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {theme} from "../../theme";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import {CategoryListResponseDataItem} from "../../ts/REST/api/generated";
 
 type ComponentProps = {
   setState: Dispatch<
     SetStateAction<{id: number | boolean; type: number | boolean}>
   >;
+  category: CategoryListResponseDataItem[];
 };
 
-const Hero = ({setState}: ComponentProps): ReactElement => {
+const Hero = ({setState, category}: ComponentProps): ReactElement => {
   const [collection, setCollection] = useState<boolean>(false); // manashu stateni yopilishini qande qiley app jsdan state ochib props bilan obkeleymi context ochamizmi ili boshqa yo'li bormi
   const [material, setMaterial] = useState<boolean>(false);
+
   const handleChange = (id: number, type: number) => {
     setState({id, type});
   };
@@ -48,13 +51,6 @@ const Hero = ({setState}: ComponentProps): ReactElement => {
     },
   };
 
-  const [collections] = useState<string[]>([
-    "first collect",
-    "second collect",
-    "third collect",
-    "fourth collect",
-  ]);
-
   const [materials] = useState<string[]>([
     "first material",
     "second material",
@@ -73,12 +69,20 @@ const Hero = ({setState}: ComponentProps): ReactElement => {
 
   return (
     <Stack onClick={closeFn}>
-      <Typography variant="paragraph" sx={{marginBottom: "80px"}}>
+      <Typography
+        variant="h2"
+        sx={{margin: {xs: "50px 0 30px 0", md: "100px 0 50px 0"}}}
+      >
         СATALOGUE
       </Typography>
       <hr />
       <Grid container>
-        <Grid item xs={12} sm={10} sx={{display:"flex", flexDirection: {xs: "column", sm: "row"}}}>
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          sx={{display: "flex", flexDirection: {xs: "column", sm: "row"}}}
+        >
           <Grid item xs={12} sm={6} md={4}>
             <Stack
               sx={{
@@ -94,22 +98,27 @@ const Hero = ({setState}: ComponentProps): ReactElement => {
                   variant="h3"
                   sx={{fontSize: "16px", lineHeight: "20px"}}
                 >
-                  Select Collection
+                  Select Category
                 </Typography>
                 <ExpandMoreIcon />
               </Stack>
               <List sx={style.content}>
-                {collections.map((e, index) => (
-                  <ListItem
-                    key={index}
-                    sx={{
-                      borderBottom: `1px solid ${theme.palette.secondary.main}`,
-                    }}
-                    onClick={() => handleChange(index, 1)}
-                  >
-                    {e}
-                  </ListItem>
-                ))}
+                {category?.map(
+                  (e, index) =>
+                    e?.id && (
+                      <ListItem
+                        key={index}
+                        sx={{
+                          borderBottom: `1px solid ${theme.palette.secondary.main}`,
+                        }}
+                        onClick={() =>
+                          handleChange(e.id !== undefined ? e.id : 0, 1)
+                        }
+                      >
+                        {e.attributes?.title}
+                      </ListItem>
+                    )
+                )}
               </List>
             </Stack>
           </Grid>
