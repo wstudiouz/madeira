@@ -1,11 +1,12 @@
-import { Stack } from "@mui/material";
-import React, { ReactElement } from "react";
+import React, {ReactElement} from "react";
 import SingleProduct from "../components/singleproduct";
+import MainContainer from "../components/MainContainer";
 
-const ProductDetailPage = () : ReactElement =>{
-    
-    return <Stack>
-        <SingleProduct />
-    </Stack>
-}
-export default ProductDetailPage
+const ProductDetailPage = (): ReactElement => {
+  return (
+    <MainContainer>
+      <SingleProduct />
+    </MainContainer>
+  );
+};
+export default ProductDetailPage;
