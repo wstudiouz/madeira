@@ -26,7 +26,6 @@ const ContactPage = (): ReactElement => {
       getValue();
     }
   }, [isMounted]);
-  console.log(contactPage);
 
   return (
     <>
@@ -34,7 +33,9 @@ const ContactPage = (): ReactElement => {
         {contactPage && <Hero data={contactPage} />}
         <Form />
       </MainContainer>
-      <Map />
+      {contactPage && contactPage.attributes?.mapUrl && (
+        <Map src={contactPage.attributes.mapUrl} />
+      )}
     </>
   );
 };

@@ -2182,6 +2182,12 @@ export interface ContactPageListResponseDataItemAttributes {
    * @type {string}
    * @memberof ContactPageListResponseDataItemAttributes
    */
+  mapUrl?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageListResponseDataItemAttributes
+   */
   createdAt?: string;
   /**
    *
@@ -2288,6 +2294,12 @@ export interface ContactPageRequestData {
    * @memberof ContactPageRequestData
    */
   phoneText: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactPageRequestData
+   */
+  mapUrl: string;
 }
 /**
  *
