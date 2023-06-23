@@ -1,4 +1,4 @@
-import React, {ReactElement, useEffect, useState} from "react";
+import React, {ReactElement, useCallback, useEffect, useState} from "react";
 import MainContainer from "../MainContainer";
 import Hero from "./Hero";
 import Products from "./Products";
@@ -31,17 +31,20 @@ const Catalogue = (): ReactElement => {
   }>({id: false, type: false});
   const [page, setPage] = useState<number>(1);
 
-  const concater = (arr: DoorListResponse) => {
-    try {
-      if (arr.data && arr.meta) {
-        const newValues = data.data.concat(arr.data);
-        return {newValues, total: arr.meta.pagination?.total};
+  const concater = useCallback(
+    (arr: DoorListResponse) => {
+      try {
+        if (arr.data && arr.meta) {
+          const newValues = data.data.concat(arr.data);
+          return {newValues, total: arr.meta.pagination?.total};
+        }
+        return {newValues: data.data, total: data.totalPages};
+      } catch {
+        return {newValues: data.data, total: data.totalPages};
       }
-      return {newValues: data.data, total: data.totalPages};
-    } catch {
-      return {newValues: data.data, total: data.totalPages};
-    }
-  };
+    },
+    [data.data, data.totalPages]
+  );
 
   const selector = (arr: DoorListResponse) => {
     try {
@@ -98,7 +101,7 @@ const Catalogue = (): ReactElement => {
       }
     };
     getValues();
-  }, [page]); //funksiyani depend listga qandey beraman :(
+  }, [concater, page]); //funksiyani depend listga qandey beraman :(
 
   const [category, setCategory] = useState<CategoryListResponseDataItem[]>();
 
