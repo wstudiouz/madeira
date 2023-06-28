@@ -4,6 +4,7 @@ import MiniCardTextAndBtn from "./MiniCardTextAndBtn";
 import {DSvg} from "../../imports";
 import {ScrollParallax} from "react-just-parallax";
 import {HomeDcompComponent} from "../../ts/REST/api/generated";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
   sx?: SxProps;
@@ -89,8 +90,7 @@ const DComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           >
             <ScrollParallax>
               {value && value?.letterImg?.data?.attributes?.url && (
-                <Box
-                  component="img"
+                <ResponsiveImage
                   src={`${process.env.REACT_APP_BACKEND_URL}${value.letterImg.data.attributes.url}`}
                   sx={{
                     height: "calc(100% + 100px)",
@@ -118,8 +118,7 @@ const DComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
         >
           <ScrollParallax strength={0.01}>
             {value && value?.firstImg?.data?.attributes?.url && (
-              <Box
-                component="img"
+              <ResponsiveImage
                 src={`${process.env.REACT_APP_BACKEND_URL}${value.firstImg.data.attributes.url}`}
                 sx={{
                   width: {
@@ -139,8 +138,7 @@ const DComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           </ScrollParallax>
           <ScrollParallax strength={0.03}>
             {value && value?.secondImg?.data?.attributes?.url && (
-              <Box
-                component="img"
+              <ResponsiveImage
                 src={`${process.env.REACT_APP_BACKEND_URL}${value.secondImg.data.attributes.url}`}
                 sx={{
                   zIndex: 4,

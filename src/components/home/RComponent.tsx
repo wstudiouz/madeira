@@ -1,5 +1,5 @@
 import React, {ReactElement, useRef} from "react";
-import {Stack, SxProps, Box, Grid} from "@mui/material";
+import {Stack, SxProps, Grid} from "@mui/material";
 import MiniCardTextAndBtn from "./MiniCardTextAndBtn";
 import {RSvg} from "../../imports";
 import SvgIcon from "@mui/material/SvgIcon";
@@ -48,8 +48,7 @@ const RComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           >
             <Stack>
               <ScrollParallax strength={0.01}>
-                <Box
-                  component="img"
+                <ResponsiveImage
                   src={`${process.env.REACT_APP_BACKEND_URL}${value?.rightImg1?.data?.attributes?.url}`}
                   sx={{
                     width: {xs: "100px", sm: "170px", md: "240px", lg: "300px"},
@@ -93,8 +92,7 @@ const RComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
               }}
             >
               <ScrollParallax strength={0.04}>
-                <Box
-                  component="img"
+                <ResponsiveImage
                   src={`${process.env.REACT_APP_BACKEND_URL}${value?.letterImg?.data?.attributes?.url}`}
                   sx={{
                     width: {xs: "160px", sm: "180px", md: "210px", lg: "270px"},

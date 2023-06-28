@@ -1,10 +1,11 @@
 import React, {ReactElement} from "react";
-import {Stack, SxProps, Box, SvgIcon, Grid} from "@mui/material";
+import {Stack, SxProps, SvgIcon, Grid} from "@mui/material";
 import MiniCardTextAndBtn from "./MiniCardTextAndBtn";
 import {ASvg} from "../../imports";
 import {theme} from "../../theme";
 import {ScrollParallax} from "react-just-parallax";
 import {HomeSecondACompComponent} from "../../ts/REST/api/generated";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
@@ -36,8 +37,7 @@ const SeacondAComponent = ({
             <Stack sx={{flexDirection: "row", justifyContent: "space-around"}}>
               <Stack sx={{zIndex: 3, width: {xs: "30%", sm: "45%", md: "27%"}}}>
                 <ScrollParallax strength={0.02}>
-                  <Box
-                    component="img"
+                  <ResponsiveImage
                     src={`${process.env.REACT_APP_BACKEND_URL}${value?.leftImg1?.data?.attributes?.url}`}
                     sx={{
                       width: {
@@ -56,8 +56,7 @@ const SeacondAComponent = ({
                   />
                 </ScrollParallax>
                 <ScrollParallax strength={0.05}>
-                  <Box
-                    component="img"
+                  <ResponsiveImage
                     src={`${process.env.REACT_APP_BACKEND_URL}${value?.leftImg2?.data?.attributes?.url}`}
                     sx={{
                       width: {
@@ -79,8 +78,7 @@ const SeacondAComponent = ({
                   />
                 </ScrollParallax>
                 <ScrollParallax strength={0.02}>
-                  <Box
-                    component="img"
+                  <ResponsiveImage
                     src={`${process.env.REACT_APP_BACKEND_URL}${value?.leftImg3?.data?.attributes?.url}`}
                     sx={{
                       width: {

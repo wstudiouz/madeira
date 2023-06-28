@@ -9,7 +9,6 @@ import {
   Stack,
   Typography,
   SxProps,
-  Box,
   SvgIcon,
   useMediaQuery,
 } from "@mui/material";
@@ -19,6 +18,7 @@ import MiniTextCard from "../about/MiniTextCard";
 import {ISvg} from "../../imports";
 import {ScrollParallax} from "react-just-parallax";
 import {HomeICompComponent} from "../../ts/REST/api/generated";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 type ComponentProps = {
   SectionRef?: React.RefObject<HTMLDivElement>;
   sx?: SxProps;
@@ -86,8 +86,7 @@ const IComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           <Stack sx={{width: "50vw"}}>
             <ScrollParallax strength={isMobile ? 0.01 : 0.04}>
               {value && value?.letterImgLeft?.data?.attributes?.url && (
-                <Box
-                  component="img"
+                <ResponsiveImage
                   src={`${process.env.REACT_APP_BACKEND_URL}${value.letterImgLeft.data.attributes.url}`}
                   sx={{
                     width: "100%",
@@ -101,8 +100,7 @@ const IComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           <Stack sx={{width: "50vw"}}>
             <ScrollParallax strength={isMobile ? 0.02 : 0.08}>
               {value && value?.letterImgRight?.data?.attributes?.url && (
-                <Box
-                  component="img"
+                <ResponsiveImage
                   src={`${process.env.REACT_APP_BACKEND_URL}${value.letterImgRight.data.attributes.url}`}
                   sx={{
                     width: "100%",
@@ -164,8 +162,7 @@ const IComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           value?.bottomImg2?.data?.attributes?.url &&
           value?.bottomImg3?.data?.attributes?.url && (
             <>
-              <Box
-                component="img"
+              <ResponsiveImage
                 src={`${process.env.REACT_APP_BACKEND_URL}${value.bottomImg1.data.attributes.url}`}
                 sx={{
                   width: "33%",
@@ -178,8 +175,7 @@ const IComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
                   },
                 }}
               />
-              <Box
-                component="img"
+              <ResponsiveImage
                 src={`${process.env.REACT_APP_BACKEND_URL}${value.bottomImg2.data.attributes.url}`}
                 sx={{
                   width: "33%",
@@ -192,8 +188,7 @@ const IComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
                   },
                 }}
               />
-              <Box
-                component="img"
+              <ResponsiveImage
                 src={`${process.env.REACT_APP_BACKEND_URL}${value.bottomImg3.data.attributes.url}`}
                 sx={{
                   width: "33%",

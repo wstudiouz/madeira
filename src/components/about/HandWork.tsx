@@ -5,6 +5,7 @@ import {theme} from "../../theme";
 import {ScrollParallax} from "react-just-parallax";
 import useIntersectionObserver from "../../ts/utils/Hooks";
 import {AboutHandWorkComponent} from "../../ts/REST/api/generated";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 
 type Props = {
   data: AboutHandWorkComponent;
@@ -99,8 +100,7 @@ const HandWork = ({data}: Props): ReactElement => {
               }}
             >
               {data && data?.topImg?.data?.attributes?.url && (
-                <Box
-                  component="img"
+                <ResponsiveImage
                   sx={{
                     width: "100%",
                     height: "auto",
@@ -131,8 +131,7 @@ const HandWork = ({data}: Props): ReactElement => {
         >
           <ScrollParallax strength={0.1}>
             {data && data?.bottomImg?.data?.attributes?.url && (
-              <Box
-                component="img"
+              <ResponsiveImage
                 alt="handworks"
                 src={`${process.env.REACT_APP_BACKEND_URL}${data.bottomImg.data.attributes.url}`}
                 sx={{

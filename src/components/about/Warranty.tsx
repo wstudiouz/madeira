@@ -6,6 +6,7 @@ import MiniTextCard from "./MiniTextCard";
 import useIntersectionObserver from "../../ts/utils/Hooks";
 import {zIndex} from "../../ts/utils/ZIndexs";
 import {AboutWarrantyComponent} from "../../ts/REST/api/generated";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 
 type Props = {
   data: AboutWarrantyComponent;
@@ -96,8 +97,7 @@ const Warranty = ({data}: Props): ReactElement => {
         >
           <ScrollParallax>
             {data && data?.warrantyYearBg?.data?.attributes?.url && (
-              <Box
-                component="img"
+              <ResponsiveImage
                 src={`${process.env.REACT_APP_BACKEND_URL}${data.warrantyYearBg.data.attributes.url}`}
                 sx={{
                   height: "calc(100% + 100px)",

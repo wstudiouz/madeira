@@ -1,10 +1,11 @@
-import {Box, Stack, Typography, Grid} from "@mui/material";
+import {Stack, Typography, Grid} from "@mui/material";
 import React, {ReactElement} from "react";
 import {theme} from "../../theme";
 import MiniTextCard from "./MiniTextCard";
 import {LeonHandleSvg} from "../../imports/index";
 import {ScrollParallax} from "react-just-parallax";
 import {AboutComplexComponent} from "../../ts/REST/api/generated";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 
 type Props = {
   data: AboutComplexComponent;
@@ -76,7 +77,7 @@ const Complex = ({data}: Props): ReactElement => {
               />
             )}
           <ScrollParallax strength={0.02}>
-            <Box
+            <ResponsiveImage
               sx={{
                 width: "150px",
                 height: "190px",
@@ -84,7 +85,6 @@ const Complex = ({data}: Props): ReactElement => {
                 right: {xs: "30%", md: "25px", lg: "30px", xl: "70px"},
                 bottom: {xs: "-110px", md: "-90px"},
               }}
-              component="img"
               src={LeonHandleSvg}
             />
           </ScrollParallax>

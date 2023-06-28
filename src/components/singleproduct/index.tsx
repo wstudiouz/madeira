@@ -1,6 +1,6 @@
 import React, {ReactElement, useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import {Box, Stack} from "@mui/system";
+import {Stack} from "@mui/system";
 import {Typography, Grid} from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -12,6 +12,7 @@ import Paper from "@mui/material/Paper";
 import {theme} from "../../theme";
 import {DoorListResponseDataItem} from "../../ts/REST/api/generated";
 import {getter} from "../../ts/utils/Fetcher";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 
 function createData(
   name: string,
@@ -76,8 +77,7 @@ const SingleProduct = (): ReactElement => {
           >
             {data?.attributes?.images?.data?.map((e, index) => (
               <Grid key={index} item xs={4} lg={3}>
-                <Box
-                  component="img"
+                <ResponsiveImage
                   src={`${process.env.REACT_APP_BACKEND_URL}${e.attributes?.url}`}
                   sx={{
                     width: "100%",
@@ -98,8 +98,7 @@ const SingleProduct = (): ReactElement => {
         </Stack>
         <Stack sx={{width: {xs: "100%", lg: "30%"}}}>
           {data?.attributes?.mainImg?.data?.attributes?.url && (
-            <Box
-              component="img"
+            <ResponsiveImage
               src={`${process.env.REACT_APP_BACKEND_URL}${data.attributes.mainImg.data.attributes.url}`}
               sx={{
                 width: {xs: "200px", sm: "220px", md: "240px", lg: "252px"},

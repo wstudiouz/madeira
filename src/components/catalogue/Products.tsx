@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {keyframes} from "@mui/material";
 import {theme} from "../../theme";
 import {StateTypes} from ".";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 
 type ComponentProps = {
   data: StateTypes;
@@ -69,9 +70,8 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
                   position: "relative",
                 }}
               >
-                <Box
-                  component="img"
-                  alt="product img"
+                <ResponsiveImage
+                  alt={e.attributes?.mainImg?.data?.attributes?.alternativeText}
                   src={`${process.env.REACT_APP_BACKEND_URL}${e.attributes?.mainImg?.data?.attributes?.url}`}
                   sx={{
                     marginTop: "-10px",

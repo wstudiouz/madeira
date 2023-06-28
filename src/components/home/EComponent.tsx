@@ -97,8 +97,7 @@ const EComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           >
             <ScrollParallax>
               {value && value?.letterImg?.data?.attributes?.url && (
-                <Box
-                  component="img"
+                <ResponsiveImage
                   src={`${process.env.REACT_APP_BACKEND_URL}${value.letterImg.data.attributes.url}`}
                   sx={{
                     height: "calc(100% + 100px)",

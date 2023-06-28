@@ -1,9 +1,9 @@
 import {Stack, Typography, Grid} from "@mui/material";
-import {Box} from "@mui/system";
 import React, {ReactElement} from "react";
 import MiniTextCard from "./MiniTextCard";
 import {theme} from "../../theme";
 import {AboutProductionComponent} from "../../ts/REST/api/generated";
+import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
 type Props = {
   data: AboutProductionComponent;
 };
@@ -53,8 +53,7 @@ const Production = ({data}: Props): ReactElement => {
         >
           <Grid item xs={6}>
             {data && data?.img1?.data?.attributes?.url && (
-              <Box
-                component="img"
+              <ResponsiveImage
                 alt="own production"
                 sx={{
                   width: "100%",
@@ -66,8 +65,7 @@ const Production = ({data}: Props): ReactElement => {
           </Grid>
           <Grid item xs={6} sx={{marginLeft: {xs: "20px", lg: "30px"}}}>
             {data && data?.img2?.data?.attributes?.url && (
-              <Box
-                component="img"
+              <ResponsiveImage
                 alt="own production"
                 sx={{
                   width: "100%",
