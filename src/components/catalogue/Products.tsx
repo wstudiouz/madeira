@@ -84,6 +84,7 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
                     transformOrigin: "50% 100%",
                     verticalAlign: "middle",
                     transform: "scale(0.97)",
+                    width: "auto",
                   }}
                 />
               </Box>
