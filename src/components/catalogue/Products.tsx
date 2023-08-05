@@ -28,7 +28,8 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
   return (
     <Stack sx={{width: "100%", marginTop: "50px"}}>
       <Grid container spacing={3} sx={{width: "100%"}}>
-        {data.get && data.data ? (
+        {data.get &&
+          data.data.length > 0 &&
           data.data.map((e, ind) => (
             <Grid
               item
@@ -156,14 +157,10 @@ const Products = ({data, setPage, page}: ComponentProps): ReactElement => {
                 </Typography>
               </Stack>
             </Grid>
-          ))
-        ) : data.error ? (
+          ))}
+        {data.error && (
           <Typography sx={{textAlign: "center", margin: "0 auto"}}>
             error :(
-          </Typography>
-        ) : (
-          <Typography sx={{textAlign: "center", margin: "0 auto"}}>
-            Loading...
           </Typography>
         )}
       </Grid>

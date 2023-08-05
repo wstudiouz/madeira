@@ -8,6 +8,7 @@ import {
   DoorListResponseDataItem,
 } from "../../ts/REST/api/generated";
 import {getter} from "../../ts/utils/Fetcher";
+import {Stack} from "@mui/material";
 
 export type StateTypes = {
   get?: boolean;
@@ -31,20 +32,17 @@ const Catalogue = (): ReactElement => {
   }>({id: false, type: false});
   const [page, setPage] = useState<number>(1);
 
-  const concater = useCallback(
-    (arr: DoorListResponse) => {
-      try {
-        if (arr.data && arr.meta) {
-          const newValues = data.data.concat(arr.data);
-          return {newValues, total: arr.meta.pagination?.total};
-        }
-        return {newValues: data.data, total: data.totalPages};
-      } catch {
-        return {newValues: data.data, total: data.totalPages};
+  const concater = useCallback((arr: DoorListResponse) => {
+    try {
+      if (arr.data && arr.meta) {
+        const newValues = data.data.concat(arr.data);
+        return {newValues, total: arr.meta.pagination?.total};
       }
-    },
-    [data.data, data.totalPages]
-  );
+      return {newValues: data.data, total: data.totalPages};
+    } catch {
+      return {newValues: data.data, total: data.totalPages};
+    }
+  }, []);
 
   const selector = (arr: DoorListResponse) => {
     try {
@@ -118,7 +116,9 @@ const Catalogue = (): ReactElement => {
   return (
     <MainContainer>
       {category && <Hero category={category} setState={setSelect} />}
-      <Products data={data} setPage={setPage} page={page} />
+      {data.data && data.data.length > 0 && (
+        <Products data={data} setPage={setPage} page={page} />
+      )}
     </MainContainer>
   );
 };
