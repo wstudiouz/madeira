@@ -41,6 +41,7 @@ const Catalogue = (): ReactElement => {
     } catch {
       return {newValues: data.data, total: data.totalPages};
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const selector = (arr: DoorListResponse) => {
