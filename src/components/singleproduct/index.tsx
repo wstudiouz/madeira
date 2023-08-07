@@ -2,33 +2,9 @@ import React, {ReactElement, useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {Stack} from "@mui/system";
 import {Typography, Grid} from "@mui/material";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import {theme} from "../../theme";
 import {DoorListResponseDataItem} from "../../ts/REST/api/generated";
 import {getter} from "../../ts/utils/Fetcher";
 import ResponsiveImage from "@qubixstudio/sphere/sphere/components/ResponsiveImage";
-
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number
-) {
-  return {name, calories, fat, carbs, protein};
-}
-
-const rows = [
-  createData("Plank", 159, 6.0, 24, 4.0),
-  createData("Case", 237, 9.0, 37, 4.3),
-  createData("Aperture", 262, 16.0, 24, 6.0),
-];
 
 const SingleProduct = (): ReactElement => {
   const {id} = useParams();
@@ -109,56 +85,6 @@ const SingleProduct = (): ReactElement => {
           )}
         </Stack>
       </Stack>
-      <Grid container>
-        <Grid item md={8} lg={7} sx={{display: {xs: "none", md: "block"}}}>
-          <TableContainer
-            component={Paper}
-            sx={{
-              background: "none",
-              margin: "30px 0",
-              width: "100%",
-            }}
-          >
-            <Table sx={{minWidth: 300}} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>type</TableCell>
-                  <TableCell align="right">width</TableCell>
-                  <TableCell align="right">height</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row) => (
-                  <TableRow
-                    key={row.name}
-                    sx={{"&:last-child td, &:last-child th": {border: 0}}}
-                  >
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Grid>
-      </Grid>
-      <Typography
-        variant="paragraph"
-        sx={{
-          display: {
-            xs: "none",
-            md: "block",
-            color: theme.palette.secondary.main,
-          },
-        }}
-      >
-        Non standard sizes are 2100, 2200, 2300 mm.
-      </Typography>
     </Stack>
   );
 };
