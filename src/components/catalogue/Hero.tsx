@@ -51,13 +51,6 @@ const Hero = ({setState, category}: ComponentProps): ReactElement => {
     },
   };
 
-  const [materials] = useState<string[]>([
-    "first material",
-    "second material",
-    "third material",
-    "fourth material",
-  ]);
-
   const closeFn = () => {
     if (collection) {
       setCollection(false);
@@ -119,48 +112,6 @@ const Hero = ({setState, category}: ComponentProps): ReactElement => {
                       </ListItem>
                     )
                 )}
-              </List>
-            </Stack>
-          </Grid>
-          <hr style={{marginTop: "1px"}} />
-          <Grid item xs={12} sm={6} md={4}>
-            <Stack
-              sx={{
-                width: "100%",
-                position: "relative",
-              }}
-            >
-              <Stack
-                sx={{
-                  ...style.title,
-                  border: `1px solid ${
-                    material ? theme.palette.secondary.main : "white"
-                  }`,
-                }}
-                onClick={() => setMaterial(!material)}
-              >
-                <Typography
-                  variant="h3"
-                  sx={{fontSize: "16px", lineHeight: "20px"}}
-                >
-                  Select material
-                </Typography>
-                <ExpandMoreIcon />
-              </Stack>
-              <List
-                sx={{...style.content, display: material ? "block" : "none"}}
-              >
-                {materials.map((e, index) => (
-                  <ListItem
-                    key={index}
-                    sx={{
-                      borderBottom: `1px solid ${theme.palette.secondary.main}`,
-                    }}
-                    onClick={() => handleChange(index, 2)}
-                  >
-                    {e}
-                  </ListItem>
-                ))}
               </List>
             </Stack>
           </Grid>

@@ -8,7 +8,6 @@ import {
   DoorListResponseDataItem,
 } from "../../ts/REST/api/generated";
 import {getter} from "../../ts/utils/Fetcher";
-import {Stack} from "@mui/material";
 
 export type StateTypes = {
   get?: boolean;
