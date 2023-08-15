@@ -125,7 +125,7 @@ const IComponent = ({SectionRef, sx, value}: ComponentProps): ReactElement => {
           }}
         />
       </Stack>
-      <Stack sx={{textAlign: "center", width: "30%"}}>
+      <Stack sx={{textAlign: "center", width: {xs: "100%", lg: "30%"}}}>
         <Typography
           variant="heroText1"
           sx={{
