@@ -2,6 +2,7 @@ import {Box, Stack, SxProps, Grid} from "@mui/material";
 import React, {ReactElement} from "react";
 import {theme} from "../../theme";
 import MiniGoldCard from "../home/MiniGoldCard";
+import {sendMessage} from "../../ts/utils/sendMessage";
 
 const Form = (): ReactElement => {
   const inputsStyle: SxProps = {
@@ -41,7 +42,9 @@ const Form = (): ReactElement => {
       msg: target.msg.value,
     };
 
-    alert(JSON.stringify(fvalue));
+    sendMessage(
+      `New message! \n\nName: ${fvalue.name}\nPhone Number: ${fvalue.phone}\nEmail: ${fvalue.email}\nMessage: ${fvalue.msg}`
+    );
   };
   return (
     <Stack sx={{width: {xs: "100%", md: "80%", lg: "70%"}}}>
