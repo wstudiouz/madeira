@@ -16,12 +16,12 @@ export const sendMessage = async (message: string) => {
     );
 
     if (response.ok) {
-      alert("success");
+      alert("Your message has been sent successfully");
     } else {
-      alert("error");
+      alert("error, try again later");
     }
   } catch (error) {
     alert(String(error));
   }
-  //   window.location.reload();
+  window.location.reload();
 };
